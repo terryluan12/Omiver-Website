@@ -1,0 +1,39 @@
+body {
+  background-color: #67997d;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+  height: 100vh;
+
+  background-image: url("overlay.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#start_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  height: 70px;
+  width: 280px;
+  border-radius: 50px;
+  margin-top: 20px;
+
+  background-color: white;
+  color: 67997d;
+  border: none;
+
+  font-family: "Open Sans";
+  font-size: 22px;
+  text-decoration: none;
+}
+
+#start_button svg {
+  flex-shrink: 0;
+}
