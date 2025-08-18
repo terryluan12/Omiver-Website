@@ -1,26 +1,15 @@
 body {
   background-color: E0E0E0;
 
+  display: flex;
+  flex-direction: row;
+
   font-family: "Open Sans";
 }
 
 .athlete-pic {
   height: 1000px;
   filter: brightness(50%);
-}
-
-.cartoon-img {
-  height: 25vh;
-  max-height: 300px;
-  margin-top: 40px;
-}
-
-.carousel-item {
-  display: none;
-}
-.carousel-item.active {
-  display: flex;
-  flex-direction: row;
 }
 
 #welcome-left-half {
@@ -34,12 +23,12 @@ body {
 
 #welcome-left-half,
 #welcome-right-half {
+  flex: 1;
   height: 100vh;
 
   border: 2px solid green;
   margin-left: 20px;
   margin-right: 20px;
-  flex: 1;
   box-sizing: border-box;
 }
 
@@ -59,13 +48,9 @@ body {
   margin: 0px 150px;
 }
 
-#next-button {
-  margin-top: 50px;
-  width: 60px;
-  height: 60px;
-
-  position: absolute;
-  bottom: 40px;
+.submit-button {
+  width: 515;
+  height: 68px;
 
   background-color: #a8879d;
   border-radius: 60px;
