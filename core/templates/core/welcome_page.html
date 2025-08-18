@@ -1,7 +1,91 @@
+{% load static %}
 <html>
-<head>
-</head>
-<body>
-    <h1>Welcome</h1>
-</body>
-</hmtl>
+  <head>
+    <link rel="stylesheet" href="{% static 'core/welcome/style.css' %}" />
+  </head>
+  <body>
+    {% for page in pages %}
+    <div class="carousel-item {% if forloop.first %}active {% endif %}">
+      <div id="welcome-left-half">
+        <img
+          class="athlete-pic"
+          src="{% static page.photo_url %}"
+          alt="{{ page.photo_alt }}"
+        />
+      </div>
+      <div id="welcome-right-half">
+        <button id="back-button" onclick="prevSlide()">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.6432 9.23701H3.71022L10.5762 2.69701C10.6702 2.61786 10.747 2.5203 10.8019 2.41035C10.8567 2.30039 10.8885 2.18037 10.8952 2.05767C10.9019 1.93497 10.8834 1.8122 10.8408 1.69693C10.7983 1.58165 10.7326 1.47631 10.6478 1.38739C10.5629 1.29847 10.4608 1.22787 10.3477 1.17992C10.2345 1.13197 10.1128 1.1077 9.98991 1.10861C9.86703 1.10951 9.74565 1.13556 9.63322 1.18516C9.5208 1.23476 9.41972 1.30686 9.33622 1.39701L1.49522 8.86501C1.32725 9.03343 1.19433 9.23348 1.10414 9.45358C1.01395 9.67369 0.968274 9.90948 0.969762 10.1473C0.97125 10.3852 1.01987 10.6204 1.11281 10.8394C1.20574 11.0583 1.34116 11.2567 1.51122 11.423L9.33722 18.877C9.42072 18.9672 9.5218 19.0393 9.63422 19.0889C9.74664 19.1385 9.86803 19.1645 9.99091 19.1654C10.1138 19.1663 10.2355 19.142 10.3487 19.0941C10.4618 19.0462 10.5639 18.9755 10.6488 18.8866C10.7336 18.7977 10.7993 18.6924 10.8418 18.5771C10.8844 18.4618 10.9029 18.339 10.8962 18.2164C10.8895 18.0937 10.8577 17.9736 10.8029 17.8637C10.748 17.7537 10.6712 17.6562 10.5772 17.577L3.68222 11.037H18.6432C18.8819 11.037 19.1108 10.9422 19.2796 10.7734C19.4484 10.6046 19.5432 10.3757 19.5432 10.137C19.5432 9.89832 19.4484 9.6694 19.2796 9.50061C19.1108 9.33183 18.8819 9.23701 18.6432 9.23701Z"
+              fill="black"
+              stroke="#171717"
+              stroke-width="0.6"
+            />
+          </svg>
+        </button>
+        <div>Welcome to</div>
+        <img src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
+
+        <img
+          class="cartoon-img"
+          src="{% static page.cartoon_url %}"
+          alt="{{ page.cartoon_alt }}"
+        />
+
+        <h2>{{ page.heading }}</h2>
+        <p>{{ page.description }}</p>
+        <button id="next-button" onclick="nextSlide()">
+          <svg
+            width="10"
+            height="18"
+            viewBox="0 0 10 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.51802 8.73394L0.281017 14.9739C0.1104 15.1452 0.0146055 15.3772 0.0146055 15.6189C0.0146055 15.8607 0.1104 16.0926 0.281017 16.2639L0.827017 16.8079C0.99819 16.9788 1.23016 17.0748 1.47202 17.0748C1.71387 17.0748 1.94584 16.9788 2.11702 16.8079L9.54302 9.38194C9.7134 9.20971 9.80896 8.97721 9.80896 8.73494C9.80896 8.49267 9.7134 8.26018 9.54302 8.08794L2.12402 0.668943C1.95272 0.498327 1.72079 0.402533 1.47902 0.402533C1.23724 0.402533 1.00532 0.498327 0.834017 0.668943L0.288017 1.21494C0.117156 1.38612 0.0211935 1.61809 0.0211935 1.85994C0.0211935 2.1018 0.117156 2.33377 0.288017 2.50494L6.51802 8.73394Z"
+              fill="#FFFFFF"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".carousel-item");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = currentSlide + 1;
+
+      if (currentSlide > 2) {
+        window.location.href = "next_page";
+      }
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = currentSlide - 1;
+
+      if (currentSlide < 0) {
+        window.location.href = "/";
+      }
+      showSlide(currentSlide);
+    }
+  </script>
+</html>

@@ -1,0 +1,87 @@
+body {
+  background-color: E0E0E0;
+
+  font-family: "Open Sans";
+}
+
+.athlete-pic {
+  height: 1000px;
+  filter: brightness(50%);
+}
+
+.cartoon-img {
+  height: 25vh;
+  max-height: 300px;
+  margin-top: 40px;
+}
+
+.carousel-item {
+  display: none;
+}
+.carousel-item.active {
+  display: flex; /* or block depending on layout */
+  flex-direction: row;
+}
+
+#welcome-left-half {
+  border-radius: 80px;
+  overflow: hidden;
+}
+#welcome-right-half {
+  display: flex;
+  flex-direction: column;
+}
+
+#welcome-left-half,
+#welcome-right-half {
+  height: 100vh;
+
+  border: 2px solid green;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+#welcome-right-half {
+  position: relative;
+
+  padding-top: 20px;
+
+  background-color: white;
+  border-radius: 80px;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+}
+
+#welcome-right-half p {
+  margin: 0px 150px;
+}
+
+#next-button {
+  margin-top: 50px;
+  width: 60px;
+  height: 60px;
+
+  position: absolute;
+  bottom: 40px;
+
+  background-color: #a8879d;
+  border-radius: 60px;
+  border-style: none;
+}
+
+#back-button {
+  margin-top: px;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 60px;
+  left: 60px;
+
+  background-color: #ffffff;
+  border: 2px #000000 solid;
+  border-radius: 40px;
+}
