@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Marcus Thompson",
+    "age": 28,
+    "sport": "Football (Wide Receiver)",
+    "goal": {
+      "fitness": "Improve explosive speed and agility; reduce body fat by 3% for better quickness on the field.",
+      "nutrition": "Increase lean protein intake to support muscle recovery and maintain strength while cutting; reduce processed carbs and increase hydration."
+    },
+    "colour": "#D27644"
+  },
+  {
+    "name": "Sofia Riviera",
+    "age": 24,
+    "sport": "Competitive Runner (5K and 10K distances)",
+    "goal": {
+      "fitness": "Improve VO₂ max and running economy; integrate more strength training to prevent injury.",
+      "nutrition": "Optimize carbohydrate timing for endurance training; maintain a plant-forward diet rich in iron, B12, and omega-3s."
+    },
+    "colour": "#88A9C3"
+  },
+  {
+    "name": "Jackson Lee",
+    "age": 33,
+    "sport": "Ice Hockey (Defenseman)",
+    "goal": {
+      "fitness": "Enhance core stability and upper-body power for better puck control and physical play.",
+      "nutrition": "Maintain high caloric intake to match energy expenditure during training; focus on anti-inflammatory foods for recovery."
+    },
+    "colour": "#DC6874"
+  }
+]

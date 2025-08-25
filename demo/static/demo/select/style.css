@@ -1,0 +1,70 @@
+.info-block {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.info-block > * {
+  margin: 3px;
+}
+
+.selection-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.selection-block .profile-block {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.profile-block > * {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.profile-block > div > * {
+  margin: 0;
+}
+
+#content > div {
+  margin: 10px 5vw;
+  border-radius: 15px;
+}
+
+#disclaimer-block {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  text-align: center;
+}
+
+.basic-info-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.basic-info-block > div > * {
+  margin: 0;
+  margin-left: 15px;
+}
+
+.select-profile-button {
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: calc(100% - 5vw);
+  color: white;
+
+  box-sizing: border-box;
+  display: block;
+}
