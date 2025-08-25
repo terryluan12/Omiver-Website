@@ -1,0 +1,80 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'demo/profile_detail/style.css' %}" />
+
+<style>
+  body {
+    background-color: {{ colour }};
+  }
+</style>
+{% endblock %} 
+
+{% block content %}
+<div class="info-block">
+  <p>Welcome to</p>
+  <img class="green_logo" src="{% static 'green_logo.svg' %}" />
+  <h6>You selected {{name}}'s Profile</h6>
+  <p>The profile details are generated based on the client's specific goal and lifestyle information inputted by you</p>
+</div>
+
+<img class="user-photo" src="{% static 'demo/select/' %}{{name}}.png" />
+<div class="user-info">
+  <div>
+    <h2>{{ name }}</h2>
+    <p>Age: {{ age }}</p>
+  </div>
+  <div>
+    <h2>Ethnicity</h2>
+    <p>{{ethnicity}}</p>
+  </div>
+  <div>
+    <h2>Allergies</h2>
+    <p>{{allergies}}</p>
+  </div>
+  <div class="user-sport">
+    <h2>Sport:</h2>
+    <p>{{ sport }}</p>
+  </div>
+  <div class="user-fitness">
+    <h2>Fitness Goal:</h2>
+    <p>{{ goal.fitness }}</p>
+  </div>
+  <div class="user-nutrition">
+    <h2>Nutrition Goal:</h2>
+    <p>{{ goal.nutrition }}</p>
+  </div>
+</div>
+<div>
+  <h1>Fitness Goal</h1>
+  <div>
+    <p>{{ goal.nutrition }}</p>
+  </div>
+</div>
+<div>
+  <h1>Nutrition Goal</h1>
+  <div>
+    <p>{{ goal.nutrition }}</p>
+  </div>
+</div>
+<div>
+  <h1>Weekly Exercise Routine</h1>
+  {% for day, routine in weekly_routine.items %}
+  <div>
+    <h4>{{ day }}:</h4>
+    <p>{{ routine }}</p>
+  </div>
+  {% endfor %}
+</div>
+<div>
+  <h1>Daily Food Log</h1>
+  {% for time, food in food_log.items %}
+  <div>
+    <h4>{{ time }}:</h4>
+    <p>{{ food }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

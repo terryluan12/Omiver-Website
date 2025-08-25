@@ -2,10 +2,15 @@
   background-color: white;
   text-align: center;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .info-block > * {
   margin: 3px;
+}
+
+p {
+  font-size: small;
 }
 
 .selection-block {
@@ -21,7 +26,7 @@
 
 .profile-block > * {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 15px;
+  margin: 10px;
   border-radius: 15px;
   padding: 10px;
 }
@@ -31,12 +36,13 @@
 }
 
 #content > div {
-  margin: 10px 5vw;
+  margin: 10px 8vw;
   border-radius: 15px;
 }
 
 #disclaimer-block {
   border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .profile-pic {
@@ -67,4 +73,12 @@
 
   box-sizing: border-box;
   display: block;
+}
+
+.green_logo {
+}
+
+hr {
+  width: 70%;
+  margin-top: 50px;
 }

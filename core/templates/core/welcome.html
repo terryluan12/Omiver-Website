@@ -2,35 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="{% static 'core/welcome/style.css' %}" />
-
-    <script>
-      let currentSlide = 0;
-      const slides = document.querySelectorAll(".carousel-item");
-
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
-      }
-
-      function nextSlide() {
-        currentSlide = currentSlide + 1;
-
-        if (currentSlide > 2) {
-          window.location.href = "login";
-        }
-        showSlide(currentSlide);
-      }
-
-      function prevSlide() {
-        currentSlide = currentSlide - 1;
-
-        if (currentSlide < 0) {
-          window.location.href = "/";
-        }
-        showSlide(currentSlide);
-      }
-    </script>
   </head>
   <body>
     {% for page in pages %}
@@ -76,5 +47,34 @@
       </div>
     </div>
     {% endfor %}
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-item");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = currentSlide + 1;
+
+        if (currentSlide > 2) {
+          window.location.href = "login";
+        }
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = currentSlide - 1;
+
+        if (currentSlide < 0) {
+          window.location.href = "/";
+        }
+        showSlide(currentSlide);
+      }
+    </script>
   </body>
 </html>

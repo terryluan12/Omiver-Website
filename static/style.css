@@ -2,3 +2,10 @@ body {
   background-color: #ebe9ea;
   font-family: "Open Sans";
 }
+
+#content > * {
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}

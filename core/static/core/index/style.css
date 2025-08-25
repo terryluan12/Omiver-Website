@@ -20,17 +20,18 @@ body {
   justify-content: center;
   gap: 2rem;
 
-  height: 70px;
-  width: 280px;
+  height: 10vh;
+  width: 25vw;
+  max-width: 280px;
   border-radius: 50px;
-  margin-top: 20px;
+  margin-top: 40px;
 
   background-color: white;
   color: 67997d;
   border: none;
 
   font-family: "Open Sans";
-  font-size: 22px;
+  font-size: 3vh;
   text-decoration: none;
 }
 
