@@ -37,22 +37,22 @@
   padding: 0;
 }
 .circle-crop {
-  width: 50px;            /* final diameter of the circle */
+  width: 50px;
   height: 50px;
-  border-radius: 50%;      /* makes it a circle */
-  overflow: hidden;        /* crops anything outside the circle */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* aligns content to top */
+  align-items: flex-start; 
 }
 
 .circle-crop img {
-  width: 120px;            /* slightly larger than container to scale down */
-  height: auto;            /* maintain aspect ratio */
-  object-fit: cover;       /* ensures the image covers the container */
-  object-position: top;    /* shows the top of the photo */
-  object-position: center; /* controls which part is centered in the circle */
-  transform: translateY(-10px);   /* scale down a little */
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  object-position: center;
+  transform: translateY(-10px);
 }
 
 .user-info {
@@ -62,6 +62,7 @@
   grid-auto-flow: row;
 }
 
+#disclaimer-block,
 .welcome-block,
 .user-sport,
 .user-fitness,
@@ -116,4 +117,23 @@ p {
 
 .info-block {
   align-items: center;
+}
+
+#content > #disclaimer-block {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+}
+
+#content > #disclaimer-block > p {
+  opacity: 100%;
+}
+
+a {
+  text-decoration: none;
+  background-color: #A8879D;
+  color: white;
+  text-align: center;
+  grid-column: 1 / -1;
 }

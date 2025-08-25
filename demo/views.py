@@ -15,3 +15,6 @@ def profile_detail(request, id):
     profile_data = all_profiles[id]
     
     return render(request, "demo/profile_detail.html", profile_data)
+
+def process(request):
+    return render(request, "demo/process.html")
