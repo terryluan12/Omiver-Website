@@ -21,9 +21,9 @@
     },
     "food_log": {
       "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack_1": "Banana with protein shake (whey isolate)",
+      "Snack 1": "Banana with protein shake (whey isolate)",
       "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack_2": "Rice cakes with sunflower seed butter",
+      "Snack 2": "Rice cakes with sunflower seed butter",
       "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
       "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
     },
@@ -52,9 +52,9 @@
     },
     "food_log": {
       "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack_1": "Banana with protein shake (whey isolate)",
+      "Snack 1": "Banana with protein shake (whey isolate)",
       "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack_2": "Rice cakes with sunflower seed butter",
+      "Snack 2": "Rice cakes with sunflower seed butter",
       "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
       "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
     },
@@ -82,9 +82,9 @@
     },
     "food_log": {
       "Breakfast": "Omelet with kimchi and steamed rice",
-      "Snack_1": "Trail mix (without peanuts), apple",
+      "Snack 1": "Trail mix (without peanuts), apple",
       "Lunch": "Bulgogi beef with brown rice and mixed vegetables",
-      "Snack_2": "Cottage cheese with pineapple",
+      "Snack 2": "Cottage cheese with pineapple",
       "Dinner": "Grilled mackerel, sweet potato, spinach and garlic stir-fry",
       "Hydration": "3 liters of water daily, green tea included"
     },

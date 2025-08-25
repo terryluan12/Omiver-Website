@@ -1,11 +1,11 @@
-.info-block {
+.welcome-block {
   background-color: white;
   text-align: center;
   padding: 10px;
   border-radius: 15px;
 }
 
-.info-block > * {
+.welcome-block > * {
   margin: 3px;
 }
 
@@ -73,12 +73,18 @@ p {
 
   box-sizing: border-box;
   display: block;
+  text-align: center;
 }
 
 .green_logo {
+  margin-bottom: 10px;
 }
 
 hr {
   width: 70%;
   margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
 }

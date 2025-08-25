@@ -5,16 +5,18 @@
   gap: 5px;
 }
 
+.green_logo {
+  margin-bottom: 10px;
+}
 
 #content > div > div {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 5px;
   text-align: left;
   padding: 10px;
 }
 
-.info-block {
+.welcome-block {
   background-color: white;
   text-align: center;
   padding: 10px;
@@ -23,23 +25,89 @@
 
 .user-photo {
   width: 50vw;
-  max-height: 600px;
+  max-height: 435px;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   margin: 0;
   padding: 0;
+}
+.circle-crop {
+  width: 50px;            /* final diameter of the circle */
+  height: 50px;
+  border-radius: 50%;      /* makes it a circle */
+  overflow: hidden;        /* crops anything outside the circle */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* aligns content to top */
+}
+
+.circle-crop img {
+  width: 120px;            /* slightly larger than container to scale down */
+  height: auto;            /* maintain aspect ratio */
+  object-fit: cover;       /* ensures the image covers the container */
+  object-position: top;    /* shows the top of the photo */
+  object-position: center; /* controls which part is centered in the circle */
+  transform: translateY(-10px);   /* scale down a little */
 }
 
 .user-info {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 5px;
+  gap: 15px;
   grid-auto-flow: row;
 }
 
-.info-block,
+.welcome-block,
 .user-sport,
 .user-fitness,
 .user-nutrition {
   grid-column: 1 / -1;
+}
+
+
+.user-sport,
+.user-fitness,
+.user-nutrition {
+  padding-right: 15px;
+}
+
+.weekly-exercise-section > div,
+.food-log-section > div {
+ margin-top: 15px;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+h4 {
+  margin: 0px;
+}
+
+p {
+  font-size: medium;
+  opacity: 0.5;
+  margin: 0px;
+}
+
+.section-title {
+  display: inline-flex;
+  margin: 0px;
+}
+
+.section-title > img {
+  margin-right: 10px;
+}
+
+#content > div {
+  padding: 20px;
+}
+
+.section-pii {
+  display: inline-flex;
+  padding: 16px;
+}
+
+.info-block {
+  align-items: center;
 }
