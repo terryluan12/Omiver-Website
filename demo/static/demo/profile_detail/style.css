@@ -23,6 +23,11 @@
   border-radius: 15px;
 }
 
+.welcome-block hr {
+  width: 70%;
+  margin: 5px auto;
+}
+
 .user-photo {
   width: 50vw;
   max-height: 435px;
@@ -101,6 +106,7 @@ p {
 
 #content > div {
   padding: 20px;
+  background-color: white;
 }
 
 .section-pii {
