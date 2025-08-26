@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'profiles',
     'core',
     'demo',
+    'dashboard',
     'django_browser_reload',
 ]
 
