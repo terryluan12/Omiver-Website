@@ -7,22 +7,30 @@
 
 {% block content %}
 
-<div class="info-block">
-    <h4>Support</h4>
-    <p>Here you can contact our support team, get assistance, and resolve your questions</p>
-
-    <div>
-        <h6>Last Ticket</h6>
-        <p>Aug 05, 2025</p>
+<div id="info-block">
+    <div class="description-info-block">
+        <h4>Support</h4>
+        <p>Here you can contact our support team, get assistance, and resolve your questions</p>
     </div>
-    <div>
-        <h6>Current Ticket</h6>
-        <p>Sep 05, 2025</p>
+    <img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
+        <span>
+            <h4>Last Ticket</h4>
+            <p>Aug 05, 2025</p>
+        </span>
+    </div>
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
+        <span>
+            <h4>Current Ticket</h4>
+            <p>Sep 05, 2025</p>
+        </span>
     </div>
 </div>
 
 <div class="ticket-block">
-    <div class="tickets-list">
+    <div id="tickets-list">
     {% for ticket in tickets %}
         <div 
         class="ticket-preview" 
@@ -30,14 +38,16 @@
         hx-target="#ticket-detail"
         hx-swapp="innerHTML"
         >
-            <h6>{{ ticket.title }}</h6>
+            <h5>{{ ticket.title }}</h5>
             <p>{{ ticket.email }}</p>
             <p>{{ ticket.snippet }}</p>
         </div>
     {% endfor %}
     </div>
     <div id="ticket-detail">
-        <p>Select a ticket to read</p>
+        <div id="ticket-detail-placeholder">
+            <p>Select a ticket to read</p>
+        </div>
     </div>
 </div>
 

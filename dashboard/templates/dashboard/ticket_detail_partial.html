@@ -1,2 +1,30 @@
-<h2>{{ subject }}</h2>
-<p>{{ body }}</p>
+{% load static %}
+
+<div id="ticket-header">
+    <div id="ticket-info">
+        <img class="profile-pic" src="{% static '/dashboard/support/garbage.svg' %}" />
+        <span>
+            <h4>{{ title }}</h4>
+            <p id="email-text">{{ email }}</p>
+
+        </span>
+    </div>
+
+    <div>
+        <p>Solved</p>
+        <img src="{% static '/dashboard/support/garbage.svg' %}" />
+    </div>
+</div>
+
+<div id="ticket-body">
+    <p id="ticket-description">
+    {{ description }}
+    </p>
+
+    <span id="input-wrapper">
+        <input id="reply-input" placeholder="Write..." type="text" />
+        <button id="reply-button" >
+            <img src="{% static 'dashboard/support/right_arrow.svg' %}" />
+        </button>
+    </span>
+</div>
