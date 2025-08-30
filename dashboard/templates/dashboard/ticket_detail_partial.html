@@ -1,30 +1,27 @@
 {% load static %}
+{% load component_tags %}
 
 <div id="ticket-header">
-    <div id="ticket-info">
-        <img class="profile-pic" src="{% static '/dashboard/support/garbage.svg' %}" />
-        <span>
-            <h4>{{ title }}</h4>
-            <p id="email-text">{{ email }}</p>
+  <div id="ticket-info">
+    <img class="profile-pic" src="{% static '/dashboard/support/garbage.svg' %}" />
+    <span>
+      <h4>{{ title }}</h4>
+      <p id="email-text">{{ email }}</p>
+    </span>
+  </div>
 
-        </span>
-    </div>
-
-    <div>
-        <p>Solved</p>
-        <img src="{% static '/dashboard/support/garbage.svg' %}" />
-    </div>
+  <span id="ticket-status-box">
+    <p id="ticket-status">Solved</p>
+    {% component "ibutton"
+    img_url="/dashboard/support/garbage.svg" / %}
+  </span>
 </div>
 
 <div id="ticket-body">
-    <p id="ticket-description">
-    {{ description }}
-    </p>
+  <p id="ticket-description" style="white-space: pre-wrap;">{{ description }}</p>
 
-    <span id="input-wrapper">
-        <input id="reply-input" placeholder="Write..." type="text" />
-        <button id="reply-button" >
-            <img src="{% static 'dashboard/support/right_arrow.svg' %}" />
-        </button>
-    </span>
+  <span id="input-wrapper">
+    <input id="reply-input" placeholder="Write..." type="text" />
+    <button id="reply-button"><img src="{% static 'dashboard/support/right_arrow.svg' %}" /></button>
+  </span>
 </div>

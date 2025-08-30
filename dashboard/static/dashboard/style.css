@@ -66,3 +66,24 @@ body {
 .main-icons > .ibutton {
   margin: 10px;
 }
+
+#ticket-status-box {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+#ticket-status {
+  margin-right: 10px;
+
+  background-color: rgba(103, 153, 125, 0.1);
+  color: #67997d;
+
+  border-radius: 40%;
+  padding: 7px;
+}
+
+#ticket-status-box > .ibutton {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

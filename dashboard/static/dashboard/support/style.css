@@ -65,7 +65,7 @@ p {
 }
 
 .ticket-preview:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #ticket-detail {
@@ -75,6 +75,11 @@ p {
   border-radius: 15px;
   margin-top: 10px;
   margin-left: 10px;
+
+  max-height: 400px;
+  overflow-y: auto;
+
+  padding-bottom: 20px;
 }
 
 #ticket-detail-placeholder {
@@ -112,9 +117,6 @@ p {
 }
 
 #tickets-list {
-  flex: 0 0 300px;
-  max-height: 400px;
-  overflow-y: auto;
   padding: 10px;
 }
 
