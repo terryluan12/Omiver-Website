@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% load static %} {% load component_tags %} {% block
 styles %}
 <link rel="stylesheet" href="{% static 'dashboard/style.css' %}" />
-{% endblock %} {% block content %}
+
+{% block inner_styles%} {% endblock %} {% endblock %} {% block content %}
 
 <header id="header">
   <span class="header-section">
@@ -24,12 +25,12 @@ styles %}
     <img src="{% static '/back_arrow.svg' %}" />
   </span>
   <span class="main-icons">
-    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %}
-    {% component "ibutton" img_url="dashboard/report_icon.svg" / %}
-    {% component "ibutton" img_url="dashboard/client_icon.svg" / %}
-    {% component "ibutton" img_url="dashboard/support_icon.svg" / %}
-    {% component "ibutton" img_url="dashboard/settings_icon.svg" / %}
-    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %} {%
+    component "ibutton" img_url="dashboard/report_icon.svg" / %} {% component
+    "ibutton" img_url="dashboard/client_icon.svg" / %} {% component "ibutton"
+    img_url="dashboard/support_icon.svg" / %} {% component "ibutton"
+    img_url="dashboard/settings_icon.svg" / %} {% component "ibutton"
+    img_url="dashboard/dashboard_icon.svg" / %}
   </span>
   <span>
     <img src="{% static '/dashboard/logout_icon.svg' %}" />

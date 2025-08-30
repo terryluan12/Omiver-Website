@@ -1,56 +1,47 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends 'base_dashboard.html' %}
+{% load static %}
 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
-{% endblock %} 
+{% block inner_styles %}
+  <link rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
+{% endblock %}
 
-{% block content %}
-
-<div id="info-block">
+{% block dashboard_content %}
+  <div id="info-block">
     <div class="description-info-block">
-        <h4>Support</h4>
-        <p>Here you can contact our support team, get assistance, and resolve your questions</p>
+      <h4>Support</h4>
+      <p>Here you can contact our support team, get assistance, and resolve your questions</p>
     </div>
     <img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
     <div class="ticket-info-block">
-        <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
-        <span>
-            <h4>Last Ticket</h4>
-            <p>Aug 05, 2025</p>
-        </span>
+      <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
+      <span>
+        <h4>Last Ticket</h4>
+        <p>Aug 05, 2025</p>
+      </span>
     </div>
     <div class="ticket-info-block">
-        <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
-        <span>
-            <h4>Current Ticket</h4>
-            <p>Sep 05, 2025</p>
-        </span>
+      <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
+      <span>
+        <h4>Current Ticket</h4>
+        <p>Sep 05, 2025</p>
+      </span>
     </div>
-</div>
+  </div>
 
-<div class="ticket-block">
+  <div class="ticket-block">
     <div id="tickets-list">
-    {% for ticket in tickets %}
-        <div 
-        class="ticket-preview" 
-        hx-get="{% url 'ticket_detail_partial' ticket.pk %}"
-        hx-target="#ticket-detail"
-        hx-swapp="innerHTML"
-        >
-            <h5>{{ ticket.title }}</h5>
-            <p>{{ ticket.email }}</p>
-            <p>{{ ticket.snippet }}</p>
+      {% for ticket in tickets %}
+        <div class="ticket-preview" hx-get="{% url 'ticket_detail_partial' ticket.pk %}" hx-target="#ticket-detail" hx-swapp="innerHTML">
+          <h5>{{ ticket.title }}</h5>
+          <p>{{ ticket.email }}</p>
+          <p>{{ ticket.snippet }}</p>
         </div>
-    {% endfor %}
+      {% endfor %}
     </div>
     <div id="ticket-detail">
-        <div id="ticket-detail-placeholder">
-            <p>Select a ticket to read</p>
-        </div>
+      <div id="ticket-detail-placeholder">
+        <p>Select a ticket to read</p>
+      </div>
     </div>
-</div>
-
-
-
-{% endblock content %}
+  </div>
+{% endblock %}

@@ -54,6 +54,8 @@ body {
   width: calc(100vw - 140px);
   background-color: #f8f9fa;
   border-radius: 15px;
+
+  overflow: hidden;
 }
 
 .main-icons {
