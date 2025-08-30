@@ -1,21 +1,5 @@
-body {
-  background-color: #ebe9ea;
-  font-family: "Open Sans";
-}
-
-#content > * {
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
-}
-
-h4 {
-  font-family: "Open Sans";
-  font-weight: 500;
-  font-size: large;
-  text-decoration: none;
-}
-
-body {
-  padding: 10px 8vw;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

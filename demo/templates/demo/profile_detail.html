@@ -1,7 +1,4 @@
-{% extends "base.html" %} 
-{% load static %} 
-
-{% block styles %}
+{% extends "base.html" %} {% load static %} {% block styles %}
 <link rel="stylesheet" href="{% static 'demo/profile_detail/style.css' %}" />
 
 <style>
@@ -9,24 +6,22 @@
     background-color: {{ colour }};
   }
 </style>
-{% endblock %} 
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="welcome-block">
   <p>Welcome to</p>
   <img class="green_logo" src="{% static 'green_logo.svg' %}" />
   <hr />
 
   <h4>You selected {{name}}'s Profile</h4>
-  <p>The profile details are generated based on the client's specific goal and lifestyle information inputted by you</p>
+  <p>
+    The profile details are generated based on the client's specific goal and
+    lifestyle information inputted by you
+  </p>
 </div>
 
 <img class="user-photo" src="{% static 'demo/select/' %}{{name}}.png" />
 <div class="user-info">
   <div class="section-pii info-block">
-    <div class="circle-crop">
-      <img src="{% static 'demo/select/' %}{{name}}.png" />
-    </div>
     <span>
       <h4>{{ name }}</h4>
       <p>Age: {{ age }}</p>
@@ -97,9 +92,9 @@
 </div>
 <div id="disclaimer-block">
   <p>
-    Please note: After a client profile has been created, 
-    Omiver’s proprietary biomarker sample collection kit will be shipped directly to you. 
-    This begins our sample collection process!
+    Please note: After a client profile has been created, Omiver’s proprietary
+    biomarker sample collection kit will be shipped directly to you. This begins
+    our sample collection process!
   </p>
 </div>
 <a href="/demo/process">Continue</a>

@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static %} {% load component_tags %} {% block
+styles %}
+<link rel="stylesheet" href="{% static 'dashboard/style.css' %}" />
+{% endblock %} {% block content %}
+
+<header id="header">
+  <span class="header-section">
+    <img src="{% static '/green_logo.svg' %}" />
+    <h1>/</h1>
+    <h1>{% block header_title %}Dashboard{% endblock %}</h1>
+  </span>
+  <span class="header-section">
+    <img src="{% static '/dashboard/notification_icon.svg' %}" />
+    <img src="{% static '/dashboard/support_icon.svg' %}" />
+    <img
+      class="profile-pic"
+      src="{% static '/dashboard/mock_profile_pic.png' %}"
+    />
+  </span>
+</header>
+
+<div id="sidebar">
+  <span>
+    <img src="{% static '/back_arrow.svg' %}" />
+  </span>
+  <span class="main-icons">
+    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/report_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/client_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/support_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/settings_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %}
+  </span>
+  <span>
+    <img src="{% static '/dashboard/logout_icon.svg' %}" />
+  </span>
+</div>
+<div class="inner_content">{% block dashboard_content %} {% endblock %}</div>
+{% endblock %}

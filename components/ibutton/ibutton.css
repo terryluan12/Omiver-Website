@@ -1,0 +1,17 @@
+.ibutton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  object-fit: contain;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ibutton-icon {
+  width: 20px;
+  height: 20px;
+}

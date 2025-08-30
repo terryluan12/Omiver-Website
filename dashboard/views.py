@@ -53,3 +53,6 @@ def support(request):
 def ticket_detail_partial(request, pk):
     ticket = tickets[pk]
     return render(request, "dashboard/ticket_detail_partial.html", ticket)
+
+def dashboard(request):
+    return render(request, "base_dashboard.html")

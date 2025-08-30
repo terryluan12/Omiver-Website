@@ -43,7 +43,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .circle-crop img {
@@ -70,7 +70,6 @@
   grid-column: 1 / -1;
 }
 
-
 .user-sport,
 .user-fitness,
 .user-nutrition {
@@ -79,7 +78,7 @@
 
 .weekly-exercise-section > div,
 .food-log-section > div {
- margin-top: 15px;
+  margin-top: 15px;
 }
 
 h3 {
@@ -132,8 +131,12 @@ p {
 
 a {
   text-decoration: none;
-  background-color: #A8879D;
+  background-color: #a8879d;
   color: white;
   text-align: center;
   grid-column: 1 / -1;
+}
+
+.info-block {
+  align-items: center;
 }
