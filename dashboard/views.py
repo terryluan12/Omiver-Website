@@ -104,3 +104,6 @@ def ticket_detail_partial(request, pk):
 
 def dashboard(request):
     return render(request, "base_dashboard.html")
+
+def settings(request):
+    return render(request, "dashboard/settings.html")

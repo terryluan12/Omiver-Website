@@ -43,12 +43,6 @@
   margin: 10px;
 }
 
-h4,
-h5,
-p {
-  margin: 0px;
-}
-
 .ticket-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -58,6 +52,7 @@ p {
 .ticket-preview {
   background-color: white;
   margin: 10px;
+  margin-left: 0px;
   border-radius: 15px;
   padding: 20px 10px;
 
@@ -118,6 +113,7 @@ p {
 
 #tickets-list {
   padding: 10px;
+  padding-left: 0px;
 }
 
 #ticket-description {
@@ -165,4 +161,13 @@ p {
   transform: translateY(-50%);
   background: white;
   cursor: pointer;
+}
+
+.ticket-title {
+  font-size: medium;
+}
+
+.ticket-email {
+  color: #508f7c;
+  margin-bottom: 10px;
 }

@@ -5,7 +5,7 @@ body {
 }
 
 #header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 100px;
   right: 0;
@@ -48,14 +48,9 @@ body {
 
 .inner_content {
   margin-left: 120px;
-  margin-top: 100px;
   padding: 20px;
-  height: calc(100vh - 120px);
-  width: calc(100vw - 140px);
   background-color: #f8f9fa;
   border-radius: 15px;
-
-  overflow: hidden;
 }
 
 .main-icons {
@@ -64,7 +59,7 @@ body {
 }
 
 .main-icons > .ibutton {
-  margin: 10px;
+  margin: 20px;
 }
 
 #ticket-status-box {

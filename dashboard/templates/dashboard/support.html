@@ -1,6 +1,10 @@
 {% extends 'base_dashboard.html' %}
 {% load static %}
 
+{% block header_title %}
+  Support
+{% endblock %}
+
 {% block inner_styles %}
   <link rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
 {% endblock %}
@@ -32,9 +36,9 @@
     <div id="tickets-list">
       {% for ticket in tickets %}
         <div class="ticket-preview" hx-get="{% url 'ticket_detail_partial' ticket.pk %}" hx-target="#ticket-detail" hx-swapp="innerHTML">
-          <h5>{{ ticket.title }}</h5>
-          <p>{{ ticket.email }}</p>
-          <p>{{ ticket.snippet }}</p>
+          <h5 class="ticket-title">{{ ticket.title }}</h5>
+          <p class="ticket-email">{{ ticket.email }}</p>
+          <p class="ticket-body-preview">{{ ticket.snippet }}</p>
         </div>
       {% endfor %}
     </div>
