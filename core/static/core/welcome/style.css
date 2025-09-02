@@ -1,73 +1,63 @@
-body {
-  background-color: E0E0E0;
+#content {
+  background-color: #E0E0E0;
 
-  font-family: "Open Sans";
-}
-
-.athlete-pic {
-  height: 1000px;
-  filter: brightness(50%);
-}
-
-.cartoon-img {
-  height: 25vh;
-  max-height: 300px;
-  margin-top: 40px;
 }
 
 .carousel-item {
   display: none;
 }
+
 .carousel-item.active {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  height: 100vh;
+}
+
+.section {
+  margin: 20px ;
+  border-radius: 80px;
 }
 
 #welcome-left-half {
-  border-radius: 80px;
   overflow: hidden;
 }
+
 #welcome-right-half {
   display: flex;
   flex-direction: column;
-}
 
-#welcome-left-half,
-#welcome-right-half {
-  height: 100vh;
+  justify-content: space-between;
 
-  margin: 20px;
-  flex: 1;
-  box-sizing: border-box;
-}
-
-#welcome-right-half {
   position: relative;
 
-  padding-top: 20px;
+  padding: 50px 0px;
 
   background-color: white;
-  border-radius: 80px;
-  box-sizing: border-box;
   align-items: center;
   text-align: center;
 }
 
+#welcome-right-half span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #welcome-right-half p {
-  margin: 0px 150px;
+  margin-top: 10px;
+  max-width: 450px;
 }
 
 #next-button {
-  margin-top: 50px;
   width: 60px;
   height: 60px;
-
-  position: absolute;
-  bottom: 40px;
 
   background-color: #a8879d;
   border-radius: 60px;
   border-style: none;
+
+  cursor: pointer;
 }
 
 #back-button {
@@ -82,4 +72,30 @@ body {
   background-color: #ffffff;
   border: 2px #000000 solid;
   border-radius: 40px;
+
+  cursor: pointer;
+}
+
+.athlete-pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  filter: brightness(50%);
+  border-radius: 80px;
+}
+
+.cartoon-img {
+  height: 25vh;
+  max-height: 300px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1000px) { /* adjust breakpoint as needed */
+  .carousel-item.active {
+    grid-template-columns: 1fr; /* single column */
+    grid-template-rows: 1fr 1fr; /* two rows */
+  }
+
 }
