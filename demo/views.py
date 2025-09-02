@@ -70,3 +70,6 @@ def process(request):
 
 def dashboard(request):
     return render(request, "demo/dashboard.html")
+
+def layout(request):
+    return render(request, "demo/two_column_layout.html")

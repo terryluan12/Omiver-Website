@@ -1,0 +1,54 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  height: 100vh;
+}
+
+.section {
+    margin: 20px ;
+    border-radius: 80px;
+}
+
+
+#welcome-right-half {
+  display: flex;
+  flex-direction: column;
+
+
+  position: relative;
+
+  padding: 50px 0px;
+
+  background-color: white;
+  align-items: center;
+  text-align: center;
+}
+
+#welcome-left-half {
+  overflow: hidden;
+}
+
+#back-button {
+  margin-top: px;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 60px;
+  left: 60px;
+
+  background-color: #ffffff;
+  border: 2px #000000 solid;
+  border-radius: 40px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) { /* adjust breakpoint as needed */
+  .container {
+    grid-template-columns: 1fr; /* single column */
+    grid-template-rows: 1fr 1fr; /* two rows */
+  }
+
+}
