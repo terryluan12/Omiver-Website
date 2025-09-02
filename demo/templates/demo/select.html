@@ -1,64 +1,38 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends 'demo/welcome_title_block_layout.html' %}
+{% load static %}
 
-{% block styles %}
-<link rel="stylesheet" href="{% static 'demo/select/style.css' %}" />
-{% endblock %} 
+{% block inner_inner_styles %}
+  <link rel="stylesheet" href="{% static 'demo/select/style.css' %}" />
+{% endblock %}
 
-{% block content %}
-
-<div class="welcome-block">
-  <p>Welcome to</p>
-  <img class="green_logo" src="{% static 'green_logo.svg' %}" />
-  <hr />
-  <h5>Please select a client to begin your journey</h5>
-  <p>
-    In order to get the full experience of our service, we have created 3 client
-    profiles for you to choose from
-  </p>
-</div>
-<div class="selection-block">
-  {% for profile in profiles %}
-  <div class="profile-block" style="border: 2px solid {{ profile.colour }}; ">
-    <div class="basic-info-block">
-      <img
-        class="profile-pic"
-        src="{% static 'demo/select/' %}{{profile.name}}.png"
-        style="border: 3px solid {{ profile.colour }}; "
-      />
-      <div>
-        <h4>{{ profile.name }}</h4>
-        <p>{{ profile.age}} years old</p>
+{% block inner_content %}
+  <div class="selection-block">
+    {% for profile in profiles %}
+      <div class="profile-block" style="border: 2px solid {{ profile.colour }}; ">
+        <div class="basic-info-block">
+          <img class="profile-pic" src="{% static 'demo/select/' %}{{ profile.name }}.png" style="border: 3px solid {{ profile.colour }}; " />
+          <div>
+            <h4>{{ profile.name }}</h4>
+            <p>{{ profile.age }} years old</p>
+          </div>
+        </div>
+        <div class="sport-info-block">
+          <h4>Sport:</h4>
+          <p>{{ profile.sport }}</p>
+        </div>
+        <div class="fitness-info-block">
+          <h4>Fitness Goal:</h4>
+          <p>{{ profile.goal.fitness }}</p>
+        </div>
+        <div class="nutrition-info-block">
+          <h4>Nutrition Goal:</h4>
+          <p>{{ profile.goal.nutrition }}</p>
+        </div>
+        <a class="select-profile-button" style="background-color: {{ profile.colour }}" href="/demo/profile_detail/{{ profile.id }}">Select Profile</a>
       </div>
-    </div>
-    <div class="sport-info-block">
-      <h4>Sport:</h4>
-      <p>{{ profile.sport}}</p>
-    </div>
-    <div class="fitness-info-block">
-      <h4>Fitness Goal:</h4>
-      <p>{{ profile.goal.fitness}}</p>
-    </div>
-    <div class="nutrition-info-block">
-      <h4>Nutrition Goal:</h4>
-      <p>{{ profile.goal.nutrition}}</p>
-    </div>
-    <a
-      class="select-profile-button"
-      style="background-color: {{ profile.colour }}"
-      href="/demo/profile_detail/{{ profile.id }}"
-    >
-      Select Profile
-    </a>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-<div id="disclaimer-block">
-  <p>
-    Please note: User profiles displayed are generated for demonstration
-    purposes only. They are used to illustrate the functionality and do not
-    reflect actual users or their information.
-  </p>
-</div>
 
-{% endblock content %}
+  <div id="disclaimer-block">
+    <p>Please note: User profiles displayed are generated for demonstration purposes only. They are used to illustrate the functionality and do not reflect actual users or their information.</p>
+{% endblock %}

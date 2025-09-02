@@ -1,0 +1,16 @@
+.welcome-block {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 20px 8vw;
+}
+
+.welcome-block > * {
+  margin: 3px;
+}
+
+.welcome-block hr {
+  width: 70%;
+  margin: 5px auto;
+}
