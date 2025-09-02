@@ -1,112 +1,104 @@
-
 {% extends 'demo/welcome_title_block_layout.html' %}
 {% load static %}
 
 {% block inner_inner_styles %}
-<link rel="stylesheet" href="{% static 'demo/profile_detail/style.css' %}" />
-
-<style>
-  #content {
-    background-color: {{ colour }};
-  }
-</style>
+  <link rel="stylesheet" href="{% static 'demo/profile_detail/style.css' %}" />
+  
+  <style>
+    #content {
+      background-color: {{ colour }};
+    }
+  </style>
 {% endblock %}
 
 {% block title %}
-  You selected {{name}}'s Profile
+  You selected {{ name }}'s Profile
 {% endblock %}
 {% block subtitle %}
-  The profile details are generated based on the client's specific goal and
-  lifestyle information inputted by you
+  The profile details are generated based on the client's specific goal and lifestyle information inputted by you
 {% endblock %}
 
 {% block inner_content %}
-
-<div class="container">
-  <div class="section-block img-block">
-    <img class="user-photo" src="{% static 'demo/select/' %}{{name}}.png" />
+  <div class="container">
+    <div class="section-block img-block">
+      <img class="user-photo" src="{% static 'demo/select/' %}{{ name }}.png" />
+    </div>
+    <div class="user-info section-block">
+      <div class="section-pii info-block">
+        <span>
+          <h4>{{ name }}</h4>
+          <p>Age: {{ age }}</p>
+        </span>
+      </div>
+      <div class="info-block">
+        <h4>Ethnicity</h4>
+        <p>{{ ethnicity }}</p>
+      </div>
+      <div class="info-block">
+        <h4>Allergies</h4>
+        <p>{{ allergies }}</p>
+      </div>
+      <div class="user-sport info-block">
+        <h4>Sport:</h4>
+        <p>{{ sport }}</p>
+      </div>
+      <div class="user-fitness info-block">
+        <h4>Fitness Goal:</h4>
+        <p>{{ goal.fitness }}</p>
+      </div>
+      <div class="user-nutrition info-block">
+        <h4>Nutrition Goal:</h4>
+        <p>{{ goal.nutrition }}</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <span class="section-title">
+        <img src="{% static 'demo/profile_detail/fitness_goal.svg' %}" />
+        <h3>Fitness Goal</h3>
+      </span>
+      <div class="info-block">
+        <p>{{ goal.nutrition }}</p>
+      </div>
+    </div>
+    <div class="section-block">
+      <span class="section-title">
+        <img src="{% static 'demo/profile_detail/nutrition_goal.svg' %}" />
+        <h3>Nutrition Goal</h3>
+      </span>
+      <div class="info-block">
+        <p>{{ goal.nutrition }}</p>
+      </div>
+    </div>
+    <div class="weekly-exercise-section section-block">
+      <span class="section-title">
+        <img src="{% static 'demo/profile_detail/weekly_exercise.svg' %}" />
+        <h3>Weekly Exercise Routine</h3>
+      </span>
+      {% for day, routine in weekly_routine.items %}
+        <div class="info-block">
+          <h4>{{ day }}:</h4>
+          <p>{{ routine }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="food-log-section section-block">
+      <span class="section-title">
+        <img src="{% static 'demo/profile_detail/food_log.svg' %}" />
+        <h3>Daily Food Log</h3>
+      </span>
+      {% for time, food in food_log.items %}
+        <div class="info-block">
+          <h4>{{ time }}:</h4>
+          <p>{{ food }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div id="disclaimer-block">
+      <p>Please note: After a client profile has been created, Omiver’s proprietary biomarker sample collection kit will be shipped directly to you. This begins our sample collection process!</p>
+    </div>
   </div>
-<div class="user-info section-block">
-  <div class="section-pii info-block">
-    <span>
-      <h4>{{ name }}</h4>
-      <p>Age: {{ age }}</p>
-    </span>
-  </div>
-  <div class="info-block">
-    <h4>Ethnicity</h4>
-    <p>{{ethnicity}}</p>
-  </div>
-  <div class="info-block">
-    <h4>Allergies</h4>
-    <p>{{allergies}}</p>
-  </div>
-  <div class="user-sport info-block">
-    <h4>Sport:</h4>
-    <p>{{ sport }}</p>
-  </div>
-  <div class="user-fitness info-block">
-    <h4>Fitness Goal:</h4>
-    <p>{{ goal.fitness }}</p>
-  </div>
-  <div class="user-nutrition info-block">
-    <h4>Nutrition Goal:</h4>
-    <p>{{ goal.nutrition }}</p>
-  </div>
-</div>
-<div class="section-block">
-  <span class="section-title">
-    <img src="{% static 'demo/profile_detail/fitness_goal.svg' %}" />
-    <h3>Fitness Goal</h3>
-  </span>
-  <div class="info-block">
-    <p>{{ goal.nutrition }}</p>
-  </div>
-</div>
-<div class="section-block">
-  <span class="section-title">
-    <img src="{% static 'demo/profile_detail/nutrition_goal.svg' %}" />
-    <h3>Nutrition Goal</h3>
-  </span>
-  <div class="info-block">
-    <p>{{ goal.nutrition }}</p>
-  </div>
-</div>
-<div class="weekly-exercise-section section-block">
-  <span class="section-title">
-    <img src="{% static 'demo/profile_detail/weekly_exercise.svg' %}" />
-    <h3>Weekly Exercise Routine</h3>
-  </span>
-  {% for day, routine in weekly_routine.items %}
-  <div class="info-block">
-    <h4>{{ day }}:</h4>
-    <p>{{ routine }}</p>
-  </div>
-  {% endfor %}
-</div>
-<div class="food-log-section section-block">
-  <span class="section-title">
-    <img src="{% static 'demo/profile_detail/food_log.svg' %}" />
-    <h3>Daily Food Log</h3>
-  </span>
-  {% for time, food in food_log.items %}
-  <div class="info-block">
-    <h4>{{ time }}:</h4>
-    <p>{{ food }}</p>
-  </div>
-  {% endfor %}
-</div>
-<div id="disclaimer-block">
-  <p>
-    Please note: After a client profile has been created, Omiver’s proprietary
-    biomarker sample collection kit will be shipped directly to you. This begins
-    our sample collection process!
-  </p>
-</div>
-</div>
-<a href="/demo/process">
-  Continue
-  <img src="{% static '/next_arrow.svg' %}" />
-</a>
-
+  <a href="/demo/process">
+    Continue
+    <img src="{% static '/next_arrow.svg' %}" />
+  </a>
 {% endblock %}
