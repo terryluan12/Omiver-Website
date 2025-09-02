@@ -1,6 +1,15 @@
 {% extends 'demo/base.html' %}
 
 {% load static %}
+
+{% block inner_styles %}
+  <link rel="stylesheet" href="{% static 'demo/two_column_layout/style.css' %}" />
+
+  {% block inner_inner_styles %}
+
+  {% endblock %}
+{% endblock %}
+
 {% block content %}
   <div class="container">
     <div id="welcome-left-half" class="section">

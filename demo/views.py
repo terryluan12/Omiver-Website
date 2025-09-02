@@ -67,3 +67,6 @@ def profile_detail(request, id):
 
 def process(request):
     return render(request, "demo/process.html")
+
+def layout(request):
+    return render(request, "demo/two_column_layout.html")
