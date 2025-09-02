@@ -13,8 +13,16 @@
     <p>Welcome to</p>
     <img class="green_logo" src="{% static 'green_logo.svg' %}" />
     <hr />
-    <h5>Please select a client to begin your journey</h5>
-    <p>In order to get the full experience of our service, we have created 3 client profiles for you to choose from</p>
+    <h4>
+      {% block title %}
+
+      {% endblock %}
+    </h4>
+    <p>
+      {% block subtitle %}
+
+      {% endblock %}
+    </p>
   </div>
 
   {% block inner_content %}

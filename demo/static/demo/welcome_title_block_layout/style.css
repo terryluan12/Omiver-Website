@@ -1,9 +1,10 @@
 .welcome-block {
   background-color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   border-radius: 15px;
-  margin: 20px 8vw;
+
+  margin: 20px 0px;
 }
 
 .welcome-block > * {
@@ -13,4 +14,18 @@
 .welcome-block hr {
   width: 70%;
   margin: 5px auto;
+}
+
+
+.welcome-block h4 {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: large;
+  text-decoration: none;
+}
+
+.welcome-block p {
+  font-size: medium;
+  opacity: 0.5;
+  margin: 0px;
 }

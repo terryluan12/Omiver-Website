@@ -1,26 +1,32 @@
-{% extends "base.html" %} {% load static %} {% block styles %}
+
+{% extends 'demo/welcome_title_block_layout.html' %}
+{% load static %}
+
+{% block inner_inner_styles %}
 <link rel="stylesheet" href="{% static 'demo/profile_detail/style.css' %}" />
 
 <style>
-  body {
+  #content {
     background-color: {{ colour }};
   }
 </style>
-{% endblock %} {% block content %}
-<div class="welcome-block">
-  <p>Welcome to</p>
-  <img class="green_logo" src="{% static 'green_logo.svg' %}" />
-  <hr />
+{% endblock %}
 
-  <h4>You selected {{name}}'s Profile</h4>
-  <p>
-    The profile details are generated based on the client's specific goal and
-    lifestyle information inputted by you
-  </p>
-</div>
+{% block title %}
+  You selected {{name}}'s Profile
+{% endblock %}
+{% block subtitle %}
+  The profile details are generated based on the client's specific goal and
+  lifestyle information inputted by you
+{% endblock %}
 
-<img class="user-photo" src="{% static 'demo/select/' %}{{name}}.png" />
-<div class="user-info">
+{% block inner_content %}
+
+<div class="container">
+  <div class="section-block img-block">
+    <img class="user-photo" src="{% static 'demo/select/' %}{{name}}.png" />
+  </div>
+<div class="user-info section-block">
   <div class="section-pii info-block">
     <span>
       <h4>{{ name }}</h4>
@@ -48,43 +54,43 @@
     <p>{{ goal.nutrition }}</p>
   </div>
 </div>
-<div class="info-block">
+<div class="section-block">
   <span class="section-title">
     <img src="{% static 'demo/profile_detail/fitness_goal.svg' %}" />
     <h3>Fitness Goal</h3>
   </span>
-  <div>
+  <div class="info-block">
     <p>{{ goal.nutrition }}</p>
   </div>
 </div>
-<div class="info-block">
+<div class="section-block">
   <span class="section-title">
     <img src="{% static 'demo/profile_detail/nutrition_goal.svg' %}" />
     <h3>Nutrition Goal</h3>
   </span>
-  <div>
+  <div class="info-block">
     <p>{{ goal.nutrition }}</p>
   </div>
 </div>
-<div class="weekly-exercise-section info-block">
+<div class="weekly-exercise-section section-block">
   <span class="section-title">
     <img src="{% static 'demo/profile_detail/weekly_exercise.svg' %}" />
     <h3>Weekly Exercise Routine</h3>
   </span>
   {% for day, routine in weekly_routine.items %}
-  <div>
+  <div class="info-block">
     <h4>{{ day }}:</h4>
     <p>{{ routine }}</p>
   </div>
   {% endfor %}
 </div>
-<div class="food-log-section info-block">
+<div class="food-log-section section-block">
   <span class="section-title">
     <img src="{% static 'demo/profile_detail/food_log.svg' %}" />
     <h3>Daily Food Log</h3>
   </span>
   {% for time, food in food_log.items %}
-  <div>
+  <div class="info-block">
     <h4>{{ time }}:</h4>
     <p>{{ food }}</p>
   </div>
@@ -97,6 +103,10 @@
     our sample collection process!
   </p>
 </div>
-<a href="/demo/process">Continue</a>
+</div>
+<a href="/demo/process">
+  Continue
+  <img src="{% static '/next_arrow.svg' %}" />
+</a>
 
 {% endblock %}
