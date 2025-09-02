@@ -28,7 +28,7 @@
 .process-step::before {
     content: '';
     position: absolute;
-    top: 100px; /* adjust based on image height */
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
