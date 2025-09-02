@@ -1,4 +1,4 @@
-body {
+#content {
   background-color: #67997d;
 
   display: flex;
@@ -6,7 +6,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: auto;
   height: 100vh;
 
   background-image: url("overlay.svg");
@@ -15,26 +14,18 @@ body {
 }
 
 #start_button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
 
-  height: 10vh;
-  width: 25vw;
-  max-width: 280px;
-  border-radius: 50px;
-  margin-top: 40px;
+  border-radius: 100px;
+  margin-top: 6vh;
+  padding: 20px 50px;
 
   background-color: white;
-  color: 67997d;
-  border: none;
+  color: #67997d;
 
   font-family: "Open Sans";
   font-size: 3vh;
   text-decoration: none;
-}
-
-#start_button svg {
-  flex-shrink: 0;
 }
