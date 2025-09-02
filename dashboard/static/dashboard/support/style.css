@@ -128,11 +128,11 @@
 
 #input-wrapper {
   position: relative;
-  display: flex; /* input and button in a row */
-  align-items: center; /* vertically center */
+  display: flex;
+  align-items: center;
   border-radius: 8px;
-  overflow: hidden; /* keep button inside */
-  width: 100%; /* fill parent naturally */
+  overflow: hidden;
+  width: 100%;
 }
 
 #reply-input {

@@ -47,7 +47,6 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 60px;
 }
 
 .basic-info-block > div > * {
@@ -79,4 +78,19 @@ a {
 #disclaimer-block {
   padding: 15px;
   border-radius: 100px;
+}
+
+
+@media (max-width: 1000px) {
+  .selection-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+  .fitness-info-block,
+  .nutrition-info-block {
+    display: none;
+  }
 }

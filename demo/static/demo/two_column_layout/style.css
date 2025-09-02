@@ -45,10 +45,10 @@
   cursor: pointer;
 }
 
-@media (max-width: 1000px) { /* adjust breakpoint as needed */
+@media (max-width: 1000px) {
   .container {
-    grid-template-columns: 1fr; /* single column */
-    grid-template-rows: 1fr 1fr; /* two rows */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
 }
