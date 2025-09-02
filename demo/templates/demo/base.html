@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'demo/style.css' %}" />
+
+  {% block inner_styles %}
+
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+  {% block inner_content %}
+
+  {% endblock %}
+{% endblock %}

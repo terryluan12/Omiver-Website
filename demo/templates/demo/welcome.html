@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'demo/base.html' %}
 {% load static %}
 
-{% block styles %}
+{% block inner_styles %}
   <link rel="stylesheet" href="{% static 'demo/welcome/style.css' %}" />
 {% endblock %}
 
-{% block content %}
+{% block inner_content %}
   {% for page in pages %}
     <div class="carousel-item {% if forloop.first %}active {% endif %}">
       <div id="welcome-left-half" class="section">
