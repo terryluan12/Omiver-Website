@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
+from django.http import HttpResponse
 import os, json
 
 
-def welcome_page(request):
+def welcome_page(request, index=0):
     pages = [
         {
             "heading": "Omiver is a Wellness Technology Company",
@@ -42,7 +43,12 @@ def welcome_page(request):
         }
     ]
     
-    return render(request, "demo/welcome.html", {"pages": pages})
+    if index > len(pages) - 1:
+        response = HttpResponse()
+        response['HX-Redirect'] = '/login'  # or use reverse('select_page')
+        return response
+    
+    return render(request, "demo/welcome.html", {"page": pages[index], "index": index})
 
 
 def select_page(request):

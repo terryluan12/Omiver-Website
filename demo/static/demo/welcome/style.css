@@ -1,8 +1,4 @@
-.carousel-item {
-  display: none;
-}
-
-.carousel-item.active {
+.container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -88,7 +84,7 @@
 }
 
 @media (max-width: 1000px) { /* adjust breakpoint as needed */
-  .carousel-item.active {
+  .container {
     grid-template-columns: 1fr; /* single column */
     grid-template-rows: 1fr 1fr; /* two rows */
   }
