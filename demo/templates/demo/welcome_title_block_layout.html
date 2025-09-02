@@ -1,0 +1,23 @@
+{% extends 'demo/base.html' %}
+{% load static %}
+
+{% block inner_styles %}
+  <link rel="stylesheet" href="{% static 'demo/welcome_title_block_layout/style.css' %}" />
+  {% block inner_inner_styles %}
+
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+  <div class="welcome-block">
+    <p>Welcome to</p>
+    <img class="green_logo" src="{% static 'green_logo.svg' %}" />
+    <hr />
+    <h5>Please select a client to begin your journey</h5>
+    <p>In order to get the full experience of our service, we have created 3 client profiles for you to choose from</p>
+  </div>
+
+  {% block inner_content %}
+
+  {% endblock %}
+{% endblock %}

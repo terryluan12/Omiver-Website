@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  height: 100vh;
+  height: calc(100vh - 40px); /* 20px for each padding */
 }
 
 .section {

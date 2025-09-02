@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponse
+
+from django.contrib.auth.decorators import login_required
 import os, json
 
 
@@ -51,6 +53,7 @@ def welcome_page(request, index=0):
     return render(request, "demo/welcome.html", {"page": pages[index], "index": index})
 
 
+@login_required
 def select_page(request):
     DATA_FILE = os.path.join(settings.BASE_DIR, "demo", "data", "profiles.json")
     with open(DATA_FILE) as f:

@@ -1,3 +1,12 @@
+html, body {
+  height: 100%
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +15,6 @@
 
 #content {
   font-family: "Open Sans";
+  padding: 20px;
+  flex: 1;
 }
