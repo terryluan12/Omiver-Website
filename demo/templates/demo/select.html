@@ -5,6 +5,13 @@
   <link rel="stylesheet" href="{% static 'demo/select/style.css' %}" />
 {% endblock %}
 
+{% block title %}
+  Please select a client to begin your journey
+{% endblock %}
+{% block subtitle %}
+  In order to get the full experience of our service, we have created 3 client profiles for you to choose from
+{% endblock %}
+
 {% block inner_content %}
   <div class="selection-block">
     {% for profile in profiles %}
@@ -35,4 +42,5 @@
 
   <div id="disclaimer-block">
     <p>Please note: User profiles displayed are generated for demonstration purposes only. They are used to illustrate the functionality and do not reflect actual users or their information.</p>
+  </div>
 {% endblock %}

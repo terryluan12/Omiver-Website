@@ -26,14 +26,14 @@
 .submit-button {
   position: relative;
   display: flex;
-  justify-content: center; /* Centers the text */
+  justify-content: center;
   align-items: center;
 }
 
 .submit-button img {
   position: absolute;
-  right: 25px; /* 25px from the right */
-  height: 16px; /* adjust size if needed */
+  right: 25px;
+  height: 16px;
 }
 
 .inputs {
