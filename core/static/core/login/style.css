@@ -44,17 +44,32 @@ body {
   text-align: center;
 }
 
-#welcome-right-half p {
-  margin: 0px 150px;
-}
 
 .submit-button {
-  width: 515;
-  height: 68px;
+  width: 400px;
+  height: 50px;
 
   background-color: #a8879d;
   border-radius: 60px;
   border-style: none;
+
+  color: white;
+
+  padding: 0px 25px;
+  
+}
+
+.submit-button {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centers the text */
+  align-items: center;
+}
+
+.submit-button img {
+  position: absolute;
+  right: 25px; /* 25px from the right */
+  height: 16px; /* adjust size if needed */
 }
 
 #back-button {
@@ -69,4 +84,38 @@ body {
   background-color: #ffffff;
   border: 2px #000000 solid;
   border-radius: 40px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.section-title {
+  margin-bottom: 70px;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  border-radius: 20px;
+  border: none;
+
+  height: 40px;
+  margin: 5px;
+  width: 400px;
+  background-color: #f8f8f8;
+  color: black;
+
+  padding-left: 20px; 
 }

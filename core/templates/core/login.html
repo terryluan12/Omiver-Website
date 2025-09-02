@@ -5,55 +5,32 @@
   </head>
   <body>
     <div id="welcome-left-half">
-      <img
-        class="athlete-pic"
-        src="{% static 'core/login/athlete.png' %}"
-        alt="An athlete running into the sunset"
-      />
+      <img class="athlete-pic" src="{% static 'core/login/athlete.png' %}" alt="An athlete running into the sunset" />
     </div>
     <div id="welcome-right-half">
-      <button id="back-button" onclick="prevSlide()">
-        <img src="{% static 'back_arrow.svg' %}" />
-      </button>
+      <button id="back-button" onclick="prevSlide()"><img src="{% static 'back_arrow.svg' %}" /></button>
 
-      <p>Login to Account</p>
+      <p class="section-title">Login to Account</p>
 
-      <img src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
+      <img class="logo" src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
 
       {% if messages %}
-      <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-      </ul>
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
       {% endif %}
 
       <form method="POST">
         {% csrf_token %}
-        <label for="username">Email:</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          placeholder="Email"
-          required
-        />
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          required
-        />
-
-        <button class="submit-button" type="submit">
-          Login <img src="{% static 'next_arrow.svg' %}" />
-        </button>
+        <span class="inputs">
+          <input type="text" name="username" id="username" placeholder="Email" required />
+          <input type="password" name="password" id="password" placeholder="Password" required />
+        </span>
+        <button class="submit-button" type="submit">Login <img src="{% static 'next_arrow.svg' %}" /></button>
         <h2>OR</h2>
-        <button class="submit-button">
-          Create Account <img src="{% static 'next_arrow.svg' %}" />
-        </button>
+        <button class="submit-button">Create Account <img src="{% static 'next_arrow.svg' %}" /></button>
       </form>
     </div>
   </body>
