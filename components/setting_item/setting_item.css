@@ -4,7 +4,13 @@
   align-items: center;
 
   justify-content: space-between;
-  margin: 20px 5px;
+  margin: 0px 5px;
+}
+
+.setting-block .setting-item + .setting-item {
+  border-top: 1px solid #e0e0e0; 
+  margin-top: 12px; 
+  padding-top: 15px;
 }
 
 .setting-item .setting-icon {

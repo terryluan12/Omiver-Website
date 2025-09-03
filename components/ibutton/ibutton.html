@@ -1,4 +1,16 @@
 {% load static %}
-<div class="ibutton">
-  <a class="ibutton-icon" href="{{ href }}"><img class="ibutton-icon" src="{% static img_url %}" /></a>
-</div>
+<a class="ibutton {{ class }}" 
+  {% if href %} href="{{ href }}" {% endif %}
+  {% if hx_get %} hx-get="{{ hx_get }}" {% endif %}
+  {% if hx_target %} hx-target="{{ hx_target }}" {% endif %}
+  {% if hx_select %} hx-select="{{ hx_select }}" {% endif %}
+  {% if hx_swap %} hx-swap="{{ hx_swap }}" {% endif %}
+  {% if hx_swap_oob %} hx-swap-oob="{{ hx_swap_oob }}" {% endif %}
+  >
+  {% if not svg %}
+  <img class="ibutton-icon" src="{% static img_url %}" />
+  {% endif %}
+  {% if svg %}
+  {{ svg }}
+  {% endif %}
+</a>

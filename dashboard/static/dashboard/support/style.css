@@ -171,3 +171,11 @@
   color: #508f7c;
   margin-bottom: 10px;
 }
+
+.support-button path {
+  fill: white;
+}
+
+#sidebar .support-button {
+  background-color: #67997D;
+}

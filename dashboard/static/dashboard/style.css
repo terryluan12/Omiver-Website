@@ -359,3 +359,8 @@ body {
     font-size: 0.9rem;
   }
 }
+
+#header h1 {
+  font-weight: 100;
+}
+
