@@ -1,39 +1,19 @@
 #content {
-    text-align: center;
-}
-.welcome-block {
-  background-color: white;
-  text-align: center;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.welcome-block hr {
-  width: 70%;
-  margin: 5px auto;
+  align-items: center;
 }
 
 #diagram {
     display: flex;
     flex-direction: row;
     text-align: center;
+
+    margin-top: 20px;
 }
 
 .process-step {
     position: relative;
-    width: 30vw;
-    min-width: 200px;
-}
 
-.process-step::before {
-    content: '';
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 30px;
-    background-color: #333;
+    max-width: 250px;
 }
 
 .process-info {
@@ -41,19 +21,76 @@
     margin: 10px;
     margin-top: 50px;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px 30px;
 
     border: 1px solid var(--border-color, black);
+
 }
 
-#content > a {
-  border-radius: 100px;
-  display: inline-block; 
+
+a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   text-decoration: none;
   background-color: #A8879D;
   color: white;
-  text-align: center;
-  grid-column: 1 / -1;
-  width: 25vw;
-  max-width: 350px;
+
+  margin: 20px 0px;
+  padding: 20px;
+  border-radius: 100px;
+  width: 20vw;
+}
+
+a img {
+  position: absolute;
+  right: 25px;
+  height: 16px;
+}
+
+p {
+  font-size: 15px;
+}
+
+.process-step {
+    position: relative;
+    max-width: 250px;
+}
+
+
+.process-step::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 2px;
+  height: 150px;
+  border-left: 2px dotted black;
+  z-index: 0;
+  transform: translateX(-50%);
+}
+
+.process-step .process-info {
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.process-img {
+  position: relative;
+  z-index: 1;
+  background-color: #e0e0e0;
+}
+
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: -80px;
+  width: 200px;
+  height: 2px;
+  border-top: 2px dotted black;
+  z-index: 0;
 }

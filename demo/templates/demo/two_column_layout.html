@@ -18,7 +18,7 @@
       {% endblock %}
     </div>
     <div id="welcome-right-half" class="section">
-      <button id="back-button" onclick=""><img src="{% static '/back_arrow.svg' %}" /></button>
+      <a id="back-button" {% block back_button_attrs %}{% endblock %}><img src="{% static 'back_arrow.svg' %}" /></a>
 
       {% block right_content %}
 
