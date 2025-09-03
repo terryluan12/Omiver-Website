@@ -26,7 +26,7 @@ p {
 }
 
 #content > div {
-  margin: 10px 8vw;
+  margin: 10px 7vw;
 }
 
 #disclaimer-block {
@@ -62,19 +62,20 @@ p {
   color: white;
 
   box-sizing: border-box;
-  display: block;
-  text-align: center;
 
   border-radius: 100px;
-}
 
-.nutrition-info-block {
-  height: 100px;
-}
-
-a {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
 }
+
+.fitness-info-block, .nutrition-info-block {
+  min-height: 100px;
+}
+
 #disclaimer-block {
   padding: 15px;
   border-radius: 100px;
@@ -82,15 +83,29 @@ a {
 
 
 @media (max-width: 1000px) {
-  .selection-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 15px;
-}
 
-  .fitness-info-block,
-  .nutrition-info-block {
-    display: none;
+  .selection-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
   }
+
+  .welcome-block h4, h4 {
+    font-size: xx-large;
+  }
+  .welcome-block p, p {
+    font-size: x-large;
+  }
+
+  a {
+    height: 100px;
+    font-size: xx-large;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
 }
