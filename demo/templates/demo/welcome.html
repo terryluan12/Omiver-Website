@@ -9,6 +9,10 @@
   <img class="athlete-pic" src="{% static page.photo_url %}" alt="{{ page.photo_alt }}" />
 {% endblock %}
 
+{% block back_button_attrs %}
+  hx-get="{% url 'welcome_page' prev_index %}" hx-target="#content" hx-select="#content > *" hx-swap="innerHTML"
+{% endblock %}
+
 {% block right_content %}
   <span>
     <div class="title">Welcome to</div>
@@ -21,5 +25,5 @@
     <h2>{{ page.heading }}</h2>
     <p>{{ page.description }}</p>
   </span>
-  <button id="next-button" hx-get="{% url 'welcome_page' index|add:1 %}" hx-target="#content" hx-swap="innerHTML"><img src="{% static 'next_arrow.svg' %}" /></button>
+  <button id="next-button" hx-get="{% url 'welcome_page' next_index %}" hx-target="#content" hx-select="#content > *" hx-swap="innerHTML"><img src="{% static 'next_arrow.svg' %}" /></button>
 {% endblock %}

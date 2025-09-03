@@ -11,9 +11,16 @@
   <img class="athlete-pic" src="{% static 'core/login/athlete.png' %}" alt="An athlete running into the sunset" />
 {% endblock %}
 
+
+{% block back_button_attrs %}
+  href="{% url 'welcome_default_page' %}"
+{% endblock %}
+
+
 {% block right_content %}
   <p class="section-title">Login to Account</p>
   <img class="logo" src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
+
 
   {% if messages %}
     <ul>

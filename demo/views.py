@@ -44,13 +44,18 @@ def welcome_page(request, index=0):
             "photo_alt": "An athlete stretching, with his arms above his head"
         }
     ]
-    
+    index = int(index)
     if index > len(pages) - 1:
         response = HttpResponse()
-        response['HX-Redirect'] = '/login'  # or use reverse('select_page')
+        response['HX-Redirect'] = '/login'
         return response
     
-    return render(request, "demo/welcome.html", {"page": pages[index], "index": index})
+    if index < 0:
+        response = HttpResponse()
+        response['HX-Redirect'] = '/'
+        return response
+    
+    return render(request, "demo/welcome.html", {"page": pages[index], "next_index": index+1, "prev_index": index - 1})
 
 
 @login_required
