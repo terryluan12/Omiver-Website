@@ -1,51 +1,14 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 
-{% block header_title %}
-  Support
+{% block inner_styles %}
+  <link id="page-specific-css" hx-swap-oob="true" rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
 {% endblock %}
 
-{% block inner_styles %}
-  <link rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
+{% block header_title %}
+  <h1 id="header-title" hx-swap-oob="true">Support</h1>
 {% endblock %}
 
 {% block dashboard_content %}
-  <div id="info-block">
-    <div class="description-info-block">
-      <h4>Support</h4>
-      <p>Here you can contact our support team, get assistance, and resolve your questions</p>
-    </div>
-    <img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
-    <div class="ticket-info-block">
-      <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
-      <span>
-        <h4>Last Ticket</h4>
-        <p>Aug 05, 2025</p>
-      </span>
-    </div>
-    <div class="ticket-info-block">
-      <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
-      <span>
-        <h4>Current Ticket</h4>
-        <p>Sep 05, 2025</p>
-      </span>
-    </div>
-  </div>
-
-  <div class="ticket-block">
-    <div id="tickets-list">
-      {% for ticket in tickets %}
-        <div class="ticket-preview" hx-get="{% url 'ticket_detail_partial' ticket.pk %}" hx-target="#ticket-detail" hx-swapp="innerHTML">
-          <h5 class="ticket-title">{{ ticket.title }}</h5>
-          <p class="ticket-email">{{ ticket.email }}</p>
-          <p class="ticket-body-preview">{{ ticket.snippet }}</p>
-        </div>
-      {% endfor %}
-    </div>
-    <div id="ticket-detail">
-      <div id="ticket-detail-placeholder">
-        <p>Select a ticket to read</p>
-      </div>
-    </div>
-  </div>
+  {% include 'dashboard/partials/support.html' %}
 {% endblock %}

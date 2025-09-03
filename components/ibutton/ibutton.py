@@ -6,6 +6,4 @@ class Icon(Component):
     css_file = "ibutton.css"
 
     def get_template_data(self, args, kwargs, slots, context):
-        return {
-            "img_url": kwargs["img_url"],
-        }
+        return kwargs

@@ -70,3 +70,33 @@
   width: 50px;
   margin: 10px;
 }
+
+h4 {
+  font-size: larger;
+}
+
+h5 {
+  font-weight: 100;
+  font-size: larger;
+}
+
+h1 {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.management-block h1 {
+  color: black
+}
+
+.management-block {
+  color: red;
+}
+
+.settings-button path {
+  fill: white;
+}
+
+#sidebar .settings-button {
+  background-color: #67997D;
+}

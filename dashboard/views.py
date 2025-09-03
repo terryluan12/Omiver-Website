@@ -96,6 +96,8 @@ Omiver
     ]
 
 def support(request):
+    if request.headers.get("HX-Request") == "true":
+        return render(request, "dashboard/partials/support.html", {"tickets": tickets})
     return render(request, "dashboard/support.html", {"tickets": tickets})
 
 def ticket_detail_partial(request, pk):
@@ -103,7 +105,9 @@ def ticket_detail_partial(request, pk):
     return render(request, "dashboard/ticket_detail_partial.html", ticket)
 
 def dashboard(request):
-    return render(request, "/dashboard/base.html")
+    return render(request, "dashboard/base.html")
 
 def settings(request):
+    if request.headers.get("HX-Request") == "true":
+        return render(request, "dashboard/partials/settings.html", {"tickets": tickets})
     return render(request, "dashboard/settings.html")

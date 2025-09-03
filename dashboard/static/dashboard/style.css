@@ -82,3 +82,7 @@ body {
 #ticket-status-box > .ibutton {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+#header h1 {
+  font-weight: 100;
+}
