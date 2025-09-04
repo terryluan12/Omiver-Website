@@ -1,4 +1,7 @@
+import json
+import os
 from django.shortcuts import render
+from django.conf import settings as django_settings
 
 # Create your views here.
 
@@ -108,8 +111,16 @@ def dashboard(request):
 def settings(request):
     return render(request, "dashboard/settings.html")
 
-def dynamic_page(request, page_name):
-    if page_name == "plans":
-        return render(request, "dashboard/plans.html")
-    if page_name == "profile":
-        return render(request, "dashboard/profile.html")
+def profile(request, uid):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    profile_data = all_profiles[uid]
+    return render(request, "dashboard/profile.html", profile_data)
+
+def plans(request, uid):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    profile_data = all_profiles[uid]
+    return render(request, "dashboard/plans.html", profile_data)
