@@ -111,3 +111,9 @@ def settings(request):
     if request.headers.get("HX-Request") == "true":
         return render(request, "dashboard/partials/settings.html", {"tickets": tickets})
     return render(request, "dashboard/settings.html")
+
+def dynamic_page(request, page_name):
+    if page_name == "plans":
+        return render(request, "dashboard/plans.html")
+    if page_name == "profile":
+        return render(request, "dashboard/profile.html")

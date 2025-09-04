@@ -8,7 +8,14 @@
 {% block inner_styles %} {% endblock %}
 {% endblock %}
 
+{% block inner_styles%} {% endblock %} {% endblock %} 
+
+{% block scripts %}
+<script src="{% static 'dashboard/plans.js' %}"></script>
+{% endblock %}
+
 {% block content %}
+
 <header id="header">
   <span class="header-section">
     <img src="{% static '/green_logo.svg' %}" />

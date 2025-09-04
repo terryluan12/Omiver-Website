@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal and Fitness Plans</title>
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;  /* header, content, footer */
+      grid-template-columns: 220px 1fr 220px; /* left, main, right */
+      grid-template-areas:
+        "header header header"
+        "left main right"
+        "footer footer footer";
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      grid-area: header;
+      background: #6c63ff;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    header .btn {
+      background: #fff;
+      color: #6c63ff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav {
+      grid-area: left;
+      background: #eaf5ef;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    nav h3 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    nav li:hover {
+      background: #d6ebe0;
+    }
+
+    main {
+      grid-area: main;
+      padding: 20px;
+    }
+
+    .plans-box {
+      background: #eaf5ef;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .plans-box h2 {
+      margin-top: 0;
+    }
+
+    .status-cards {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .status-card {
+      background: #fff;
+      flex: 1;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .weekly-plan {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      overflow-x: auto;
+    }
+
+    .weekly-plan h3 {
+      margin-bottom: 20px;
+    }
+
+    /* Schedule Table */
+    table.schedule {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    table.schedule th, 
+    table.schedule td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      vertical-align: top;
+    }
+
+    table.schedule th {
+      background: #6c63ff;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    table.schedule td {
+      background: #f9f9f9;
+    }
+
+    table.schedule td strong {
+      color: #333;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .feedback-btn {
+      margin-top: 8px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    aside {
+      grid-area: right;
+      background: #f9f9f9;
+      padding: 20px;
+      border-left: 1px solid #ddd;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #6c63ff;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      body {
+        grid-template-rows: auto 1fr auto auto; 
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "main"
+          "left"
+          "right"
+          "footer";
+      }
+      table.schedule {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <img src="/static/core/logo.svg" alt="Omiver Logo" style="height:48px;vertical-align:middle;margin-right:16px;">
+  Meal and Fitness Plans
+  <button class="btn">Plan Generation</button>
+  </header>
+
+  <nav id="dashboard-menu" hx-get="/dashboard/menu/" hx-trigger="load" hx-target="#dashboard-menu" hx-swap="outerHTML">
+    <h3>Menu</h3>
+    <ul>
+      <li hx-get="/dashboard/" hx-target="main" hx-swap="innerHTML">Dashboard</li>
+      <li hx-get="/dashboard/plans/" hx-target="main" hx-swap="innerHTML">Plans</li>
+      <li hx-get="/dashboard/reports/" hx-target="main" hx-swap="innerHTML">Reports</li>
+      <li hx-get="/dashboard/settings/" hx-target="main" hx-swap="innerHTML">Settings</li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Plans Info -->
+    <div class="plans-box" id="plans-box" hx-get="/dashboard/plans-info/" hx-trigger="load" hx-target="#plans-box" hx-swap="outerHTML">
+      <h2>Plans</h2>
+      <p>Here you can manage your task, set preferences and updates.</p>
+      <div class="status-cards">
+        <div class="status-card">
+          <strong>Latest Update</strong><br>
+          20 Apr, 25 - 12:00pm
+        </div>
+        <div class="status-card">
+          <strong>Next Activity</strong><br>
+          21 Apr, 25 - Friday
+        </div>
+      </div>
+    </div>
+
+    <!-- Weekly Plan (Schedule Style) -->
+    <div class="weekly-plan" id="weekly-plan" hx-get="/dashboard/weekly-plan/" hx-trigger="load" hx-target="#weekly-plan" hx-swap="outerHTML">
+      <h3>Recommended Weekly Training Plan</h3>
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Morning</strong></td>
+            <td>Sprint intervals <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Mon","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Full-body HIIT <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Tue","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Sprint intervals <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Wed","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Full-body HIIT <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Thu","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Sprint intervals <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Fri","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Full-body HIIT <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Sat","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+            <td>Rest & Mobility <button class="feedback-btn" hx-post="/dashboard/feedback/" hx-vals='{"day":"Sun","time":"Morning"}' hx-target="body" hx-swap="none">Feedback</button></td>
+          </tr>
+          <tr>
+            <td><strong>Afternoon</strong></td>
+            <td>Agility drills</td>
+            <td>Hand-eye drills</td>
+            <td>Agility drills</td>
+            <td>Hand-eye drills</td>
+            <td>Agility drills</td>
+            <td>Hand-eye drills</td>
+            <td>Stretching</td>
+          </tr>
+          <tr>
+            <td><strong>Evening</strong></td>
+            <td>Healthy dinner</td>
+            <td>Yoga</td>
+            <td>Healthy dinner</td>
+            <td>Yoga</td>
+            <td>Healthy dinner</td>
+            <td>Yoga</td>
+            <td>Foam rolling</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <aside>
+    <h3>Right Sidebar</h3>
+    <p>Use this area for notifications, profile, or quick links.</p>
+  </aside>
+
+  <footer>
+    © 2025 Omiver Dashboard Theme
+  </footer>
+
+</body>
+</html>

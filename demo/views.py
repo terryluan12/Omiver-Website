@@ -78,3 +78,5 @@ def process(request):
 
 def layout(request):
     return render(request, "demo/two_column_layout.html")
+def dashboard(request):
+    return render(request, "demo/dashboard.html")
