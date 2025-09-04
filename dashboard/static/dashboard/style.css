@@ -8,6 +8,7 @@ body {
   position: relative;
   top: 0;
   height: 100px;
+  width: calc(100% - 100px);
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -21,7 +22,8 @@ body {
 }
 
 .header-section > * {
-  margin: 12px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 #sidebar {
@@ -364,3 +366,6 @@ body {
   font-weight: 100;
 }
 
+h4 {
+  font-size: larger;
+}

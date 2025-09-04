@@ -25,12 +25,12 @@
     {% block header_title %}<h1 id="header-title">Dashboard</h1>{% endblock %}
   </span>
   <span class="header-section">
-    <img src="{% static '/dashboard/notification_icon.svg' %}" />
-    <img src="{% static '/dashboard/support_icon.svg' %}" />
+    <img class="DEMO-ACTION" src="{% static '/dashboard/notification_icon.svg' %}" />
+    <img class="DEMO-ACTION" src="{% static '/dashboard/support_icon.svg' %}" />
     <span class="divider"></span>
     <img src="{% static '/dashboard/arrow_down.svg' %}" />
     <img
-      class="profile-pic"
+      class="profile-pic DEMO-ACTION"
       src="{% static '/dashboard/mock_profile_pic.png' %}"
     />
   </span>
@@ -70,4 +70,5 @@
   </span>
 </div>
 <div class="inner_content">{% block dashboard_content %} {% endblock %}</div>
+{% component "demo_modal" / %}
 {% endblock %}
