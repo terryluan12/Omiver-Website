@@ -36,7 +36,7 @@ class MealPlan(models.Model):
   updated_at = models.DateTimeField(auto_now=True)
   
   def __str__(self):
-    return f'<MealPlan for user {self.user_id} for time {self.timestamp}: {self.meals}>'
+    return f'<MealPlan for client {self.client} for time {self.timestamp}: {self.meals}>'
 
   @staticmethod
   def get_meal_plans_by_user_and_date(user_id, start_date=None, end_date=None) -> 'models.QuerySet':
