@@ -61,3 +61,6 @@ def profile_detail(request, id):
 
 def process(request):
     return render(request, "demo/process.html")
+
+def dashboard(request):
+    return render(request, "demo/dashboard.html")

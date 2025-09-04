@@ -1,0 +1,271 @@
+
+
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load component_tags %}
+
+{% block inner_styles %}
+<link rel="stylesheet" href="{% static 'dashboard/plans/style.css' %}" />
+{% endblock %}
+
+{% block dashboard_content %}
+<div id="info-block">
+    <div class="description-info-block">
+        <h4>Plans</h4>
+        <p>Here you can manage your tasks, set preferences, and updates.</p>
+    </div>
+    <img class="cartoon" src="{% static 'dashboard/plans/banner.svg' %}" />
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/plans/update.svg' %}" />
+        <span>
+            <h4>Last Update</h4>
+            <p>20 Apr, 2025 - 12:00 pm</p>
+        </span>
+    </div>
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/plans/activity.svg' %}" />
+        <span>
+            <h4>Next Activity</h4>
+            <p>21 Apr, 2025 - Friday</p>
+        </span>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Recommended Weekly Training Plan</h1>
+    <div class="training-grid">
+        <!-- Header Row -->
+        <div class="primary-header"></div>
+        <div class="primary-header exercise-theme day-header">Monday</div>
+        <div class="primary-header exercise-theme day-header">Tuesday</div>
+        <div class="primary-header exercise-theme day-header">Wednesday</div>
+        <div class="primary-header exercise-theme day-header">Thursday</div>
+        <div class="primary-header exercise-theme day-header">Friday</div>
+        <div class="primary-header exercise-theme day-header">Saturday</div>
+        <div class="primary-header exercise-theme day-header">Sunday</div>
+
+        <!-- Icon Row -->
+        <div class="primary-header exercise-theme focus-header">Focus</div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/rest.svg' %}" />
+        </div>
+        
+        <!-- Training Plan Row -->
+        <div class="primary-header exercise-theme">Training Plan</div>
+
+        <!-- Monday -->
+        <div class="plan-cell">
+            <div class="meal">Sprint intervals: Scrambled eggs with spinach, avocado, whole grain toast</div>
+            <div class="exercise">Agility ladder drills: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+        </div>
+        
+        <!-- Tuesday -->
+        <div class="plan-cell">
+            <div class="meal">Full-body HIIT circuit: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+            <div class="exercise">Hand-eye coordination training: Jumping jacks with alternating arms: 3 sets of 10-12 reps</div>
+        </div>
+        
+        <!-- Wednesday -->
+        <div class="plan-cell">
+            <div class="meal">Sprint intervals: Scrambled eggs with spinach, avocado, whole grain toast</div>
+            <div class="exercise">Agility ladder drills: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+        </div>
+        
+        <!-- Thursday -->
+        <div class="plan-cell">
+            <div class="meal">Full-body HIIT circuit: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+            <div class="exercise">Hand-eye coordination training: Jumping jacks with alternating arms: 3 sets of 10-12 reps</div>
+        </div>
+        
+        <!-- Friday -->
+        <div class="plan-cell">
+            <div class="meal">Sprint intervals: Scrambled eggs with spinach, avocado, whole grain toast</div>
+            <div class="exercise">Agility ladder drills: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+        </div>
+        
+        <!-- Saturday -->
+        <div class="plan-cell">
+            <div class="meal">Full-body HIIT circuit: 3 sets of 10-12 reps, with 2-3 minutes rest between sets</div>
+            <div class="exercise">Hand-eye coordination training: Jumping jacks with alternating arms: 3 sets of 10-12 reps</div>
+        </div>
+        
+        <!-- Sunday -->
+        <div class="plan-cell">
+            <div class="meal">Rest and mobility work: 30-60 minutes, focusing on stretching and foam rolling day</div>
+        </div>
+        
+        <!-- Feedback Row -->
+        <div class="feedback-cell"></div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Recommended Weekly Meal Plan</h1>
+    <div class="training-grid">
+        <!-- Header Row -->
+        <div class="primary-header"></div>
+        <div class="primary-header meal-theme day-header">Monday</div>
+        <div class="primary-header meal-theme day-header">Tuesday</div>
+        <div class="primary-header meal-theme day-header">Wednesday</div>
+        <div class="primary-header meal-theme day-header">Thursday</div>
+        <div class="primary-header meal-theme day-header">Friday</div>
+        <div class="primary-header meal-theme day-header">Saturday</div>
+        <div class="primary-header meal-theme day-header">Sunday</div>
+        
+        <!-- meal row -->
+        <div class="primary-header meal-theme focus-header">Breakfast</div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+
+        <div class="primary-header meal-theme focus-header">Lunch</div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="primary-header meal-theme focus-header">Dinner</div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="primary-header meal-theme focus-header">Snack</div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        <div class="plan-cell">
+            Scrambled eggs with spinach, avocado, and whole grain toast
+        </div>
+        
+        <!-- Feedback Row -->
+        <div class="feedback-cell"></div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+    </div>
+</div>
+{% component "demo_modal" / %}
+{% endblock %}

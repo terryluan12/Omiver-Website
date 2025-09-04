@@ -103,7 +103,13 @@ def ticket_detail_partial(request, pk):
     return render(request, "dashboard/ticket_detail_partial.html", ticket)
 
 def dashboard(request):
-    return render(request, "/dashboard/base.html")
+    return render(request, "dashboard/base.html")
 
 def settings(request):
     return render(request, "dashboard/settings.html")
+
+def dynamic_page(request, page_name):
+    if page_name == "plans":
+        return render(request, "dashboard/plans.html")
+    if page_name == "profile":
+        return render(request, "dashboard/profile.html")
