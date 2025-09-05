@@ -5,6 +5,8 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 import os, json
 
+def index_page(request):
+    return render(request, "demo/index.html")
 
 def welcome_page(request, index=0):
     pages = [

@@ -1,0 +1,30 @@
+#content {
+  background-color: #67997d;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-image: url("overlay.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#start_button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  border-radius: 100px;
+  margin-top: 6vh;
+  padding: 20px 50px;
+
+  background-color: white;
+  color: #67997d;
+
+  font-size: 3vh;
+  text-decoration: none;
+}

@@ -15,12 +15,20 @@
   color: white;
 }
 
+
+.sub-info-blocks {
+  display: flex;
+  flex-direction: row;
+
+  margin: 5px 0px;
+}
+
 .description-info-block {
   max-width: 350px;
 }
 
 .cartoon {
-  margin: 0px 25px;
+  margin: 0px 100px;
   height: 100px;
 }
 
@@ -95,4 +103,51 @@ h1 {
 
 #sidebar .settings-button {
   background-color: #67997D;
+}
+
+@media (max-width: 1000px) {
+
+  #info-block {
+    flex-direction: column;
+  }
+  .sub-info-blocks {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cartoon {
+    margin-top: 50px;
+  }
+
+  #setting-block-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .setting-profile {
+    height: 100px;
+  }
+  .setting-block h4 {
+    font-size: xx-large
+  }
+  .setting-block h5 {
+    font-size: x-large
+  }
+
+
+  #info-block p, p {
+    font-size: x-large;
+  }
+
+  .header-section img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .proceed-icon {
+    width: 50px;
+  }
+  .setting-item .setting-icon {
+      width: 50px;
+    }
 }
