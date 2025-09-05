@@ -8,4 +8,5 @@ class Icon(Component):
     def get_template_data(self, args, kwargs, slots, context):
         return {
             "img_url": kwargs["img_url"],
+            "href": kwargs["href"],
         }

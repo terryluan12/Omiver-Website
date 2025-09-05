@@ -2,7 +2,13 @@
 styles %}
 <link rel="stylesheet" href="{% static 'dashboard/style.css' %}" />
 
-{% block inner_styles%} {% endblock %} {% endblock %} {% block content %}
+{% block inner_styles%} {% endblock %} {% endblock %} 
+
+{% block scripts %}
+<script src="{% static 'dashboard/plans.js' %}"></script>
+{% endblock %}
+
+{% block content %}
 
 <header id="header">
   <span class="header-section">
@@ -25,11 +31,11 @@ styles %}
     <img src="{% static '/back_arrow.svg' %}" />
   </span>
   <span class="main-icons">
-    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" / %} {%
-    component "ibutton" img_url="dashboard/report_icon.svg" / %} {% component
-    "ibutton" img_url="dashboard/client_icon.svg" / %} {% component "ibutton"
-    img_url="dashboard/support_icon.svg" / %} {% component "ibutton"
-    img_url="dashboard/settings_icon.svg" / %}
+    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" href='/dashboard/profile/{{ request.session.profile_id }}' / %} 
+    {% component "ibutton" img_url="dashboard/report_icon.svg" href='/dashboard/plans/{{ request.session.profile_id }}' / %}
+    {% component "ibutton" img_url="dashboard/client_icon.svg" href='/dashboard/clients' / %} 
+    {% component "ibutton" img_url="dashboard/support_icon.svg" href='/dashboard/support' / %} 
+    {% component "ibutton" img_url="dashboard/settings_icon.svg" href='/dashboard/settings' / %}
   </span>
   <span>
     <img src="{% static '/dashboard/logout_icon.svg' %}" />

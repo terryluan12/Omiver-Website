@@ -1,0 +1,22 @@
+### api endpoint
+GET http://localhost:8000/api http/1.1
+### meal plan
+GET http://localhost:8000/api/mealPlan?client_id=2 http/1.1
+### post client
+POST http://localhost:8000/api/client http/1.1
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "date_of_birth": "1990-01-01",
+    "ethnicity": "Caucasian",
+    "allergies": "None",
+    "sport": "Soccer",
+    "fitness_goal": "Lose weight",
+    "nutritional_goal": "Balanced diet"
+}
+
+### user info
+GET http://localhost:8000/api/client/1 http/1.1

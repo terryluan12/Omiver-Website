@@ -1,4 +1,7 @@
+import json
+import os
 from django.shortcuts import render
+from django.conf import settings as django_settings
 
 # Create your views here.
 
@@ -103,7 +106,27 @@ def ticket_detail_partial(request, pk):
     return render(request, "dashboard/ticket_detail_partial.html", ticket)
 
 def dashboard(request):
-    return render(request, "/dashboard/base.html")
+    return render(request, "dashboard/base.html")
 
 def settings(request):
     return render(request, "dashboard/settings.html")
+
+def profile(request, uid):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    profile_data = all_profiles[uid]
+    return render(request, "dashboard/profile.html", profile_data)
+
+def plans(request, uid):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    profile_data = all_profiles[uid]
+    return render(request, "dashboard/plans.html", profile_data)
+
+def clients(request):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    return render(request, "dashboard/clients.html", {"profiles": all_profiles})

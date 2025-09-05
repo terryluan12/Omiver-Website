@@ -1,0 +1,156 @@
+
+
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load component_tags %}
+
+{% block header_title %}Meal Plan{% endblock %}
+{% block inner_styles %}
+<link rel="stylesheet" href="{% static 'dashboard/plans/style.css' %}" />
+{% endblock %}
+
+{% block dashboard_content %}
+<div id="info-block">
+    <div class="description-info-block">
+        <h4>Plans</h4>
+        <p>Here you can manage your tasks, set preferences, and updates.</p>
+    </div>
+    <img class="cartoon" src="{% static 'dashboard/plans/banner.svg' %}" />
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/plans/update.svg' %}" />
+        <span>
+            <h4>Last Update</h4>
+            <p>20 Apr, 2025 - 12:00 pm</p>
+        </span>
+    </div>
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/plans/activity.svg' %}" />
+        <span>
+            <h4>Next Activity</h4>
+            <p>21 Apr, 2025 - Friday</p>
+        </span>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Recommended Weekly Training Plan</h1>
+    <div class="training-grid">
+        <!-- Header Row -->
+        <div class="primary-header"></div>
+        <div class="primary-header exercise-theme day-header">Monday</div>
+        <div class="primary-header exercise-theme day-header">Tuesday</div>
+        <div class="primary-header exercise-theme day-header">Wednesday</div>
+        <div class="primary-header exercise-theme day-header">Thursday</div>
+        <div class="primary-header exercise-theme day-header">Friday</div>
+        <div class="primary-header exercise-theme day-header">Saturday</div>
+        <div class="primary-header exercise-theme day-header">Sunday</div>
+
+        <!-- Icon Row -->
+        <div class="primary-header exercise-theme focus-header">Focus</div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+        </div>
+        <div class="icon-cell">
+            <img class="icon" src="{% static 'dashboard/plans/rest.svg' %}" />
+        </div>
+        
+        <!-- Training Plan Row -->
+        <div class="primary-header exercise-theme">Training Plan</div>
+
+        {% for day, routine in weekly_routine.items %}
+        <div class="plan-cell">
+            <div class="exercise">{{ routine}}</div>
+        </div>
+        {% endfor %}
+        
+        <!-- Feedback Row -->
+        <div class="feedback-cell"></div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Recommended Weekly Meal Plan</h1>
+    <div class="training-grid">
+        <!-- Header Row -->
+        <div class="primary-header"></div>
+        <div class="primary-header meal-theme day-header">Monday</div>
+        <div class="primary-header meal-theme day-header">Tuesday</div>
+        <div class="primary-header meal-theme day-header">Wednesday</div>
+        <div class="primary-header meal-theme day-header">Thursday</div>
+        <div class="primary-header meal-theme day-header">Friday</div>
+        <div class="primary-header meal-theme day-header">Saturday</div>
+        <div class="primary-header meal-theme day-header">Sunday</div>
+        
+        {% for time, meal in food_log.items %}
+        <!-- meal row -->
+        <div class="primary-header meal-theme focus-header">{{time}}</div>
+        {% for _ in '1234567' %}
+        <div class="plan-cell">
+            {{ meal }}
+        </div>
+        {% endfor %}
+        {% endfor %}
+        
+        <!-- Feedback Row -->
+        <div class="feedback-cell"></div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+        <div class="feedback-cell">
+            <div class="feedback-btn">🔊 Feedback</div>
+        </div>
+    </div>
+</div>
+{% component "demo_modal" / %}
+{% endblock %}

@@ -56,8 +56,11 @@ def profile_detail(request, id):
     with open(DATA_FILE) as f:
         all_profiles = json.load(f)
     profile_data = all_profiles[id]
-    
+    request.session['profile_id'] = id
     return render(request, "demo/profile_detail.html", profile_data)
 
 def process(request):
     return render(request, "demo/process.html")
+
+def dashboard(request):
+    return render(request, "demo/dashboard.html")
