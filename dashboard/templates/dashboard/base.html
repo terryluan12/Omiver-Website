@@ -31,8 +31,8 @@ styles %}
     <img src="{% static '/back_arrow.svg' %}" />
   </span>
   <span class="main-icons">
-    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" href='/dashboard/profile' / %} 
-    {% component "ibutton" img_url="dashboard/report_icon.svg" href='/dashboard/plans' / %}
+    {% component "ibutton" img_url="dashboard/dashboard_icon.svg" href='/dashboard/profile/{{ request.session.profile_id }}' / %} 
+    {% component "ibutton" img_url="dashboard/report_icon.svg" href='/dashboard/plans/{{ request.session.profile_id }}' / %}
     {% component "ibutton" img_url="dashboard/client_icon.svg" href='/dashboard/clients' / %} 
     {% component "ibutton" img_url="dashboard/support_icon.svg" href='/dashboard/support' / %} 
     {% component "ibutton" img_url="dashboard/settings_icon.svg" href='/dashboard/settings' / %}

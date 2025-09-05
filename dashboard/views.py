@@ -124,3 +124,9 @@ def plans(request, uid):
         all_profiles = json.load(f)
     profile_data = all_profiles[uid]
     return render(request, "dashboard/plans.html", profile_data)
+
+def clients(request):
+    DATA_FILE = os.path.join(django_settings.BASE_DIR, "demo", "data", "profiles.json")
+    with open(DATA_FILE) as f:
+        all_profiles = json.load(f)
+    return render(request, "dashboard/clients.html", {"profiles": all_profiles})
