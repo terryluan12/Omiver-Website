@@ -98,8 +98,9 @@ p {
     font-size: x-large;
   }
 
-  a {
-    height: 100px;
+  .select-profile-button {
+    height: 80px;
+    width: calc(100% - 30vw);
     font-size: xx-large;
   }
 
