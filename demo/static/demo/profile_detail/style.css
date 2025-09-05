@@ -158,3 +158,19 @@ a img {
   right: 25px;
   height: 16px;
 }
+
+@media (max-width: 1000px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3, h4 {
+    font-size: xx-large
+  }
+  p {
+    font-size: x-large
+  }
+
+}

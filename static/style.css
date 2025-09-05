@@ -20,3 +20,9 @@ body {
   padding: 20px;
   flex: 1;
 }
+
+@media (max-width: 1000px) {
+  #content {
+    padding: 20px 100px;
+  }
+}
