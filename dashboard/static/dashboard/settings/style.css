@@ -66,10 +66,9 @@
   flex-direction: row;
   border-radius: 15px;
 
-  margin: 0px 25px;
-  width: 300px;
+  margin: 10px 25px;
 
-  padding: 10px;
+  padding: 10px 25px;
 
   align-items: center;
 }
@@ -109,6 +108,7 @@ h1 {
 
   #info-block {
     flex-direction: column;
+    padding: 20px;
   }
   .sub-info-blocks {
     display: flex;
@@ -136,7 +136,7 @@ h1 {
 
 
   #info-block p, p {
-    font-size: x-large;
+    font-size: large;
   }
 
   .header-section img {

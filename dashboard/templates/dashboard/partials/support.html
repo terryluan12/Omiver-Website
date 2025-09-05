@@ -1,25 +1,29 @@
 {% load static %}
 
 <div id="info-block">
-<div class="description-info-block">
-    <h4>Support</h4>
-    <p>Here you can contact our support team, get assistance, and resolve your questions</p>
-</div>
-<img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
-<div class="ticket-info-block">
-    <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
-    <span>
-    <h4>Last Ticket</h4>
-    <p>Aug 05, 2025</p>
+    <span class="sub-info-blocks">
+        <div class="description-info-block">
+            <h4>Support</h4>
+            <p>Here you can contact our support team, get assistance, and resolve your questions</p>
+        </div>
+        <img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
     </span>
-</div>
-<div class="ticket-info-block">
-    <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
-    <span>
-    <h4>Current Ticket</h4>
-    <p>Sep 05, 2025</p>
+    <span class="sub-info-blocks">
+        <div class="ticket-info-block">
+            <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
+            <span>
+            <h4>Last Ticket</h4>
+            <p>Aug 05, 2025</p>
+            </span>
+        </div>
+        <div class="ticket-info-block">
+            <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
+            <span>
+            <h4>Current Ticket</h4>
+            <p>Sep 05, 2025</p>
+            </span>
+        </div>
     </span>
-</div>
 </div>
 
 <div class="ticket-block">
@@ -37,4 +41,12 @@
     <p>Select a ticket to read</p>
     </div>
 </div>
+</div>
+
+<div id="ticket-modal">
+  <div id="ticket-modal-body">
+    <span id="ticket-close-modal-btn">&times;</span>
+    <div id="ticket-modal-content">
+    </div>
+  </div>
 </div>

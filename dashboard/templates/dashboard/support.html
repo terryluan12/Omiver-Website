@@ -3,6 +3,30 @@
 
 {% block inner_styles %}
   <link id="page-specific-css" hx-swap-oob="true" rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const previews = document.querySelectorAll('.ticket-preview')
+      const modal = document.getElementById('ticket-modal')
+      const modalBody = document.getElementById('ticket-modal-content')
+      const closeButton = document.querySelector('#ticket-close-modal-btn')
+    
+      previews.forEach((preview) => {
+        preview.addEventListener('click', function () {
+          // TODO: improve code quality, removing hx-get
+          const url = preview.getAttribute('hx-get')
+          if (window.innerWidth <= 1000) {
+            htmx.ajax('GET', url, { target: '#ticket-modal-content' })
+            modal.style.display = 'flex'
+          }
+        })
+      })
+    
+      closeButton.addEventListener('click', function () {
+        modal.style.display = 'none'
+        modalBody.innerHTML = ''
+      })
+    })
+  </script>
 {% endblock %}
 
 {% block header_title %}
