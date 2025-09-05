@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'core/information/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/information/header.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/information/footer.css' %}" />
+{% endblock %}
+
+{% block content %}
+  {% include 'core/header.html' %}
+
+  {% block inner_content %}
+
+  {% endblock %}
+
+  {% include 'core/footer.html' %}
+{% endblock %}

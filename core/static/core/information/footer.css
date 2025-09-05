@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}  
+
+.disclaimer {
+    color: #838688;
+    border-radius: 15px;
+    margin: 25px 100px;
+    padding: 35px;
+    border: 1px solid #e6e6e6;
+
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

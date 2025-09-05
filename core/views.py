@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-def index(request):
+def index_page(request):
     return render(request, "core/index.html")
+
+def information_page(request):
+    return render(request, "core/information.html")
 
 def login_page(request):
     if request.method == 'POST':
