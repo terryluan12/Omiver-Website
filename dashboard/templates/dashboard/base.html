@@ -11,7 +11,9 @@ styles %}
 {% block content %}
 
 <header id="header">
+
   <span class="header-section">
+    
     <img src="{% static '/green_logo.svg' %}" />
     <h1>/</h1>
     <h1>{% block header_title %}Dashboard{% endblock %}</h1>
@@ -19,6 +21,8 @@ styles %}
   <span class="header-section">
     <img src="{% static '/dashboard/notification_icon.svg' %}" />
     <img src="{% static '/dashboard/support_icon.svg' %}" />
+    <span class="divider"></span>
+    <img src="{% static '/dashboard/arrow_down.svg' %}" />
     <img
       class="profile-pic"
       src="{% static '/dashboard/mock_profile_pic.png' %}"

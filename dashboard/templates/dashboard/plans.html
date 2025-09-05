@@ -80,27 +80,11 @@
         
         <!-- Feedback Row -->
         <div class="feedback-cell"></div>
+        {% for _ in '1234567' %}
         <div class="feedback-cell">
             <div class="feedback-btn">🔊 Feedback</div>
         </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
@@ -120,36 +104,20 @@
         {% for time, meal in food_log.items %}
         <!-- meal row -->
         <div class="primary-header meal-theme focus-header">{{time}}</div>
-        {% for _ in '1234567' %}
-        <div class="plan-cell">
-            {{ meal }}
-        </div>
-        {% endfor %}
+            {% for _ in '1234567' %}
+            <div class="plan-cell">
+                {{ meal }}
+            </div>
+            {% endfor %}
         {% endfor %}
         
         <!-- Feedback Row -->
         <div class="feedback-cell"></div>
+        {% for _ in '1234567' %}
         <div class="feedback-cell">
             <div class="feedback-btn">🔊 Feedback</div>
         </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
-        <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% component "demo_modal" / %}

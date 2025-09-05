@@ -8,7 +8,7 @@
 
 {% block dashboard_content %}
 <div id="info-block">
-    <div class="description-info-block">
+    <div class="desacription-info-block">
         <h4>Hello {{ name }}!</h4>
         <p>Here you can manage your task, set preferences and updates.</p>
     </div>
@@ -32,25 +32,36 @@
 <div class="dashboard-container">
     <!-- Quick Actions -->
     <div class="quick-actions">
-        <button class="action-btn" hx-get="/profiles" hx-target="#main-content">
+        <button class="action-btn"  onclick="location.href='/demo/select'">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/change_profile.svg' %}" alt="Change Profile" /></span>
-            <span class="btn-text">Change Profile</span>
-            <span class="btn-text">Try other Profiles</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Change Profile</span>
+                <span class="btn-text">Try other Profiles</span>
+            </div>
         </button>
         
         <button class="action-btn" hx-get="/chatbot" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
-            <span class="btn-text">Interact with Chatbot</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Quick FaqAnswers</span>
+                <span class="btn-text">Interact with Chatbot</span>
+            </div>
         </button>
         
         <button class="action-btn" hx-get="/improve" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/improve.svg' %}" alt="Improve" /></span>
-            <span class="btn-text">How we can improve?</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Give Feedback</span>
+                <span class="btn-text">How we can improve?</span>
+            </div>
         </button>
         
         <button class="action-btn" hx-get="/support" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/support.svg' %}" alt="Support" /></span>
-            <span class="btn-text">Contact & Support</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Help Center</span>
+                <span class="btn-text">Contact & Support</span>
+            </div>
         </button>
     </div>
 
@@ -64,12 +75,16 @@
                 </div>
                 <div class="profile-card">
                     <div class="profile-info">
-                        <div class="profile-avatar">
-                            <img src="{% static 'dashboard/profile/avatar.png' %}" alt="{{name}}">
+                        <div class="profile-top">
+                            <div class="profile-avatar">
+                                <img class="profile-pic" src="{% static 'demo/select/' %}{{name}}.png" style="border: 3px solid {{ colour }};"/>
+                            </div>
+                            <div class="profile-basic">
+                                <p>{{name}}</p>
+                                <p>{{age}} Years Old</p>
+                            </div>
                         </div>
                         <div class="profile-details">
-                            <h3>{{name}}</h3>
-                            <p>{{age}} Years Old</p>
                             <div class="profile-stats">
                                 <div class="stat">
                                     <span class="stat-label">Ethnicity</span>
@@ -81,9 +96,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="profile-details">
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Sport:</span>
+                                    <span class="stat-value">{{sport}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="profile-image">
-                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=200&h=150&fit=crop" alt="Workout">
+                        <img src="{% static 'demo/select/' %}{{name}}.png" alt="Workout">
                     </div>
                 </div>
             </div>
