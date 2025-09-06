@@ -27,6 +27,20 @@
       "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
       "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
     },
+    "biomarkers": {
+      "Hippuric Acid": 10,
+      "Histidine": 10,
+      "Carnitine": 10,
+      "Glutamine": 10,
+      "Leucine": 10,
+      "Magnesium": 10,
+      "Lycopene": 10,
+      "Lactic Acid": 10,
+      "Vitamin C": 10,
+      "Vitamin D": 10,
+      "Tmao": 10,
+      "Glucose": 10
+    },
     "colour": "#D27644",
     "slug": "marcus",
     "registration_date": "06/06/2025",
@@ -64,6 +78,20 @@
       "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
       "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
     },
+    "biomarkers": {
+      "Hippuric Acid": 20,
+      "Histidine": 40,
+      "Carnitine": 60,
+      "Glutamine": 10,
+      "Leucine": 90,
+      "Magnesium": 80,
+      "Lycopene": 40,
+      "Lactic Acid": 70,
+      "Vitamin C": 20,
+      "Vitamin D": 50,
+      "Tmao": 40,
+      "Glucose": 90
+    },
     "colour": "#88A9C3",
     "registration_date": "06/06/2025",
     "email": "sofia@email.com",
@@ -99,6 +127,20 @@
       "Snack 2": "Cottage cheese with pineapple",
       "Dinner": "Grilled mackerel, sweet potato, spinach and garlic stir-fry",
       "Hydration": "3 liters of water daily, green tea included"
+    },
+    "biomarkers": {
+      "Hippuric Acid": 10,
+      "Histidine": 10,
+      "Carnitine": 10,
+      "Glutamine": 10,
+      "Leucine": 10,
+      "Magnesium": 10,
+      "Lycopene": 10,
+      "Lactic Acid": 10,
+      "Vitamin C": 10,
+      "Vitamin D": 10,
+      "Tmao": 10,
+      "Glucose": 10
     },
     "colour": "#DC6874",
     "registration_date": "06/06/2025",

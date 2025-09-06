@@ -94,7 +94,8 @@
     height: 40px;
     margin: 20px;
     display: flex;
-    align-items: center;    justify-content: center;
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
     background: #f8f9fa;
 }
@@ -142,14 +143,16 @@
 
 .profile-card {
     display: flex;
-    gap: 20px;
     flex-direction: row;
+}
+
+.profile-info {
+    flex: 1;
 }
 
 .profile-top {
     display: flex;
     align-items: center;
-    gap: 12px;
     margin: 6px;
     border-color: #eee;
     border-style: solid;
@@ -157,9 +160,6 @@
     border-width: 2px;
 }
 
-.profile-info {
-    flex: 1;
-}
 
 .profile-avatar img {
     width: 60px;
@@ -171,7 +171,7 @@
 
 .profile-stats {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -181,11 +181,11 @@
     justify-content: space-between;
     font-size: 16px;
     padding: 16px 32px;
-    margin: 8px;
-    border-width: 1px;
-    border-style: solid;
+    margin: 6px;
     border-color: #eee;
-    border-radius: 15px;
+    border-style: solid;
+    border-radius: 16px;
+    border-width: 2px;
 }
 
 .stat-label {
@@ -286,12 +286,18 @@
 }
 
 /* Biomarker Section */
-.biomarker-section {
-    grid-column: span 12;
+.biomarker-card {
     background: white;
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.biomarker-section {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .biomarker-section h2 {
@@ -301,11 +307,105 @@
     color: #333;
 }
 
+.biomarker-overview {
+    flex: 1;
+    grid-column: span 1;
+    border-right: 1px solid #f0f0f0;
+    padding-right: 40px;
+}
+
 .biomarker-grid {
+    flex: 1;
     display: grid;
+    grid-column: span 3;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+.biomarker-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* pie chart */
+.pie-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pie-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.pie-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            #ff6b35 0deg,
+            #ffa726 60deg,
+            #66bb6a 120deg,
+            #e0e0e0 var(--percentage),
+            #e0e0e0 360deg);
+    transition: background 0.3s ease;
+}
+
+.pie-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.percentage {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+}
+
+.percentage-label {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.info-section {
+    text-align: center;
+}
+
+.info-section h1 {
+
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* category */
 
 .category-header {
     display: flex;
@@ -333,20 +433,6 @@
 .category-label {
     font-size: 14px;
     color: #666;
-}
-
-.biomarker-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.biomarker-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
 }
 
 .marker-name {
@@ -479,6 +565,75 @@
     color: white;
 }
 
+/* line chart */
+.chart-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Custom styles for D3 chart elements */
+.line {
+    fill: none;
+    stroke: #d99a7c;
+    stroke-width: 3px;
+}
+
+.area {
+    fill: #f2dcd0;
+    opacity: 0.6;
+}
+
+.dot {
+    fill: #d99a7c;
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.axis path,
+.axis line {
+    stroke: #e5e7eb;
+}
+
+.axis text {
+    font-size: 12px;
+    fill: #6b7280;
+}
+
+.y-axis-label {
+    font-size: 14px;
+    fill: #374151;
+    font-weight: 500;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    background: #111827;
+    color: white;
+    border-radius: 0.375rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    transform: translate(-50%, -120%);
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #111827 transparent transparent transparent;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     .content-grid {
@@ -538,6 +693,15 @@
         grid-column: span 1;
     }
 
+    .biomarker-overview {
+        grid-column: span 12;
+    }
+
+    .biomarker-grid {
+        grid-column: span 12;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .goals-section,
     .recommendations-section {
         grid-template-columns: 1fr;
@@ -554,6 +718,37 @@
 
     .profile-image {
         align-self: center;
+    }
+
+    /* carousel */
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    .gallery {
+        background: #EEE;
+    }
+
+    .gallery-cell {
+        width: 100%;
+        height: 200px;
+        margin-right: 10px;
+        counter-increment: gallery-cell;
+    }
+
+    /* cell number */
+    .gallery-cell:before {
+        display: block;
+        text-align: center;
+        content: counter(gallery-cell);
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
     }
 }
 
