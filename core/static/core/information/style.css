@@ -83,6 +83,7 @@
 }
 .info-icon img {
     width: 30px;
+    display: block;
 }
 
 /* Section 1 - Our Process */
@@ -174,4 +175,86 @@
 .our-platform-box a img {
     width: 30px;
     margin-left: 5px;
+}
+
+/* Section 5 - Contact Us */
+
+.contact-us-block .left-column {
+    background-color: #a8879d;
+    height: 100%;
+    border-radius: 20px;
+
+    padding: 20px;
+}
+
+.contact-us-block .left-column span {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-icon {
+    background-color: #a8879d;
+}
+
+.contact-me-input {
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    margin: 10px;
+    padding: 15px;
+
+    cursor:text;
+}
+
+.contact-me-input input, .contact-me-input textarea {
+    flex: 1;
+    border: none;
+}
+.contact-us-block input:focus, .contact-us-block textarea:focus {
+    outline: none;
+}
+
+.contact-me-input textarea {
+    resize: none;
+}
+
+
+.contact-us-block a {
+    background-color: #a8879d;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    width: 100px;
+
+    align-self: flex-end;
+}
+
+.contact-us-block a img {
+    width: 30px;
+    margin-left: 5px;
+}
+
+.contact-me-input textarea::placeholder,
+.contact-me-input input::placeholder {
+    font-family: 'Open Sans';
+    font-size: small;
+    color: black;
+}
+
+.icon-border-div {
+    border-radius: 100px;
+    border: 2px solid white;
+    padding: 10px;
 }
