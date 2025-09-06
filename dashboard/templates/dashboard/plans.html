@@ -1,10 +1,19 @@
-
-
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% load component_tags %}
 
-{% block header_title %}Meal Plan{% endblock %}
+{% block header_title %}<h1 id="header-title">Meal Plan</h1>{% endblock %}
+{% block header_actions %}
+    <button class="DEMO-ACTION pill-generator-button">
+        <div class="button-content">
+            <div class="medical-cross">
+                <div class="cross-horizontal"></div>
+                <div class="cross-vertical"></div>
+            </div>
+            <span class="pill-text">Plan Generation</span>
+        </div>
+    </button>
+{% endblock %}
 {% block inner_styles %}
 <link rel="stylesheet" href="{% static 'dashboard/plans/style.css' %}" />
 {% endblock %}
@@ -82,11 +91,15 @@
         <div class="feedback-cell"></div>
         {% for _ in '1234567' %}
         <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
+            <div class="DEMO-ACTION feedback-btn">🔊 Feedback</div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+<div class="spacer" style="height: 24px;"></div>
+<div class="horizontal-divider" style="height: 2px; background-color: #eee;"></div>
+<div class="spacer" style="height: 24px;"></div>
 
 <div class="container">
     <h1>Recommended Weekly Meal Plan</h1>
@@ -115,7 +128,7 @@
         <div class="feedback-cell"></div>
         {% for _ in '1234567' %}
         <div class="feedback-cell">
-            <div class="feedback-btn">🔊 Feedback</div>
+            <div class="DEMO-ACTION feedback-btn">🔊 Feedback</div>
         </div>
         {% endfor %}
     </div>

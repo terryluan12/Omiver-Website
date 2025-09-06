@@ -1,6 +1,16 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
-
+{% block header_actions %}
+    <button class="DEMO-ACTION pill-generator-button">
+        <div class="button-content">
+            <div class="medical-cross">
+                <div class="cross-horizontal"></div>
+                <div class="cross-vertical"></div>
+            </div>
+            <span class="pill-text">New Ticket</span>
+        </div>
+    </button>
+{% endblock %}
 {% block inner_styles %}
   <link id="page-specific-css" hx-swap-oob="true" rel="stylesheet" href="{% static 'dashboard/support/style.css' %}" />
 {% endblock %}

@@ -94,8 +94,7 @@
     height: 40px;
     margin: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    justify-content: center;
     border-radius: 8px;
     background: #f8f9fa;
 }
@@ -127,7 +126,7 @@
 
 /* Profile Section */
 .profile-section {
-    grid-column: span 4;
+    grid-column: span 6;
     background: white;
     border-radius: 16px;
     padding: 24px;
@@ -172,27 +171,36 @@
 
 .profile-stats {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .stat {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    font-size: 13px;
+    font-size: 16px;
+    padding: 16px 32px;
+    margin: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eee;
+    border-radius: 15px;
 }
 
 .stat-label {
-    color: #666;
+    color: #333;
 }
 
 .stat-value {
     font-weight: 500;
+    color: #666;
 }
 
 .profile-image {
-    width: 120px;
-    height: 160px;
+    flex: 1;
+    width: auto;
+    max-height: 300px;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -200,12 +208,12 @@
 .profile-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Highlights Section */
 .highlights-section {
-    grid-column: span 8;
+    grid-column: span 6;
     background: white;
     border-radius: 16px;
     padding: 24px;

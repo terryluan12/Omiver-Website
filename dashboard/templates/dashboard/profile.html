@@ -40,10 +40,10 @@
             </div>
         </button>
         
-        <button class="action-btn" hx-get="/chatbot" hx-target="#main-content">
+        <button class="action-btn" hx-get="/dashboard/chatbot" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
             <div class="text-group">
-                <span class="btn-text-secondary">Quick FaqAnswers</span>
+                <span class="btn-text-secondary">Quick Faq Answers</span>
                 <span class="btn-text">Interact with Chatbot</span>
             </div>
         </button>
@@ -84,24 +84,20 @@
                                 <p>{{age}} Years Old</p>
                             </div>
                         </div>
-                        <div class="profile-details">
-                            <div class="profile-stats">
-                                <div class="stat">
-                                    <span class="stat-label">Ethnicity</span>
-                                    <span class="stat-value">{{ethnicity}}</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-label">Allergies</span>
-                                    <span class="stat-value">{{allergies}}</span>
-                                </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ethnicity:</span>
+                                <span class="stat-value">{{ethnicity}}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Allergies:</span>
+                                <span class="stat-value">{{allergies}}</span>
                             </div>
                         </div>
-                        <div class="profile-details">
-                            <div class="profile-stats">
-                                <div class="stat">
-                                    <span class="stat-label">Sport:</span>
-                                    <span class="stat-value">{{sport}}</span>
-                                </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-label">Sport:</span>
+                                <span class="stat-value">{{sport}}</span>
                             </div>
                         </div>
                     </div>
