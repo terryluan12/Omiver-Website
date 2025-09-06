@@ -3,67 +3,107 @@
 
 {% block inner_content %}
   <div class="page-section our-process-box">
-    <p>Our Process</p>
-    <h1>Omiver works with you the whole way, from sample collection to report generation</h1>
+    <p class="section-title">Our Process</p>
+    <h1 class="section-description">Omiver works with you the whole way, from sample collection to report generation</h1>
 
-    <div class="example-box">
-      <div class="info-boxes">
+    <div class="main-infographic">
+      <div class="left-column">
         <div class="point-info-box">
-          <h4>Model Platform</h4>
-          <h5>Biodemographic and lifestyle assessment</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/profile_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Model Platform</h3>
+            <h4>Biodemographic and lifestyle assessment</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>Sample Collection</h4>
-          <h5>At-home testing kits for whole blood samples</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/beaker_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Sample Collection</h3>
+            <h4>At-home testing kits for whole blood samples</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>Biomarker Assessment</h4>
-          <h5>MS-based metabolomics data acquisition</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/molecule_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Biomarker Assessment</h3>
+            <h4>MS-based metabolomics data acquisition</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>Model Integration</h4>
-          <h5>Proprietary model for individualized recommendations</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/gear_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Model Integration</h3>
+            <h4>Proprietary model for individualized recommendations</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>Platform Reporting</h4>
-          <h5>Platform access for monitoring and feedback reporting</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/megaphone_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Platform Reporting</h3>
+            <h4>Platform access for monitoring and feedback reporting</h4>
+          </span>
         </div>
       </div>
-      <div class="information-screenshot">
+      <div class="right-column">
         <img src="{% static 'core/information/report_screenshot.png' %}" />
       </div>
     </div>
   </div>
 
   <div class="page-section measuring-metabolites-box">
-    <p>Measuring Metabolites</p>
-    <h1>Metabolomic biomarkers measures your specific physiological state</h1>
-    <div class="diagram-box">
-      <div class="info-boxes">
+    <p class="section-title">Measuring Metabolites</p>
+    <h1 class="section-description">Metabolomic biomarkers measures your specific physiological state</h1>
+    <div class="main-infographic">
+      <div class="left-column">
         <div class="point-info-box">
-          <h4>Study of Metabolomics</h4>
-          <h5>Metabolomics is the study of the metabolome, the complete set of metabolites found within a biological sample.</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/molecule_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Study of Metabolomics</h3>
+            <h4>Metabolomics is the study of the metabolome, the complete set of metabolites found within a biological sample.</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>Physiological state</h4>
-          <h5>By measuring the metabolites in a sample, we can get a direct readout of physiological state, i.e. what is happening in the system at that time point.</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/eyeball_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>Physiological state</h3>
+            <h4>By measuring the metabolites in a sample, we can get a direct readout of physiological state, i.e. what is happening in the system at that time point.</h4>
+          </span>
         </div>
         <div class="point-info-box">
-          <h4>MS-based</h4>
-          <h5>Our services utilize MS-based approaches to identify and quantify our metabolite biomarkers. Since each metabolite has a characteristic mass-spectrometry spectra, we can use MS to identify chemical patterns.</h5>
+          <div class="info-icon">
+            <img src="{% static 'core/information/gear_icon.svg' %}" />
+          </div>
+          <span>
+            <h3>MS-based</h3>
+            <h4>Our services utilize MS-based approaches to identify and quantify our metabolite biomarkers. Since each metabolite has a characteristic mass-spectrometry spectra, we can use MS to identify chemical patterns.</h4>
+          </span>
         </div>
       </div>
-      <div class="information-screenshot">
+      <div class="right-column">
         <img src="{% static 'core/information/workflow_screenshot.png' %}" />
       </div>
     </div>
   </div>
 
-  <div class="page-section our-test-kit">
-    <p>Our Test Kit</p>
-    <h1>Our test kit encompasses 200+ biomarkers specifically related to nutrition & fitness performance</h1>
-    <div class="checkmark-items">
-      <span>
+  <div class="page-section our-test-kit-box">
+    <p class="section-title">Our Test Kit</p>
+    <h1 class="section-description">Our test kit encompasses 200+ biomarkers specifically related to nutrition & fitness performance</h1>
+    <div class="main-infographic">
+      <span class="left-column">
         <div class="checkmark-item">
           <h3>Amino Acids</h3>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
@@ -73,57 +113,57 @@
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Lipids</h3>
+          <h2>Lipids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Phenolic Acids</h3>
+          <h2>Phenolic Acids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Carnitines</h3>
+          <h2>Carnitines</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Sulfurous Metabolites</h3>
+          <h2>Sulfurous Metabolites</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Phenolic lipids</h3>
+          <h2>Phenolic lipids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Alkylresorcinols</h3>
+          <h2>Alkylresorcinols</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
       </span>
-      <span>
+      <span class="right-column">
         <div class="checkmark-item">
-          <h3>Carbohydrates</h3>
+          <h2>Carbohydrates</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Fatty Acids</h3>
+          <h2>Fatty Acids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Sphingomyelins</h3>
+          <h2>Sphingomyelins</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Flavonoids</h3>
+          <h2>Flavonoids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Carotenoids</h3>
+          <h2>Carotenoids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Organic Acids</h3>
+          <h2>Organic Acids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
         <div class="checkmark-item">
-          <h3>Organic Acids</h3>
+          <h2>Organic Acids</h2>
           <img class="checkmark-icon" src="{% static 'core/information/checkmark.svg' %}" />
         </div>
       </span>
@@ -131,10 +171,13 @@
   </div>
 
   <div class="page-section our-platform-box">
-    <p>Our Platform</p>
-    <h1>Our recommendation platform that continuously adapts to user feedback and up-to-date literature</h1>
-    <p>Our platform integrates extensive biomarker data with their lifestyle information generates plans for nutritionists catered to their clients needs, and our AI model adapts by incorporating user feedback and the latest research to refine our recommendations.</p>
-    <button>Contact us to try our Demo</button>
+    <p class="section-title">Our Platform</p>
+    <h1 class="section-description">Our recommendation platform that continuously adapts to user feedback and up-to-date literature</h1>
+    <p class="our-platform-subtext">Our platform integrates extensive biomarker data with their lifestyle information generates plans for nutritionists catered to their clients needs, and our AI model adapts by incorporating user feedback and the latest research to refine our recommendations.</p>
+    <a>
+      Contact us to try our Demo
+      <img src="{% static 'core/information/diagonal_icon.svg' %}" />
+    </a>
     <img src="{% static 'core/information/three_device_screenshot.png' %}" />
   </div>
 {% endblock %}

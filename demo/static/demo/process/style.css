@@ -12,21 +12,18 @@
 
 .process-step {
     position: relative;
-
-    max-width: 250px;
+    margin: 20px;
 }
 
 .process-info {
     background-color: white;
     margin: 10px;
-    margin-top: 50px;
     border-radius: 15px;
     padding: 20px 30px;
+    max-width: 300px;
 
     border: 1px solid var(--border-color, black);
-
 }
-
 
 a {
   position: relative;
@@ -54,23 +51,7 @@ p {
   font-size: 15px;
 }
 
-.process-step {
-    position: relative;
-    max-width: 250px;
-}
 
-
-.process-step::before {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  width: 2px;
-  height: 150px;
-  border-left: 2px dotted black;
-  z-index: 0;
-  transform: translateX(-50%);
-}
 
 .process-step .process-info {
   position: relative;
@@ -82,15 +63,64 @@ p {
   position: relative;
   z-index: 1;
   background-color: #e0e0e0;
+  width: 100px;
+  height: 100px;
 }
 
-.process-step:not(:last-child)::after {
+.process-step:not(:last-child) .process-img-container::before {
   content: "";
   position: absolute;
   top: 50px;
-  right: -80px;
-  width: 200px;
-  height: 2px;
-  border-top: 2px dotted black;
-  z-index: 0;
+  left: 50%;
+  width: 250px;
+  height: 200px;
+  border-left: 2px dotted green;
+  border-top: 2px dotted green;
+  z-index: 1;
+}
+
+.process-step:last-child .process-img-container::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 0px;
+  height: 200px;
+  border-left: 2px dotted green;
+  z-index: 1;
+}
+
+
+@media (max-width: 1000px) {
+  #diagram {
+    flex-direction: column;
+  }
+  .process-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .process-step:not(:last-child) .process-img-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    width: 250px;
+    height: 200px;
+    border-left: 2px dotted blue;
+    border-top: 2px dotted blue;
+    z-index: 1;
+  }
+
+  .process-step:last-child .process-img-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    width: 0px;
+    height: 200px;
+    border-top: 2px dotted red;
+    z-index: 1;
+  }
 }

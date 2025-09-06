@@ -3,6 +3,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    margin: 0px 100px;
 }  
 
 .disclaimer {
@@ -18,4 +20,14 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.options span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.options span p {
+    margin: 0px 5px;
 }

@@ -1,0 +1,177 @@
+
+/* General styling */
+
+.page-section {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin: 10px 0px;
+    padding: 40px 100px;
+}
+
+.section-title {
+    color: #d27644;
+}
+.section-description {
+    text-align: center;
+    width: 1000px;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+.main-infographic {
+    display: flex;
+    flex-direction: row;
+
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+}
+.main-infographic h4 {
+    color: gray;
+    font-weight: 100;
+}
+
+.left-column {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.point-info-box {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    
+    margin: 5px 15px;
+
+    padding: 10px;
+
+    align-items: center;
+    
+    border-radius: 15px;
+    border: 1px solid #d8d6d7;
+}
+
+.point-info-box span {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.right-column {
+    flex: 1;
+}
+.right-column img {
+    width: 100%;
+}
+
+.info-icon {
+    margin: 10px;
+
+    border-radius: 15px;
+    padding: 15px;
+
+    display: inline-block;
+}
+.info-icon img {
+    width: 30px;
+}
+
+/* Section 1 - Our Process */
+
+.our-process-box .main-infographic {
+    background-color: #efedee;
+    
+}
+
+.our-process-box .info-icon {
+    background-color: white;
+}
+
+
+/* Section 2 - Measuring Metabolites */
+
+.measuring-metabolites-box .main-infographic {
+    background-color: #a29794;
+}
+
+.measuring-metabolites-box .point-info-box {
+    background-color: white;
+}
+
+.measuring-metabolites-box .info-icon {
+    background-color: #f7f6f7;
+}
+
+
+/* Section 3 - Our Test Kit */
+
+.our-test-kit-box .checkmark-icon {
+    width: auto;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.checkmark-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 5px 20px;
+    border-bottom: 1px solid #cccccc; 
+}
+
+.our-test-kit-box h1 {
+    font-weight: 400;
+}
+
+/* Section 4 - Our Platform */
+
+.our-platform-box {
+    background-color: #67997d;
+    text-align: center;
+    border-radius: 15px;
+
+    margin: 0px 100px;
+    padding-bottom: 0px;
+}
+
+.our-platform-box p, .our-platform-box h1 {
+    color: white;
+}
+
+.our-platform-subtext {
+    margin-bottom: 20px;
+}
+
+.our-platform-box img {
+    width: 100%;
+}
+
+.our-platform-box a {
+    background-color: #a8879d;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    margin: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 50px;
+}
+
+.our-platform-box a img {
+    width: 30px;
+    margin-left: 5px;
+}
