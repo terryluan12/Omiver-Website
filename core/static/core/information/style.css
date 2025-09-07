@@ -15,7 +15,7 @@
 }
 .section-description {
     text-align: center;
-    width: 1000px;
+    width: 70vw;
     margin-bottom: 50px;
     font-size: 40px;
 }
@@ -41,6 +41,12 @@
 
 }
 
+.slider-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .point-info-box {
     flex: 1;
 
@@ -62,7 +68,9 @@
     flex-direction: column;
 }
 
-
+.slider-buttons {
+    display: none;
+}
 
 
 
@@ -120,6 +128,11 @@
     border: 1px solid black;
     padding: 10px;
     border-radius: 100px;
+}
+
+.our-test-kit-box .slider-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .checkmark-item {
@@ -181,7 +194,7 @@
 
 .contact-us-block {
     margin-top: 100px;
-    padding: 0px 100px!important;
+    padding: 0px 100px;
 }
 
 .contact-us-block .left-column {
@@ -263,4 +276,74 @@
     border-radius: 100px;
     border: 2px solid white;
     padding: 10px;
+}
+
+
+
+@media (max-width: 1000px) {
+    /* General styling */
+    .main-infographic {
+        flex-direction: column;
+    }
+
+    .main-infographic .right-column {
+        order: -1;
+    }
+
+    .main-infographic .left-column {
+        order: 0;
+    }
+
+    .contact-us-block .right-column {
+        order: 0;
+        flex: 1;
+    }
+
+    .our-platform-box {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .contact-us-block {
+        padding: 0px;
+    }
+
+    .contact-us-block .left-column,
+    .contact-us-block .right-column {
+        margin: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+  .mobile-slider .slider-wrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobile-slider .point-info-box {
+    flex: 0 0 100%;
+    display: none;
+  }
+
+  .mobile-slider .point-info-box.active {
+    display: flex;
+  }
+
+  .mobile-slider .slider-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .mobile-slider .slider-buttons button {
+    background-color: #a8879d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
