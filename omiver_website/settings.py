@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-7z!bv1d43a&a5*b0gdfm_&x5yywoz9sv-1#d24qdjf6mc8m!-=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['omiver-website.onrender.com','*']
+
+CSRF_TRUSTED_ORIGINS = ['https://omiver-website.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition

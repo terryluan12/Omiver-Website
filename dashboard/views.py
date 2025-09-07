@@ -134,3 +134,6 @@ def clients(request):
     with open(DATA_FILE) as f:
         all_profiles = json.load(f)
     return render(request, "dashboard/clients.html", {"profiles": all_profiles})
+
+def chatbot(request):
+    return render(request, "dashboard/chatbot.html")

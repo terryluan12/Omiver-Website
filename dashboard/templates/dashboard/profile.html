@@ -4,6 +4,8 @@
 
 {% block inner_styles %}
 <link rel="stylesheet" href="{% static 'dashboard/profile/style.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" media="screen">
+<script src="https://d3js.org/d3.v7.min.js"></script>
 {% endblock %}
 
 {% block dashboard_content %}
@@ -32,25 +34,36 @@
 <div class="dashboard-container">
     <!-- Quick Actions -->
     <div class="quick-actions">
-        <button class="action-btn" hx-get="/profiles" hx-target="#main-content">
+        <button class="action-btn"  onclick="location.href='/demo/select'">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/change_profile.svg' %}" alt="Change Profile" /></span>
-            <span class="btn-text">Change Profile</span>
-            <span class="btn-text">Try other Profiles</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Change Profile</span>
+                <span class="btn-text">Try other Profiles</span>
+            </div>
         </button>
         
-        <button class="action-btn" hx-get="/chatbot" hx-target="#main-content">
+        <button class="action-btn" hx-get="/dashboard/chatbot" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
-            <span class="btn-text">Interact with Chatbot</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Quick Faq Answers</span>
+                <span class="btn-text">Interact with Chatbot</span>
+            </div>
         </button>
         
         <button class="action-btn" hx-get="/improve" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/improve.svg' %}" alt="Improve" /></span>
-            <span class="btn-text">How we can improve?</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Give Feedback</span>
+                <span class="btn-text">How we can improve?</span>
+            </div>
         </button>
         
         <button class="action-btn" hx-get="/support" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/support.svg' %}" alt="Support" /></span>
-            <span class="btn-text">Contact & Support</span>
+            <div class="text-group">
+                <span class="btn-text-secondary">Help Center</span>
+                <span class="btn-text">Contact & Support</span>
+            </div>
         </button>
     </div>
 
@@ -64,26 +77,34 @@
                 </div>
                 <div class="profile-card">
                     <div class="profile-info">
-                        <div class="profile-avatar">
-                            <img src="{% static 'dashboard/profile/avatar.png' %}" alt="{{name}}">
+                        <div class="profile-top">
+                            <div class="profile-avatar">
+                                <img class="profile-pic" src="{% static 'demo/select/' %}{{name}}.png" style="border: 3px solid {{ colour }};"/>
+                            </div>
+                            <div class="profile-basic">
+                                <p>{{name}}</p>
+                                <p>{{age}} Years Old</p>
+                            </div>
                         </div>
-                        <div class="profile-details">
-                            <h3>{{name}}</h3>
-                            <p>{{age}} Years Old</p>
-                            <div class="profile-stats">
-                                <div class="stat">
-                                    <span class="stat-label">Ethnicity</span>
-                                    <span class="stat-value">{{ethnicity}}</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-label">Allergies</span>
-                                    <span class="stat-value">{{allergies}}</span>
-                                </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ethnicity:</span>
+                                <span class="stat-value">{{ethnicity}}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Allergies:</span>
+                                <span class="stat-value">{{allergies}}</span>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-label">Sport:</span>
+                                <span class="stat-value">{{sport}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="profile-image">
-                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=200&h=150&fit=crop" alt="Workout">
+                        <img src="{% static 'demo/select/' %}{{name}}.png" alt="Workout">
                     </div>
                 </div>
             </div>
@@ -98,9 +119,13 @@
                         <option value="90">Last 90 Days</option>
                     </select>
                 </div>
-                <div id="highlights-chart" class="chart-container">
-                    <canvas id="progressChart" width="400" height="200"></canvas>
+                <!-- Informational Message -->
+                <div class="border border-gray-200 rounded-lg p-4 mb-6 bg-gray-50">
+                    <p class="text-gray-600">Your hypoxanthine levels have stabilized to average levels after 4 months. Continue to reduce purine-rich foods.</p>
                 </div>
+                <!-- Chart -->
+                <div id="chart" class="relative"></div>
+                <div class="tooltip"></div>
             </div>
 
             <!-- Goals Section -->
@@ -124,81 +149,35 @@
 
             <!-- Biomarker Overview -->
             <div class="biomarker-section">
-                <h2>Biomarker Overview</h2>
+                <div class="biomarker-overview biomarker-card">
+                    <div class="pie-section">
+                        <div class="pie-chart">
+                            <div class="pie-background" id="pieBackground"></div>
+                            <div class="pie-inner">
+                                <div class="percentage" id="overallPercentage">23%</div>
+                                <div class="percentage-label">in range</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h1>Biomarker Overview</h1>
+                        <p class="description">
+                            Key biomarkers performance; track levels over time to your training and optimize recovery.
+                        </p>
+                    </div>
+                </div>
                 <div class="biomarker-grid">
-                    <div class="biomarker-category">
-                        <div class="category-header">
-                            <div class="category-indicator orange"></div>
-                            <span class="category-percentage">23%</span>
-                            <span class="category-label">in range</span>
-                        </div>
-                        <div class="biomarker-list">
-                            <div class="biomarker-item">
-                                <span class="marker-name">Hexanoic Acid</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Glutamine</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Lycopene</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Timsol</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                        </div>
+                    {% for marker, value in biomarkers.items %}
+                    <div class="biomarker-item biomarker-card">
+                        {% component "custom_slider" min='0' max='100' value='{{value}}' marker='{{marker}}' / %}
                     </div>
-                    
-                    <div class="biomarker-category">
-                        <div class="biomarker-list">
-                            <div class="biomarker-item">
-                                <span class="marker-name">Histidine</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Leucine</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Lactic Acid</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Glucose</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="biomarker-category">
-                        <div class="biomarker-list">
-                            <div class="biomarker-item">
-                                <span class="marker-name">Carnitine</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Magnesium</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Vitamin D</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                            <div class="biomarker-item">
-                                <span class="marker-name">Vitamin C</span>
-                                <span class="marker-value">0</span>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
             <!-- Recommendations -->
             <div class="recommendations-section">
-                <div class="recommendation-card meal-plan">
+                <div class="recommendation-card">
                     <div class="rec-header">
                         <div class="rec-icon">🍽️</div>
                         <h3>Today Recommendation - Meal Plan</h3>
@@ -213,7 +192,7 @@
                     </div>
                 </div>
                 
-                <div class="recommendation-card exercise-plan">
+                <div class="recommendation-card">
                     <div class="rec-header">
                         <div class="rec-icon">💪</div>
                         <h3>Today Recommendation - Exercise Plan</h3>
@@ -273,41 +252,141 @@
 </div>
 
 <script>
-// Simple chart rendering
-document.addEventListener('DOMContentLoaded', function() {
-    const canvas = document.getElementById('progressChart');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
+    const biomarkerData = {};
+    function updatePieChart() {
+        const average = Object.values(biomarkerData).length > 0 ? Math.round(Object.values(biomarkerData).reduce((a, b) => a + b, 0) / Object.values(biomarkerData).length) : 0;
+        const pieBackground = document.getElementById('pieBackground');
+        const percentageElement = document.getElementById('overallPercentage');
         
-        // Sample chart data
-        const data = [20, 35, 30, 45, 40, 55, 50];
-        const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-        
-        // Simple line chart
-        ctx.strokeStyle = '#ff6b6b';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        
-        const width = canvas.width - 60;
-        const height = canvas.height - 40;
-        const stepX = width / (data.length - 1);
-        const maxY = Math.max(...data);
-        
-        data.forEach((point, index) => {
-            const x = 30 + index * stepX;
-            const y = height - (point / maxY) * (height - 20) + 20;
-            
-            if (index === 0) {
-                ctx.moveTo(x, y);
-            } else {
-                ctx.lineTo(x, y);
-            }
-        });
-        
-        ctx.stroke();
+        const angle = (average / 100) * 360;
+        pieBackground.style.setProperty('--percentage', `${angle}deg`);
+        percentageElement.textContent = `${23}%`;
     }
-});
-</script>
 
+    // Initialize with default values
+    updatePieChart();
+
+    // --- 1. D3 CHART SETUP ---
+        const chartData = [
+            { date: '2025-12-01', value: 85 },
+            { date: '2025-12-05', value: 40 },
+            { date: '2025-12-10', value: 80 },
+            { date: '2025-12-15', value: 55 },
+            { date: '2025-12-20', value: 60 },
+            { date: '2025-12-25', value: 10 },
+        ];
+        
+        const parseDate = d3.timeParse("%Y-%m-%d");
+        const data = chartData.map(d => ({
+            date: parseDate(d.date),
+            value: d.value
+        }));
+
+        const margin = { top: 20, right: 30, bottom: 40, left: 50 };
+        const width = 700 - margin.left - margin.right;
+        const height = 350 - margin.top - margin.bottom;
+
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+        const tooltip = d3.select(".tooltip");
+
+        // --- 2. SCALES ---
+        const xScale = d3.scaleTime()
+            .domain(d3.extent(data, d => d.date))
+            .range([0, width]);
+
+        const yScale = d3.scaleLinear()
+            .domain([0, 100]) // Domain from Low (0) to High (100)
+            .range([height, 0]);
+
+        // --- 3. AXES ---
+        const xAxis = d3.axisBottom(xScale)
+            .ticks(data.length)
+            .tickFormat(d3.timeFormat("%d-%m\n%Y"));
+            
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(xAxis)
+            .attr("class", "axis x-axis")
+            .selectAll("text")
+            .style("text-anchor", "middle")
+            .attr("dy", "0.5em");
+            
+        // Custom Y-axis labels instead of a traditional axis
+        const yAxisLabels = [
+            { label: "High", value: 90 },
+            { label: "Avg.", value: 50 },
+            { label: "Low", value: 10 }
+        ];
+
+        svg.selectAll(".y-axis-label")
+            .data(yAxisLabels)
+            .enter()
+            .append("text")
+            .attr("class", "y-axis-label")
+            .attr("x", -10)
+            .attr("y", d => yScale(d.value))
+            .attr("text-anchor", "end")
+            .attr("alignment-baseline", "middle")
+            .text(d => d.label);
+
+        // --- 4. DRAWING THE CHART ---
+        // Area generator
+        const area = d3.area()
+            .x(d => xScale(d.date))
+            .y0(height)
+            .y1(d => yScale(d.value))
+            .curve(d3.curveMonotoneX);
+
+        svg.append("path")
+            .datum(data)
+            .attr("class", "area")
+            .attr("d", area);
+
+        // Line generator
+        const line = d3.line()
+            .x(d => xScale(d.date))
+            .y(d => yScale(d.value))
+            .curve(d3.curveMonotoneX);
+
+        svg.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("d", line);
+
+        // Data points (dots)
+        svg.selectAll(".dot")
+            .data(data)
+            .enter().append("circle")
+            .attr("class", "dot")
+            .attr("cx", d => xScale(d.date))
+            .attr("cy", d => yScale(d.value))
+            .attr("r", 6)
+            .on("mouseover", (event, d) => {
+                // Show tooltip on hover
+                tooltip.style("opacity", 1);
+                // Special case for the "High" point as in the image
+                if (d.value === 80) {
+                    tooltip.html("High");
+                } else {
+                    tooltip.html(`Value: ${d.value}`);
+                }
+            })
+            .on("mousemove", (event) => {
+                // Position the tooltip relative to the chart container
+                const [posX, posY] = d3.pointer(event, d3.select("#chart").node());
+                tooltip.style("left", `${posX}px`).style("top", `${posY}px`);
+            })
+            .on("mouseout", () => {
+                // Hide tooltip
+                tooltip.style("opacity", 0);
+            });
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
 {% component "demo_modal" / %}
 {% endblock %}
