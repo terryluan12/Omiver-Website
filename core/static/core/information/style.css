@@ -179,6 +179,11 @@
 
 /* Section 5 - Contact Us */
 
+.contact-us-block {
+    margin-top: 100px;
+    padding: 0px 100px!important;
+}
+
 .contact-us-block .left-column {
     background-color: #a8879d;
     height: 100%;
@@ -224,9 +229,10 @@
 }
 
 
-.contact-us-block a {
+.contact-us-block button {
     background-color: #a8879d;
     color: white;
+    border: none;
 
     display: flex;
     align-items: center;
@@ -241,7 +247,7 @@
     align-self: flex-end;
 }
 
-.contact-us-block a img {
+.contact-us-block button img {
     width: 30px;
     margin-left: 5px;
 }
