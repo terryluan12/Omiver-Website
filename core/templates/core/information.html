@@ -237,26 +237,28 @@
     <img src="{% static 'core/information/three_device_screenshot.png' %}" />
   </div>
 
+  <div id="contact-form-response"></div>
   <div class="page-section contact-us-block main-infographic">
-    <form class="left-column">
+    <form class="left-column" hx-post="{% url 'send-email' %}" hx-target="#contact-form-response" hx-swap="innerHTML">
+      {% csrf_token %}
       <span>
         <label class="contact-me-input">
           <h4>Full name</h4>
-          <input placeholder="write..." />
+          <input name="name" placeholder="write..." />
         </label>
         <label class="contact-me-input">
           <h4>Email</h4>
-          <input placeholder="write..." />
+          <input name="email" placeholder="write..." />
         </label>
       </span>
       <span>
         <label class="contact-me-input">
           <h4>Message</h4>
-          <textarea placeholder="write..."></textarea>
-          <a>
+          <textarea name="message" placeholder="write..."></textarea>
+          <button type="submit" class="submit-button">
             Submit
             <img src="{% static 'core/information/diagonal_icon.svg' %}" />
-          </a>
+          </button>
         </label>
       </span>
     </form>

@@ -161,3 +161,10 @@ COMPONENTS = ComponentsSettings(
     #    context_behavior="isolated",  # "django" | "isolated"
     reload_on_file_change=True
 )
+
+EMAIL_HOST = ""
+EMAIL_PORT = -1 
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+
+EMAIL_USE_TLS = True 
