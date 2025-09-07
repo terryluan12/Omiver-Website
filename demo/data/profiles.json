@@ -2,6 +2,9 @@
   {
     "id": 0,
     "name": "Marcus Thompson",
+    "sex": "M",
+    "height": "6’1” / 185.4 cm",
+    "weight": "210 lbs / 95.25kg",
     "age": 28,
     "sport": "Football (Wide Receiver)",
     "goal": {
@@ -53,6 +56,9 @@
   {
     "id": 1,
     "name": "Sofia Riviera",
+    "sex": "F",
+    "height": "5’4” / 162.6 cm",
+    "weight": "134 lbs / 60.78kg",
     "age": 24,
     "sport": "Competitive Runner (5K and 10K distances)",
     "goal": {
@@ -103,6 +109,9 @@
   {
     "id": 2,
     "name": "Jackson Lee",
+    "sex": "M",
+    "height": "5’9” / 175.3 cm",
+    "weight": "165 lbs / 74.84kg",
     "age": 33,
     "sport": "Ice Hockey (Defenseman)",
     "goal": {

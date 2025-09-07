@@ -108,7 +108,7 @@ def ticket_detail_partial(request, pk):
     return render(request, "dashboard/ticket_detail_partial.html", ticket)
 
 def dashboard(request):
-    return render(request, "dashboard/base.html")
+    return render(request, "dashboard/profile.html")
 
 def settings(request):
     if request.headers.get("HX-Request") == "true":

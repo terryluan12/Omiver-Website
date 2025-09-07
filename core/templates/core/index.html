@@ -1,14 +1,1 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block styles %}
-  <link rel="stylesheet" href="{% static '/core/index/style.css' %}" />
-{% endblock %}
-
-{% block content %}
-  <img src="{% static 'white_logo.svg' %}" alt="Omiver Logo" />
-  <a href="/demo/welcome" id="start_button">
-    <p>Start Now</p>
-    <img src="{% static '/right_caret.svg' %}" />
-  </a>
-{% endblock %}
+{% extends 'core/base.html' %}

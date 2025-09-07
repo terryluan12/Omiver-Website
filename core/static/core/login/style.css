@@ -9,7 +9,7 @@
 }
 
 
-.submit-button {
+.action-button {
   width: 400px;
   height: 50px;
 
@@ -21,16 +21,13 @@
 
   padding: 0px 25px;
   
-}
-
-.submit-button {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.submit-button img {
+.action-button img {
   position: absolute;
   right: 25px;
   height: 16px;

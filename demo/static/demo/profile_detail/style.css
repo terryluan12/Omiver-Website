@@ -96,7 +96,7 @@
 
 .user-info {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 15px;
   grid-auto-flow: row;
 }
@@ -105,6 +105,16 @@
 .user-fitness,
 .user-nutrition {
   grid-column: 1 / -1;
+}
+
+.ethnicity-block {
+  grid-column: 2 / 4;
+}
+.height-block {
+  grid-column: 1 / 3;
+}
+.weight-block {
+  grid-column: 3 / 5;
 }
 
 .section-pii {
@@ -147,4 +157,19 @@ a img {
   position: absolute;
   right: 25px;
   height: 16px;
+}
+
+@media (max-width: 1000px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3, h4 {
+    font-size: xx-large
+  }
+  p {
+    font-size: x-large
+  }
 }

@@ -269,3 +269,11 @@
         margin-bottom: 10px;
     }
 }
+
+.plans-button path {
+  fill: white;
+}
+
+#sidebar .plans-button {
+  background-color: #67997D;
+}

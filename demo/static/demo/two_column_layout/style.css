@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr;
 
   height: calc(100vh - 40px); /* 20px for each padding */
+  /* TODO: Fix visual bug with zooming in */
 }
 
 .section {
@@ -33,6 +34,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: px;
+  width: 40px;
   height: 40px;
 
   position: absolute;
