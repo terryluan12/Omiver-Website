@@ -1,0 +1,117 @@
+{% load static %}
+{% load component_tags %}
+
+<div id="info-block">
+  <span class="sub-info-blocks">
+  <div class="description-info-block">
+    <h4>Settings</h4>
+    <p>Here you can update your personal info, change your password, and manage account preferences.</p>
+  </div>
+  <img class="cartoon" src="{% static 'dashboard/support/cartoon.svg' %}" />
+  </span>
+  <span class="sub-info-blocks">
+    <div class="ticket-info-block">
+      <img src="{% static 'dashboard/support/last_ticket.svg' %}" />
+      <span>
+        <h4>Creation Date</h4>
+        <p>20 Apr, 2023</p>
+      </span>
+    </div>
+    <div class="ticket-info-block">
+      <img src="{% static 'dashboard/support/current_ticket.svg' %}" />
+      <span>
+        <h4>Last Login</h4>
+        <p>Sep 05, 2025</p>
+      </span>
+    </div>
+  </span>
+</div>
+
+<div id="setting-block-list">
+  <div class="setting-block">
+    <h1>Account</h1>
+
+    <div class="setting-item">
+      <span class="setting-info">
+        <img class="setting-profile" src="{% static '/dashboard/settings/profile.png' %}" />
+        <span class="setting-text">
+          <h4 class="setting-title">Photo</h4>
+          <h5 class="setting-value">Picture</h5>
+        </span>
+      </span>
+      <img class="DEMO-ACTION proceed-icon" src="{% static '/dashboard/settings/edit_icon.svg' %}" />
+    </div>
+    
+  {% component "setting_item"
+  img_src="{% static '/dashboard/settings/name_icon.svg' %}" 
+  title="Name"
+  value="James William"
+  proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+  / %}
+
+  
+  {% component "setting_item"
+  img_src="{% static '/dashboard/settings/language_icon.svg' %}" 
+  title="Language"
+  value="English"
+  proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+  / %}
+
+  {% component "setting_item"
+  img_src="{% static '/dashboard/settings/password_icon.svg' %}" 
+  title="Password"
+  value="********"
+  proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+  / %}
+  </div>
+
+  <div class="setting-block">
+    <h1>Billing</h1>
+    
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/payment_icon.svg' %}" 
+    title="Payment"
+    value="**** **** 1234"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/next_payment_icon.svg' %}" 
+    title="Next Payment"
+    value="Sep 05, 2025"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/email_icon.svg' %}" 
+    title="Email"
+    value="mia@email.com"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+    
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/phone_icon.svg' %}" 
+    title="Phone"
+    value="+11 2345 789"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+  </div>
+
+  <div class="management-block setting-block">
+    <h1>Management</h1>
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/account_icon.svg' %}" 
+    title="Account"
+    value="Logout"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+    {% component "setting_item"
+    img_src="{% static '/dashboard/settings/manage_icon.svg' %}" 
+    title="Manage"
+    value="Delete Account"
+    proceed_icon="{% static '/dashboard/settings/edit_icon.svg' %}"
+    / %}
+  </div>
+</div>
+
+{% component "demo_modal" / %}

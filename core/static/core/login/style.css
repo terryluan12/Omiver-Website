@@ -1,51 +1,15 @@
-body {
-  background-color: E0E0E0;
-
-  display: flex;
-  flex-direction: row;
-
-  font-family: "Open Sans";
-}
-
 .athlete-pic {
-  height: 1000px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
   filter: brightness(50%);
-}
-
-#welcome-left-half {
   border-radius: 80px;
-  overflow: hidden;
-}
-#welcome-right-half {
-  display: flex;
-  flex-direction: column;
-}
-
-#welcome-left-half,
-#welcome-right-half {
-  flex: 1;
-  height: 100vh;
-
-  border: 2px solid green;
-  margin-left: 20px;
-  margin-right: 20px;
-  box-sizing: border-box;
-}
-
-#welcome-right-half {
-  position: relative;
-
-  padding-top: 20px;
-
-  background-color: white;
-  border-radius: 80px;
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
 }
 
 
-.submit-button {
+.action-button {
   width: 400px;
   height: 50px;
 
@@ -57,33 +21,16 @@ body {
 
   padding: 0px 25px;
   
-}
-
-.submit-button {
   position: relative;
   display: flex;
-  justify-content: center; /* Centers the text */
+  justify-content: center;
   align-items: center;
 }
 
-.submit-button img {
+.action-button img {
   position: absolute;
-  right: 25px; /* 25px from the right */
-  height: 16px; /* adjust size if needed */
-}
-
-#back-button {
-  margin-top: px;
-  width: 40px;
-  height: 40px;
-
-  position: absolute;
-  top: 60px;
-  left: 60px;
-
-  background-color: #ffffff;
-  border: 2px #000000 solid;
-  border-radius: 40px;
+  right: 25px;
+  height: 16px;
 }
 
 .inputs {
@@ -95,11 +42,11 @@ body {
 }
 
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 125px;
 }
 
 .logo {
-  margin-bottom: 50px;
+  margin: 25px 0px;
 }
 
 form {
@@ -118,4 +65,15 @@ form input {
   color: black;
 
   padding-left: 20px; 
+}
+
+
+#or-text {
+  margin: 50px 0px;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+button {
+  cursor: pointer;
 }

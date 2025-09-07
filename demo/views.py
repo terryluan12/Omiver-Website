@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.conf import settings
+from django.http import HttpResponse
+
+from django.contrib.auth.decorators import login_required
 import os, json
 
+def index_page(request):
+    return render(request, "demo/index.html")
 
-def welcome_page(request):
+def welcome_page(request, index=0):
     pages = [
         {
             "heading": "Omiver is a Wellness Technology Company",
@@ -41,10 +46,21 @@ def welcome_page(request):
             "photo_alt": "An athlete stretching, with his arms above his head"
         }
     ]
+    index = int(index)
+    if index > len(pages) - 1:
+        response = HttpResponse()
+        response['HX-Redirect'] = '/login'
+        return response
     
-    return render(request, "demo/welcome.html", {"pages": pages})
+    if index < 0:
+        response = HttpResponse()
+        response['HX-Redirect'] = '/'
+        return response
+    
+    return render(request, "demo/welcome.html", {"page": pages[index], "next_index": index+1, "prev_index": index - 1})
 
 
+@login_required
 def select_page(request):
     DATA_FILE = os.path.join(settings.BASE_DIR, "demo", "data", "profiles.json")
     with open(DATA_FILE) as f:
@@ -62,5 +78,7 @@ def profile_detail(request, id):
 def process(request):
     return render(request, "demo/process.html")
 
+def layout(request):
+    return render(request, "demo/two_column_layout.html")
 def dashboard(request):
     return render(request, "demo/dashboard.html")

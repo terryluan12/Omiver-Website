@@ -1,37 +1,46 @@
+{% extends 'demo/two_column_layout.html' %}
 {% load static %}
-<html>
-  <head>
-    <link rel="stylesheet" href="{% static 'core/login/style.css' %}" />
-  </head>
-  <body>
-    <div id="welcome-left-half">
-      <img class="athlete-pic" src="{% static 'core/login/athlete.png' %}" alt="An athlete running into the sunset" />
-    </div>
-    <div id="welcome-right-half">
-      <button id="back-button" onclick="prevSlide()"><img src="{% static 'back_arrow.svg' %}" /></button>
+{% load component_tags %}
 
-      <p class="section-title">Login to Account</p>
 
-      <img class="logo" src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
+{% block inner_inner_styles %}
+  <link rel="stylesheet" href="{% static 'core/login/style.css' %}" />
+{% endblock %}
 
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+{% block left_content %}
+  <img class="athlete-pic" src="{% static 'core/login/athlete.png' %}" alt="An athlete running into the sunset" />
+{% endblock %}
 
-      <form method="POST">
-        {% csrf_token %}
-        <span class="inputs">
-          <input type="text" name="username" id="username" placeholder="Email" required />
-          <input type="password" name="password" id="password" placeholder="Password" required />
-        </span>
-        <button class="submit-button" type="submit">Login <img src="{% static 'next_arrow.svg' %}" /></button>
-        <h2>OR</h2>
-        <button class="submit-button">Create Account <img src="{% static 'next_arrow.svg' %}" /></button>
-      </form>
-    </div>
-  </body>
-</html>
+
+{% block back_button_attrs %}
+  href="{% url 'welcome_default_page' %}"
+{% endblock %}
+
+
+{% block right_content %}
+  <p class="section-title">Login to Account</p>
+  <img class="logo" src="{% static 'green_logo.svg' %}" alt="Omiver Logo" />
+
+
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    <span class="inputs">
+      <input type="text" name="username" id="username" placeholder="Email" required />
+      <input type="password" name="password" id="password" placeholder="Password" required />
+    </span>
+    <button class="action-button login-button" type="submit">Login <img src="{% static 'next_arrow.svg' %}" /></button>
+    <h3 id="or-text"><span>OR</span></h3>
+    <button class="action-button DEMO-ACTION">Create Account <img src="{% static 'next_arrow.svg' %}" /></button>
+  </form>
+
+  {% component "demo_modal" / %}
+
+{% endblock %}

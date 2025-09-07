@@ -1,13 +1,3 @@
-.welcome-block {
-  background-color: white;
-  text-align: center;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.welcome-block > * {
-  margin: 3px;
-}
 
 p {
   font-size: small;
@@ -36,8 +26,7 @@ p {
 }
 
 #content > div {
-  margin: 10px 8vw;
-  border-radius: 15px;
+  margin: 10px 7vw;
 }
 
 #disclaimer-block {
@@ -58,7 +47,6 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 60px;
 }
 
 .basic-info-block > div > * {
@@ -74,19 +62,51 @@ p {
   color: white;
 
   box-sizing: border-box;
-  display: block;
-  text-align: center;
-}
 
-.green_logo {
-  margin-bottom: 10px;
-}
+  border-radius: 100px;
 
-.welcome-block hr {
-  width: 70%;
-  margin: 5px auto;
-}
-
-a {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+}
+
+.fitness-info-block, .nutrition-info-block {
+  min-height: 100px;
+}
+
+#disclaimer-block {
+  padding: 15px;
+  border-radius: 100px;
+}
+
+
+@media (max-width: 1000px) {
+
+  .selection-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
+  }
+
+  .welcome-block h4, h4 {
+    font-size: xx-large;
+  }
+  .welcome-block p, p {
+    font-size: x-large;
+  }
+
+  .select-profile-button {
+    height: 80px;
+    width: calc(100% - 30vw);
+    font-size: xx-large;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
 }

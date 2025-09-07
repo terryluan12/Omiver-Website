@@ -10,6 +10,7 @@ body {
   left: 100px;
   right: 0;
   height: 100px;
+  width: calc(100% - 100px);
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -24,6 +25,7 @@ body {
 
 .header-section > * {
   margin: 5px;
+  cursor: pointer;
 }
 
 #sidebar {
@@ -81,6 +83,14 @@ body {
 
 #ticket-status-box > .ibutton {
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#header h1 {
+  font-weight: 100;
+}
+
+h4 {
+  font-size: larger;
 }
 
 /* Plans Section Styles */

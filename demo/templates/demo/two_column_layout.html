@@ -1,0 +1,28 @@
+{% extends 'demo/base.html' %}
+
+{% load static %}
+
+{% block inner_styles %}
+  <link rel="stylesheet" href="{% static 'demo/two_column_layout/style.css' %}" />
+
+  {% block inner_inner_styles %}
+
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div id="welcome-left-half" class="section">
+      {% block left_content %}
+
+      {% endblock %}
+    </div>
+    <div id="welcome-right-half" class="section">
+      <a id="back-button" {% block back_button_attrs %}{% endblock %}><img src="{% static 'back_arrow.svg' %}" /></a>
+
+      {% block right_content %}
+
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

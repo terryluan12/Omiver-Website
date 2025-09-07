@@ -1,0 +1,31 @@
+{% extends 'demo/base.html' %}
+{% load static %}
+
+{% block inner_styles %}
+  <link rel="stylesheet" href="{% static 'demo/welcome_title_block_layout/style.css' %}" />
+  {% block inner_inner_styles %}
+
+  {% endblock %}
+{% endblock %}
+
+{% block content %}
+  <div class="welcome-block">
+    <p>Welcome to</p>
+    <img class="green_logo" src="{% static 'green_logo.svg' %}" />
+    <hr />
+    <h4>
+      {% block title %}
+
+      {% endblock %}
+    </h4>
+    <p>
+      {% block subtitle %}
+
+      {% endblock %}
+    </p>
+  </div>
+
+  {% block inner_content %}
+
+  {% endblock %}
+{% endblock %}

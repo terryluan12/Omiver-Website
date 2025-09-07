@@ -1,36 +1,5 @@
-.carousel-item {
-  display: none;
-}
-
-.carousel-item.active {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  height: 100vh;
-}
-
-.section {
-  margin: 20px ;
-  border-radius: 80px;
-}
-
-#welcome-left-half {
-  overflow: hidden;
-}
-
 #welcome-right-half {
-  display: flex;
-  flex-direction: column;
-
   justify-content: space-between;
-
-  position: relative;
-
-  padding: 50px 0px;
-
-  background-color: white;
-  align-items: center;
-  text-align: center;
 }
 
 #welcome-right-half span {
@@ -55,22 +24,6 @@
   cursor: pointer;
 }
 
-#back-button {
-  margin-top: px;
-  width: 40px;
-  height: 40px;
-
-  position: absolute;
-  top: 60px;
-  left: 60px;
-
-  background-color: #ffffff;
-  border: 2px #000000 solid;
-  border-radius: 40px;
-
-  cursor: pointer;
-}
-
 .athlete-pic {
   height: 100%;
   width: 100%;
@@ -87,10 +40,6 @@
   margin-top: 40px;
 }
 
-@media (max-width: 1000px) { /* adjust breakpoint as needed */
-  .carousel-item.active {
-    grid-template-columns: 1fr; /* single column */
-    grid-template-rows: 1fr 1fr; /* two rows */
-  }
-
+.title {
+  margin-bottom: 10px;
 }
