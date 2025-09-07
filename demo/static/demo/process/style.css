@@ -74,8 +74,8 @@ p {
   left: 50%;
   width: 250px;
   height: 200px;
-  border-left: 2px dotted green;
-  border-top: 2px dotted green;
+  border-left: 2px dotted black;
+  border-top: 2px dotted black;
   z-index: 1;
 }
 
@@ -86,7 +86,7 @@ p {
   left: 50%;
   width: 0px;
   height: 200px;
-  border-left: 2px dotted green;
+  border-left: 2px dotted black;
   z-index: 1;
 }
 
@@ -108,8 +108,8 @@ p {
     left: 50px;
     width: 250px;
     height: 200px;
-    border-left: 2px dotted blue;
-    border-top: 2px dotted blue;
+    border-left: 2px dotted black;
+    border-top: 2px dotted black;
     z-index: 1;
   }
 
@@ -118,9 +118,10 @@ p {
     position: absolute;
     top: 50%;
     left: 50px;
-    width: 0px;
+    width: 250px;
     height: 200px;
-    border-top: 2px dotted red;
+    border-left: none;
+    border-top: 2px dotted black;
     z-index: 1;
   }
 }
