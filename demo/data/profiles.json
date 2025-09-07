@@ -23,12 +23,13 @@
       "Sunday": "Rest and mobility work"
     },
     "food_log": {
-      "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack 1": "Banana with protein shake (whey isolate)",
-      "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack 2": "Rice cakes with sunflower seed butter",
-      "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
-      "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
+      "Dietary Preferences": "Omnivorous with allergies; avoids all nut-based and soy-based products, relies on other protein sources like poultry, eggs, and lentils.",
+      "Breakfast": "Avocado toast with scrambled eggs and whole grain bread",
+      "Snack 1": "Banana with peanut-free butter",
+      "Lunch": "Grilled chicken breast, and mixed greens salad with vinaigrette dressing",
+      "Snack 2": "Rice cakes with sunflower seed butter and banana slices",
+      "Dinner": "Baked chicken breast, roasted broccoli, brown rice",
+      "Hydration": "1 gallon (3.8L) of water per day"
     },
     "colour": "#D27644",
     "slug": "marcus"
@@ -57,12 +58,13 @@
       "Sunday": "Rest"
     },
     "food_log": {
-      "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack 1": "Banana with protein shake (whey isolate)",
-      "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack 2": "Rice cakes with sunflower seed butter",
-      "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
-      "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
+      "Dietary Preferences": "Vegetarian — avoids all meat and fish, consumes dairy and eggs in moderation, prefers whole, minimally processed plant-based foods.",
+      "Breakfast": "Smoothie bowl with banana, spinach, almond milk, and chia seeds topped with granola and berries",
+      "Snack 1": "Apple slices with peanut butter",
+      "Lunch": "Lentil soup Whole-grain bread Side salad with light vegetable dressing",
+      "Snack 2": "Energy bar (homemade with oats, nuts, and dried fruits)",
+      "Dinner": "Grilled portobello mushrooms with roasted sweet potatoes and steamed broccoli",
+      "Hydration": "2-3 liters of water per day, with an additional 1-2 liters on long-run days."
     },
     "colour": "#88A9C3"
   },
@@ -90,12 +92,13 @@
       "Sunday": "Rest or massage therapy"
     },
     "food_log": {
-      "Breakfast": "Omelet with kimchi and steamed rice",
-      "Snack 1": "Trail mix (without peanuts), apple",
+      "Dietary Preferences": "Omnivorous — enjoys a wide variety of foods including traditional Korean dishes, prioritizes whole foods with a focus on omega-3s and antioxidants.",
+      "Breakfast": "Kimchi omelet with whole-grain toast and a glass of green tea",
+      "Snack 1": "Apple slices with almond butter",
       "Lunch": "Bulgogi beef with brown rice and mixed vegetables",
       "Snack 2": "Cottage cheese with pineapple",
-      "Dinner": "Grilled mackerel, sweet potato, spinach and garlic stir-fry",
-      "Hydration": "3 liters of water daily, green tea included"
+      "Dinner": "Grilled mackerel with sweet potato and steamed broccoli",
+      "Hydration": "4-5 liters of water per day, considering Jackson’s high energy expenditure"
     },
     "colour": "#DC6874"
   }
