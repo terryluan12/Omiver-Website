@@ -7,8 +7,6 @@ body {
 #header {
   position: relative;
   top: 0;
-  left: 100px;
-  right: 0;
   height: 100px;
   width: calc(100% - 100px);
   padding: 0 20px;
@@ -23,14 +21,14 @@ body {
   flex-direction: row;
 }
 
-.header-section > * {
+.header-section>* {
   margin: 5px;
   cursor: pointer;
 }
 
 #sidebar {
   position: fixed;
-  top: 0;
+  top: 100px;
   left: 0;
   height: 100%;
   padding: 20px;
@@ -45,7 +43,12 @@ body {
 .profile-pic {
   width: 50px;
   height: 50px;
-  margin-left: 40px;
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  margin: 0 10px;
 }
 
 .inner_content {
@@ -60,7 +63,7 @@ body {
   flex-direction: column;
 }
 
-.main-icons > .ibutton {
+.main-icons>.ibutton {
   margin: 20px;
 }
 
@@ -81,7 +84,7 @@ body {
   padding: 7px;
 }
 
-#ticket-status-box > .ibutton {
+#ticket-status-box>.ibutton {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -231,11 +234,13 @@ h4 {
   flex-shrink: 0;
 }
 
-.focus-section, .training-plan-section {
+.focus-section,
+.training-plan-section {
   margin-bottom: 30px;
 }
 
-.focus-section h4, .training-plan-section h4 {
+.focus-section h4,
+.training-plan-section h4 {
   background: #8D6E63;
   color: white;
   padding: 15px;
@@ -264,8 +269,15 @@ h4 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .training-type {
@@ -348,22 +360,99 @@ h4 {
     text-align: center;
     gap: 20px;
   }
-  
+
   .training-plan-content {
     flex-direction: column;
   }
-  
+
   .training-plan-sidebar {
     width: 100%;
   }
-  
+
   .week-days {
     flex-wrap: wrap;
     gap: 5px;
   }
-  
+
   .day-tab {
     padding: 8px 12px;
     font-size: 0.9rem;
   }
+}
+
+#header h1 {
+  font-weight: 100;
+}
+
+h4 {
+  font-size: larger;
+}
+
+.pill-generator-button {
+  background: #A8879D;
+  border-radius: 32.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pill-generator-button:hover {
+  background: #9b7a91;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168, 135, 157, 0.3);
+}
+
+.pill-generator-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(168, 135, 157, 0.2);
+}
+
+.pill-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0 12px;
+}
+
+.medical-cross {
+  width: 32px;
+  height: 32px;
+  border: 2px solid white;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cross-horizontal,
+.cross-vertical {
+  background: white;
+  position: absolute;
+}
+
+.cross-horizontal {
+  width: 14px;
+  height: 2.6px;
+}
+
+.cross-vertical {
+  width: 2.6px;
+  height: 14px;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: relative;
+  padding: 8px 12px;
 }

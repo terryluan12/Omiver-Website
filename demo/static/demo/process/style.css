@@ -23,6 +23,7 @@
     max-width: 300px;
 
     border: 1px solid var(--border-color, black);
+
 }
 
 a {
@@ -50,9 +51,6 @@ a img {
 p {
   font-size: 15px;
 }
-
-
-
 .process-step .process-info {
   position: relative;
   z-index: 2;
@@ -63,6 +61,7 @@ p {
   position: relative;
   z-index: 1;
   background-color: #e0e0e0;
+
   width: 100px;
   height: 100px;
 }

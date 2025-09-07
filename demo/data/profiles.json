@@ -23,15 +23,36 @@
       "Sunday": "Rest and mobility work"
     },
     "food_log": {
-      "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack 1": "Banana with protein shake (whey isolate)",
-      "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack 2": "Rice cakes with sunflower seed butter",
-      "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
-      "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
+      "Dietary Preferences": "Omnivorous with allergies; avoids all nut-based and soy-based products, relies on other protein sources like poultry, eggs, and lentils.",
+      "Breakfast": "Avocado toast with scrambled eggs and whole grain bread",
+      "Snack 1": "Banana with peanut-free butter",
+      "Lunch": "Grilled chicken breast, and mixed greens salad with vinaigrette dressing",
+      "Snack 2": "Rice cakes with sunflower seed butter and banana slices",
+      "Dinner": "Baked chicken breast, roasted broccoli, brown rice",
+      "Hydration": "1 gallon (3.8L) of water per day"
+    },
+    "biomarkers": {
+      "Hippuric Acid": 10,
+      "Histidine": 10,
+      "Carnitine": 10,
+      "Glutamine": 10,
+      "Leucine": 10,
+      "Magnesium": 10,
+      "Lycopene": 10,
+      "Lactic Acid": 10,
+      "Vitamin C": 10,
+      "Vitamin D": 10,
+      "Tmao": 10,
+      "Glucose": 10
     },
     "colour": "#D27644",
-    "slug": "marcus"
+    "slug": "marcus",
+    "registration_date": "06/06/2025",
+    "email": "marcus@email.com",
+    "last_activity": "06/06/2025",
+    "status": "active",
+    "status_text": "User is Active",
+    "plan": "PRO"
   },
   {
     "id": 1,
@@ -57,14 +78,35 @@
       "Sunday": "Rest"
     },
     "food_log": {
-      "Breakfast": "Scrambled eggs with spinach, avocado, whole grain toast",
-      "Snack 1": "Banana with protein shake (whey isolate)",
-      "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
-      "Snack 2": "Rice cakes with sunflower seed butter",
-      "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
-      "Hydration": "~1 gallon of water per day with electrolytes added post-workout"
+      "Dietary Preferences": "Vegetarian — avoids all meat and fish, consumes dairy and eggs in moderation, prefers whole, minimally processed plant-based foods.",
+      "Breakfast": "Smoothie bowl with banana, spinach, almond milk, and chia seeds topped with granola and berries",
+      "Snack 1": "Apple slices with peanut butter",
+      "Lunch": "Lentil soup Whole-grain bread Side salad with light vegetable dressing",
+      "Snack 2": "Energy bar (homemade with oats, nuts, and dried fruits)",
+      "Dinner": "Grilled portobello mushrooms with roasted sweet potatoes and steamed broccoli",
+      "Hydration": "2-3 liters of water per day, with an additional 1-2 liters on long-run days."
     },
-    "colour": "#88A9C3"
+    "biomarkers": {
+      "Hippuric Acid": 20,
+      "Histidine": 40,
+      "Carnitine": 60,
+      "Glutamine": 10,
+      "Leucine": 90,
+      "Magnesium": 80,
+      "Lycopene": 40,
+      "Lactic Acid": 70,
+      "Vitamin C": 20,
+      "Vitamin D": 50,
+      "Tmao": 40,
+      "Glucose": 90
+    },
+    "colour": "#88A9C3",
+    "registration_date": "06/06/2025",
+    "email": "sofia@email.com",
+    "last_activity": "06/06/2025",
+    "status": "pending",
+    "status_text": "User is Pending",
+    "plan": "BASIC"
   },
   {
     "id": 2,
@@ -90,13 +132,34 @@
       "Sunday": "Rest or massage therapy"
     },
     "food_log": {
-      "Breakfast": "Omelet with kimchi and steamed rice",
-      "Snack 1": "Trail mix (without peanuts), apple",
+      "Dietary Preferences": "Omnivorous — enjoys a wide variety of foods including traditional Korean dishes, prioritizes whole foods with a focus on omega-3s and antioxidants.",
+      "Breakfast": "Kimchi omelet with whole-grain toast and a glass of green tea",
+      "Snack 1": "Apple slices with almond butter",
       "Lunch": "Bulgogi beef with brown rice and mixed vegetables",
       "Snack 2": "Cottage cheese with pineapple",
-      "Dinner": "Grilled mackerel, sweet potato, spinach and garlic stir-fry",
-      "Hydration": "3 liters of water daily, green tea included"
+      "Dinner": "Grilled mackerel with sweet potato and steamed broccoli",
+      "Hydration": "4-5 liters of water per day, considering Jackson’s high energy expenditure"
     },
-    "colour": "#DC6874"
+    "biomarkers": {
+      "Hippuric Acid": 10,
+      "Histidine": 10,
+      "Carnitine": 10,
+      "Glutamine": 10,
+      "Leucine": 10,
+      "Magnesium": 10,
+      "Lycopene": 10,
+      "Lactic Acid": 10,
+      "Vitamin C": 10,
+      "Vitamin D": 10,
+      "Tmao": 10,
+      "Glucose": 10
+    },
+    "colour": "#DC6874",
+    "registration_date": "06/06/2025",
+    "email": "jackson@email.com",
+    "last_activity": "06/06/2025",
+    "status": "active",
+    "status_text": "User is Active",
+    "plan": "ADVANCED"
   }
 ]

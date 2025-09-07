@@ -58,19 +58,6 @@
     margin: 10px;
 }
 
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f8fafc;
-    color: #334155;
-    line-height: 1.6;
-}
 
 /* Container */
 .container {
@@ -197,19 +184,21 @@ body {
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
+    text-align: center;
     color: white;
     display: inline-block;
+    min-width: 100px;
 }
 
-.plan-badge.plan1 {
+.plan-badge.pro {
     background-color: #ea580c;
 }
 
-.plan-badge.plan2 {
+.plan-badge.basic {
     background-color: #0891b2;
 }
 
-.plan-badge.plan3 {
+.plan-badge.advanced {
     background-color: #dc2626;
 }
 

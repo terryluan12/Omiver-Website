@@ -1,0 +1,22 @@
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #608479;
+  /* Desaturated green from image */
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: -12px;
+  /* Vertically center thumb on the 1.5 height track */
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background-color: #608479;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
