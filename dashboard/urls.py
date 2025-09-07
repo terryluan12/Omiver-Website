@@ -9,5 +9,6 @@ urlpatterns = [
     path("settings", views.settings, name="settings_page"),
     path("plans/<int:uid>", views.plans, name="plans_page"),
     path("profile/<int:uid>", views.profile, name="profile_page"),
-    path("clients", views.clients, name="clients_page")
+    path("clients", views.clients, name="clients_page"),
+    path("chatbot", views.chatbot, name="chatbot_page"),
 ]
