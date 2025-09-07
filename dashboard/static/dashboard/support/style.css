@@ -132,6 +132,13 @@
   flex-grow: 0;
 }
 
+.sub-info-blocks {
+  display: flex;
+  flex-direction: row;
+
+  margin: 5px 0px;
+}
+
 #input-wrapper {
   position: relative;
   display: flex;
