@@ -28,12 +28,12 @@ def meal_plan(request):
     # Optionally parse start_date and end_date if provided
     start_dt = parse_datetime(start_date) if start_date else None
     end_dt = parse_datetime(end_date) if end_date else None
-    meal_plans = MealPlan.get_meal_plans_by_user_and_date(client_id, start_dt, end_dt)
+    meal_plans = MealPlan.get_meal_plans_by_client_and_date(client_id, start_dt, end_dt)
     # Serialize meal plans
     meal_plan_list = [
         {
             'id': mp.id,
-            'user_id': mp.user_id,
+            'client_id': mp.client_id,
             'timestamp': mp.timestamp,
             'meals': mp.meals,
             'created_at': mp.created_at,

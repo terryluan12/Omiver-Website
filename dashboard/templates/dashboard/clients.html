@@ -1,0 +1,233 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load component_tags %}
+
+{% block header_title %}Client{% endblock %}
+
+{% block inner_styles %}
+<link rel="stylesheet" href="{% static 'dashboard/clients/style.css' %}" />
+{% endblock %}
+
+{% block dashboard_content %}
+<div id="info-block">
+    <div class="description-info-block">
+        <h4>Plans</h4>
+        <p>Here you can manage your tasks, set preferences, and updates.</p>
+    </div>
+    <img class="cartoon" src="{% static 'dashboard/clients/banner.svg' %}" />
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/clients/update.svg' %}" />
+        <span>
+            <h4>Last Update</h4>
+            <p>20 Apr, 2025 - 12:00 pm</p>
+        </span>
+    </div>
+    <div class="ticket-info-block">
+        <img src="{% static 'dashboard/clients/client.svg' %}" />
+        <span>
+            <h4>Total Clients</h4>
+            <p>3</p>
+        </span>
+    </div>
+</div>
+
+<div class="table-container">
+    <table class="clients-table" id="clients-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Plan</th>
+                <th>Date Registration</th>
+                <th>Email</th>
+                <th>Last Activity</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody hx-get="/api/clients" hx-trigger="load" hx-target="this" hx-swap="innerHTML">
+            <tr>
+                <td>Client Person Name</td>        
+                <td><span class="plan-badge plan1">Marcus Thompson</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge active">User is Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/1/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/1" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan2">Sofia Riviera</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge pending">Verification Pending</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/2/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/2" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan3">Jackson Lee</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge active">User is Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/3/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/3" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan1">Marcus Thompson</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge pending">Verification Pending</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/4/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/4" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan2">Sofia Riviera</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge active">User is Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/5/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/5" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan3">Jackson Lee</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge pending">Verification Pending</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/6/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/6" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Client Person Name</td>
+                <td><span class="plan-badge plan3">Jackson Lee</span></td>
+                <td>06/06/2025</td>
+                <td>clientename@email.com</td>
+                <td>06/06/2025</td>
+                <td><span class="status-badge active">User is Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-sm btn-secondary" 
+                                hx-get="/api/clients/7/edit" 
+                                hx-target="#modal" 
+                                hx-trigger="click">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-danger" 
+                                hx-delete="/api/clients/7" 
+                                hx-target="closest tr" 
+                                hx-swap="outerHTML" 
+                                hx-confirm="Are you sure you want to delete this client?">
+                            Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Loading indicator -->
+<div class="loading-indicator" id="loading" style="display: none;">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+</div>
+{% component "demo_modal" / %}
+{% endblock %}

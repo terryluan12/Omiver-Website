@@ -9,7 +9,7 @@
 {% block dashboard_content %}
 <div id="info-block">
     <div class="description-info-block">
-        <h4>Hello {{ user.first_name }}!</h4>
+        <h4>Hello {{ name }}!</h4>
         <p>Here you can manage your task, set preferences and updates.</p>
     </div>
     <img class="cartoon" src="{% static 'dashboard/profile/banner.svg' %}" />
@@ -30,264 +30,246 @@
 </div>
 
 <div class="dashboard-container">
-<!-- Quick Actions -->
-<div class="quick-actions">
-    <button class="action-btn" hx-get="/profiles" hx-target="#main-content">
-        <span class="btn-icon"><img src="{% static 'dashboard/profile/change_profile.svg' %}" alt="Change Profile" /></span>
-        <span class="btn-text">Change Profile</span>
-        <span class="btn-text">Try other Profiles</span>
-    </button>
-    
-    <button class="action-btn" hx-get="/chatbot" hx-target="#main-content">
-        <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
-        <span class="btn-text">Interact with Chatbot</span>
-    </button>
-    
-    <button class="action-btn" hx-get="/improve" hx-target="#main-content">
-        <span class="btn-icon"><img src="{% static 'dashboard/profile/improve.svg' %}" alt="Improve" /></span>
-        <span class="btn-text">How we can improve?</span>
-    </button>
-    
-    <button class="action-btn" hx-get="/support" hx-target="#main-content">
-        <span class="btn-icon"><img src="{% static 'dashboard/profile/support.svg' %}" alt="Support" /></span>
-        <span class="btn-text">Contact & Support</span>
-    </button>
-</div>
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <button class="action-btn" hx-get="/profiles" hx-target="#main-content">
+            <span class="btn-icon"><img src="{% static 'dashboard/profile/change_profile.svg' %}" alt="Change Profile" /></span>
+            <span class="btn-text">Change Profile</span>
+            <span class="btn-text">Try other Profiles</span>
+        </button>
+        
+        <button class="action-btn" hx-get="/chatbot" hx-target="#main-content">
+            <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
+            <span class="btn-text">Interact with Chatbot</span>
+        </button>
+        
+        <button class="action-btn" hx-get="/improve" hx-target="#main-content">
+            <span class="btn-icon"><img src="{% static 'dashboard/profile/improve.svg' %}" alt="Improve" /></span>
+            <span class="btn-text">How we can improve?</span>
+        </button>
+        
+        <button class="action-btn" hx-get="/support" hx-target="#main-content">
+            <span class="btn-icon"><img src="{% static 'dashboard/profile/support.svg' %}" alt="Support" /></span>
+            <span class="btn-text">Contact & Support</span>
+        </button>
+    </div>
 
-<!-- Main Content -->
-<div id="main-content" class="main-content">
-    <div class="content-grid">
-        <!-- Profile Section -->
-        <div class="profile-section">
-            <div class="profile-header">
-                <h2>Profile</h2>
-            </div>
-            <div class="profile-card">
-                <div class="profile-info">
-                    <div class="profile-avatar">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b9e6e7bb?w=80&h=80&fit=crop&crop=face" alt="Sofia Rivera">
-                    </div>
-                    <div class="profile-details">
-                        <h3>Sofia Rivera</h3>
-                        <p>24 Years Old</p>
-                        <div class="profile-stats">
-                            <div class="stat">
-                                <span class="stat-label">Ethnicity</span>
-                                <span class="stat-value">Latino</span>
+    <!-- Main Content -->
+    <div id="main-content" class="main-content">
+        <div class="content-grid">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="profile-header">
+                    <h2>Profile</h2>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="profile-avatar">
+                            <img src="{% static 'dashboard/profile/avatar.png' %}" alt="{{name}}">
+                        </div>
+                        <div class="profile-details">
+                            <h3>{{name}}</h3>
+                            <p>{{age}} Years Old</p>
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Ethnicity</span>
+                                    <span class="stat-value">{{ethnicity}}</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Allergies</span>
+                                    <span class="stat-value">{{allergies}}</span>
+                                </div>
                             </div>
-                            <div class="stat">
-                                <span class="stat-label">Allergies</span>
-                                <span class="stat-value">None</span>
-                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=200&h=150&fit=crop" alt="Workout">
-                </div>
-            </div>
-        </div>
-
-        <!-- Highlights Chart -->
-        <div class="highlights-section">
-            <div class="section-header">
-                <h2>Highlights</h2>
-                <select class="time-filter" hx-get="/highlights" hx-trigger="change" hx-target="#highlights-chart">
-                    <option value="7">Last 30 Days</option>
-                    <option value="30">Last 60 Days</option>
-                    <option value="90">Last 90 Days</option>
-                </select>
-            </div>
-            <div id="highlights-chart" class="chart-container">
-                <canvas id="progressChart" width="400" height="200"></canvas>
-            </div>
-        </div>
-
-        <!-- Goals Section -->
-        <div class="goals-section">
-            <div class="goal-card fitness-goal">
-                <div class="goal-icon">🎯</div>
-                <div class="goal-content">
-                    <h3>Fitness Goal</h3>
-                    <p>Improve your cardio speed and agility, muscle mass, fit in the day. Feel more confident and energetic.</p>
-                </div>
-            </div>
-            
-            <div class="goal-card nutrition-goal">
-                <div class="goal-icon">🥗</div>
-                <div class="goal-content">
-                    <h3>Nutrition Goal</h3>
-                    <p>Focus on lean protein based to improve muscle recovery and increased strength while hitting protein and veg requirements for the body.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Biomarker Overview -->
-        <div class="biomarker-section">
-            <h2>Biomarker Overview</h2>
-            <div class="biomarker-grid">
-                <div class="biomarker-category">
-                    <div class="category-header">
-                        <div class="category-indicator orange"></div>
-                        <span class="category-percentage">23%</span>
-                        <span class="category-label">in range</span>
+                    <div class="profile-image">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=200&h=150&fit=crop" alt="Workout">
                     </div>
-                    <div class="biomarker-list">
-                        <div class="biomarker-item">
-                            <span class="marker-name">Hexanoic Acid</span>
-                            <span class="marker-value">0</span>
-                        </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Glutamine</span>
-                            <span class="marker-value">0</span>
-                        </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Lycopene</span>
-                            <span class="marker-value">0</span>
-                        </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Timsol</span>
-                            <span class="marker-value">0</span>
-                        </div>
+                </div>
+            </div>
+
+            <!-- Highlights Chart -->
+            <div class="highlights-section">
+                <div class="section-header">
+                    <h2>Highlights</h2>
+                    <select class="time-filter" hx-get="/highlights" hx-trigger="change" hx-target="#highlights-chart">
+                        <option value="7">Last 30 Days</option>
+                        <option value="30">Last 60 Days</option>
+                        <option value="90">Last 90 Days</option>
+                    </select>
+                </div>
+                <div id="highlights-chart" class="chart-container">
+                    <canvas id="progressChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- Goals Section -->
+            <div class="goals-section">
+                <div class="goal-card fitness-goal">
+                    <div class="goal-icon"><img src="{% static 'dashboard/profile/fitness_goal.svg' %}" alt="Fitness Goal" /></div>
+                    <div class="goal-content">
+                        <h3>Fitness Goal</h3>
+                        <p>{{ goal.fitness }}</p>
                     </div>
                 </div>
                 
-                <div class="biomarker-category">
-                    <div class="biomarker-list">
-                        <div class="biomarker-item">
-                            <span class="marker-name">Histidine</span>
-                            <span class="marker-value">0</span>
+                <div class="goal-card nutrition-goal">
+                    <div class="goal-icon"><img src="{% static 'dashboard/profile/nutrition_goal.svg' %}" alt="Nutrition Goal" /></div>
+                    <div class="goal-content">
+                        <h3>Nutrition Goal</h3>
+                        <p>{{ goal.nutrition }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biomarker Overview -->
+            <div class="biomarker-section">
+                <h2>Biomarker Overview</h2>
+                <div class="biomarker-grid">
+                    <div class="biomarker-category">
+                        <div class="category-header">
+                            <div class="category-indicator orange"></div>
+                            <span class="category-percentage">23%</span>
+                            <span class="category-label">in range</span>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Leucine</span>
-                            <span class="marker-value">0</span>
+                        <div class="biomarker-list">
+                            <div class="biomarker-item">
+                                <span class="marker-name">Hexanoic Acid</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Glutamine</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Lycopene</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Timsol</span>
+                                <span class="marker-value">0</span>
+                            </div>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Lactic Acid</span>
-                            <span class="marker-value">0</span>
+                    </div>
+                    
+                    <div class="biomarker-category">
+                        <div class="biomarker-list">
+                            <div class="biomarker-item">
+                                <span class="marker-name">Histidine</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Leucine</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Lactic Acid</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Glucose</span>
+                                <span class="marker-value">0</span>
+                            </div>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Glucose</span>
-                            <span class="marker-value">0</span>
+                    </div>
+                    
+                    <div class="biomarker-category">
+                        <div class="biomarker-list">
+                            <div class="biomarker-item">
+                                <span class="marker-name">Carnitine</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Magnesium</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Vitamin D</span>
+                                <span class="marker-value">0</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="marker-name">Vitamin C</span>
+                                <span class="marker-value">0</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="recommendations-section">
+                <div class="recommendation-card meal-plan">
+                    <div class="rec-header">
+                        <div class="rec-icon">🍽️</div>
+                        <h3>Today Recommendation - Meal Plan</h3>
+                    </div>
+                    <div class="meal-schedule" hx-get="/meal-plan" hx-trigger="revealed" hx-target="this">
+                        {% for type, meal in food_log.items %}
+                        <div class="meal-item">
+                            <strong>{{ type|capfirst }}:</strong>
+                            <p>{{ meal }}</p>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 
-                <div class="biomarker-category">
-                    <div class="biomarker-list">
-                        <div class="biomarker-item">
-                            <span class="marker-name">Carnitine</span>
-                            <span class="marker-value">0</span>
+                <div class="recommendation-card exercise-plan">
+                    <div class="rec-header">
+                        <div class="rec-icon">💪</div>
+                        <h3>Today Recommendation - Exercise Plan</h3>
+                    </div>
+                    <div class="exercise-schedule" hx-get="/exercise-plan" hx-trigger="revealed" hx-target="this">
+                        <div class="exercise-item">
+                            <strong>Warm:</strong>
+                            <p>Full-body light circuit, hand-eye coordination training</p>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Magnesium</span>
-                            <span class="marker-value">0</span>
+                        <div class="exercise-item">
+                            <strong>Part 1:</strong>
+                            <p>HIIT circuit: 3 sets of 10-12 reps</p>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Vitamin D</span>
-                            <span class="marker-value">0</span>
+                        <div class="exercise-item">
+                            <strong>Break:</strong>
+                            <p>Take 10 minutes break and rest</p>
                         </div>
-                        <div class="biomarker-item">
-                            <span class="marker-name">Vitamin C</span>
-                            <span class="marker-value">0</span>
+                        <div class="exercise-item">
+                            <strong>Part 2:</strong>
+                            <p>Jumping jacks with alternating arms: 3 sets of 10-12 reps</p>
+                        </div>
+                        <div class="exercise-item">
+                            <strong>Break:</strong>
+                            <p>Take 10 minutes break and rest</p>
+                        </div>
+                        <div class="exercise-item">
+                            <strong>Part 3:</strong>
+                            <p>Fast jumps with alternating legs: 3 sets of 10-12 reps</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Recommendations -->
-        <div class="recommendations-section">
-            <div class="recommendation-card meal-plan">
-                <div class="rec-header">
-                    <div class="rec-icon">🍽️</div>
-                    <h3>Today Recommendation - Meal Plan</h3>
-                </div>
-                <div class="meal-schedule" hx-get="/meal-plan" hx-trigger="revealed" hx-target="this">
-                    <div class="meal-item">
-                        <strong>Breakfast:</strong>
-                        <p>Scrambled eggs with spinach, avocado, whole grain toast</p>
+            <!-- Monitoring Progress -->
+            <div class="monitoring-section">
+                <h2>Monitoring Progress</h2>
+                <p>Previous data were checked for 6 months and have seen improvement in 5 biomarker results</p>
+                <div class="progress-timeline" hx-get="/progress-data" hx-trigger="revealed" hx-target="this">
+                    <div class="timeline-months">
+                        <div class="month-indicator active" data-month="Jan">Jan</div>
+                        <div class="month-indicator active" data-month="Feb">Feb</div>
+                        <div class="month-indicator active" data-month="Mar">Mar</div>
+                        <div class="month-indicator active" data-month="Apr">Apr</div>
+                        <div class="month-indicator" data-month="May">May</div>
+                        <div class="month-indicator" data-month="Jun">Jun</div>
+                        <div class="month-indicator" data-month="Jul">Jul</div>
+                        <div class="month-indicator" data-month="Aug">Aug</div>
+                        <div class="month-indicator" data-month="Sep">Sep</div>
+                        <div class="month-indicator" data-month="Oct">Oct</div>
+                        <div class="month-indicator" data-month="Nov">Nov</div>
+                        <div class="month-indicator" data-month="Dec">Dec</div>
                     </div>
-                    <div class="meal-item">
-                        <strong>Snack:</strong>
-                        <p>Banana with protein shake (berry based)</p>
-                    </div>
-                    <div class="meal-item">
-                        <strong>Lunch:</strong>
-                        <p>Grilled chicken breast, quinoa, steamed broccoli</p>
-                    </div>
-                    <div class="meal-item">
-                        <strong>Snack:</strong>
-                        <p>Rice cakes with sunflower seed butter</p>
-                    </div>
-                    <div class="meal-item">
-                        <strong>Dinner:</strong>
-                        <p>Baked salmon, roasted sweet potatoes, sautéed kale</p>
-                    </div>
-                    <div class="meal-item">
-                        <strong>Hydration:</strong>
-                        <p>3 glasses of water per day with electrolyte added post workout</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="recommendation-card exercise-plan">
-                <div class="rec-header">
-                    <div class="rec-icon">💪</div>
-                    <h3>Today Recommendation - Exercise Plan</h3>
-                </div>
-                <div class="exercise-schedule" hx-get="/exercise-plan" hx-trigger="revealed" hx-target="this">
-                    <div class="exercise-item">
-                        <strong>Warm:</strong>
-                        <p>Full-body light circuit, hand-eye coordination training</p>
-                    </div>
-                    <div class="exercise-item">
-                        <strong>Part 1:</strong>
-                        <p>HIIT circuit: 3 sets of 10-12 reps</p>
-                    </div>
-                    <div class="exercise-item">
-                        <strong>Break:</strong>
-                        <p>Take 10 minutes break and rest</p>
-                    </div>
-                    <div class="exercise-item">
-                        <strong>Part 2:</strong>
-                        <p>Jumping jacks with alternating arms: 3 sets of 10-12 reps</p>
-                    </div>
-                    <div class="exercise-item">
-                        <strong>Break:</strong>
-                        <p>Take 10 minutes break and rest</p>
-                    </div>
-                    <div class="exercise-item">
-                        <strong>Part 3:</strong>
-                        <p>Fast jumps with alternating legs: 3 sets of 10-12 reps</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Monitoring Progress -->
-        <div class="monitoring-section">
-            <h2>Monitoring Progress</h2>
-            <p>Previous data were checked for 6 months and have seen improvement in 5 biomarker results</p>
-            <div class="progress-timeline" hx-get="/progress-data" hx-trigger="revealed" hx-target="this">
-                <div class="timeline-months">
-                    <div class="month-indicator active" data-month="Jan">Jan</div>
-                    <div class="month-indicator active" data-month="Feb">Feb</div>
-                    <div class="month-indicator active" data-month="Mar">Mar</div>
-                    <div class="month-indicator active" data-month="Apr">Apr</div>
-                    <div class="month-indicator" data-month="May">May</div>
-                    <div class="month-indicator" data-month="Jun">Jun</div>
-                    <div class="month-indicator" data-month="Jul">Jul</div>
-                    <div class="month-indicator" data-month="Aug">Aug</div>
-                    <div class="month-indicator" data-month="Sep">Sep</div>
-                    <div class="month-indicator" data-month="Oct">Oct</div>
-                    <div class="month-indicator" data-month="Nov">Nov</div>
-                    <div class="month-indicator" data-month="Dec">Dec</div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <script>

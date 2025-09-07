@@ -24,9 +24,9 @@ class Client(models.Model):
     return f'<Client {self.first_name} {self.last_name} ({self.email})>'
 
 class MealPlan(models.Model):
-  """Represents a meal plan associated with a user and a list of meals.
+  """Represents a meal plan associated with a client and a list of meals.
 
-  This model stores meal plan details, including the user, description, and meals for a specific timestamp.
+  This model stores meal plan details, including the client, description, and meals for a specific timestamp.
   """
   client = models.ForeignKey(Client, on_delete=models.CASCADE)
   id = models.AutoField(primary_key=True)
@@ -36,12 +36,12 @@ class MealPlan(models.Model):
   updated_at = models.DateTimeField(auto_now=True)
   
   def __str__(self):
-    return f'<MealPlan for user {self.user_id} for time {self.timestamp}: {self.meals}>'
+    return f'<MealPlan for client {self.client} for time {self.timestamp}: {self.meals}>'
 
   @staticmethod
-  def get_meal_plans_by_user_and_date(user_id, start_date=None, end_date=None) -> 'models.QuerySet':
+  def get_meal_plans_by_client_and_date(client_id, start_date=None, end_date=None) -> 'models.QuerySet':
     """
-    Retrieve MealPlan objects for a user within a date range.
+    Retrieve MealPlan objects for a client within a date range.
     If no date range is provided, defaults to current week.
     Returns a QuerySet of MealPlan instances.
     """
@@ -52,7 +52,7 @@ class MealPlan(models.Model):
       end_of_week = start_of_week + timedelta(days=6, hours=23, minutes=59, seconds=59)
       start_date = start_of_week
       end_date = end_of_week
-    return MealPlan.objects.filter(client_id=user_id, timestamp__range=(start_date, end_date))
+    return MealPlan.objects.filter(client_id=client_id, timestamp__range=(start_date, end_date))
   @staticmethod
   def add_meal_plan(client,meals):
     pass    
