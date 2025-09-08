@@ -17,6 +17,11 @@
   border-radius: 12px;
   width: 400px;
   position: relative;
+  text-align: center;
+}
+
+#modal-content {
+  padding-right: 20px; 
 }
 
 #close-modal-btn {
@@ -25,4 +30,19 @@
   top: 8px;
   font-size: 28px;
   cursor: pointer;
+}
+
+
+@media (max-width: 1000px) {
+  #modal-body {
+    width: 600px;
+  }
+
+  #modal-body h3 {
+    font-size: xx-large;
+  }
+
+  #modal-body p {
+    font-size: x-large;
+  }
 }
