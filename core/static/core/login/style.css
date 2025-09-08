@@ -77,3 +77,8 @@ form input {
 button {
   cursor: pointer;
 }
+
+.error-message {
+  list-style-type: none;
+  color: red;
+}
