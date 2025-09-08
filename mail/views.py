@@ -1,13 +1,13 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.core.mail import send_mail
-from rest_framework import status
 
-# Create your views here.
+import os
 
+from dotenv import load_dotenv
 
+load_dotenv()
 
 @api_view(['POST'])
 def send_email(request):
@@ -26,8 +26,8 @@ def send_email(request):
         send_mail(
             f"Website: Inquiry from {name}",
             f"Email: {email}\nmessage",
-            "test-eqvygm0k3yzl0p7w.mlsender.net",
-            ["terry.luan@canadianmusicians.coop"],
+            os.getenv("SENDER_EMAIL"),
+            [os.getenv("RECEIVER_EMAIL", "omivernutrition@gmail.com")],
             fail_silently=False
         )
         return HttpResponse(''' <div class="form-response success">

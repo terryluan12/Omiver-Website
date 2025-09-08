@@ -14,6 +14,11 @@ from pathlib import Path
 
 from django_components import ComponentsSettings
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -164,9 +169,9 @@ COMPONENTS = ComponentsSettings(
     reload_on_file_change=True
 )
 
-EMAIL_HOST = ""
-EMAIL_PORT = -1 
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST = os.getenv("EMAIL_HOST", "omiver.me")
+EMAIL_PORT = os.getenv("EMAIL_PORT") 
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 EMAIL_USE_TLS = True 
