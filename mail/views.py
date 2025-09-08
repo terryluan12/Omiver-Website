@@ -18,7 +18,9 @@ def send_email(request):
     message = data.get("message")
     
     if not name or not email or not message:
-        return HttpResponse('<p style="color:red;">Failed to send email. Try again.</p>')
+        return HttpResponse(''' <div class="form-response error">
+                                    <p>Information is missing! Please try again.</p>
+                                </div>''')
 
     try:
         send_mail(
@@ -28,6 +30,10 @@ def send_email(request):
             ["terry.luan@canadianmusicians.coop"],
             fail_silently=False
         )
-        return HttpResponse('<p style="color:green;">Email sent successfully!</p>')
+        return HttpResponse(''' <div class="form-response success">
+                                    <p>Thank you! Your email has been sent successfully.</p>
+                                </div>''')
     except Exception as e:
-        return HttpResponse(f'<p style="color:red;">Something went wrong: {str(e)} Try again.</p>')
+        return HttpResponse(f'''<div class="form-response error">
+                                    <p>Oops! Something went wrong. Please try again, or email us directly at omivernutrition@gmail.com.</p>
+                                </div>''')

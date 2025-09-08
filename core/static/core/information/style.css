@@ -266,7 +266,8 @@
 }
 
 .contact-me-input textarea::placeholder,
-.contact-me-input input::placeholder {
+.contact-me-input input::placeholder,
+.contact-me-input textarea  {
     font-family: 'Open Sans';
     font-size: small;
     color: black;
@@ -278,6 +279,45 @@
     padding: 10px;
 }
 
+.form-response {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    max-width: 90%;
+    
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-weight: 600;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-response.success {
+    background-color: #67997d;
+    color: white;
+    border: 2px solid #4e7a61;
+}
+
+.form-response.error {
+    background-color: #d27644;
+    color: white;
+    border: 2px solid #a54f2f;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 
 @media (max-width: 1000px) {

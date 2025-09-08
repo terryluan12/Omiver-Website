@@ -35,6 +35,21 @@
     window.addEventListener('load', initMobileSliders)
     window.addEventListener('resize', initMobileSliders)
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // For the response message from the contact us form
+      document.body.addEventListener('htmx:afterSwap', (e) => {
+        const response = document.querySelector('.form-response')
+        if (response) {
+          setTimeout(() => {
+            response.style.opacity = 0
+            setTimeout(() => response.remove(), 300)
+          }, 2000)
+        }
+      })
+    })
+  </script>
 {% endblock %}
 
 {% block inner_content %}
@@ -237,7 +252,6 @@
     <img src="{% static 'core/information/three_device_screenshot.png' %}" />
   </div>
 
-  <div id="contact-form-response"></div>
   <div class="page-section contact-us-block main-infographic">
     <form class="left-column" hx-post="{% url 'send-email' %}" hx-target="#contact-form-response" hx-swap="innerHTML">
       {% csrf_token %}
@@ -309,4 +323,5 @@
       </div>
     </div>
   </div>
+  <div id="contact-form-response"></div>
 {% endblock %}
