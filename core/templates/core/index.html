@@ -1,1 +1,214 @@
 {% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Omiver - Home{% endblock %}
+
+{% block inner_styles %}
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'core/index/style.css' %}" />
+{% endblock %}
+
+{% block inner_content %}
+<main class="page-main">
+<div class="page-section hero-box">
+    <h1 class="hero-header">Redefine wellness management</h1>
+    <p class="hero-subtitle">By integrating biomarker technology and AI models, we help you develop scientifically-backed regimens optimized to your client’s goals.</p>
+    <a class="hero-cta" href="#contact-form-response">Start your Journey<img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+</div>
+<div class="page-section what-box green">
+    <div class="main-infographic">
+        <div class="left-column">
+            <p class="what-box-title">What is it</p>
+            <h1 class="section-header">Who We</h1>
+            <h1 class="section-header">Are at Omiver</h1>
+            <p class="what-box-paragraph">By combining biomarker testing and the latest scientific literature, we generate recommended meal and exercise plans designed for your clients’ specific nutrition and fitness goals.</p>
+            <p class="what-box-paragraph"><img src="{% static 'core/index/checkmark-white.svg' %}" />Curated to metabolic data and lifestyle profile</p>
+            <p class="what-box-paragraph"><img src="{% static 'core/index/checkmark-white.svg' %}" />Detailed dietary practices and fitness regimens</p>
+            <p class="what-box-paragraph"><img src="{% static 'core/index/checkmark-white.svg' %}" />AI implementation for continuous learning</p>
+            <a href="/demo"> Try our Demo <img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+        </div>
+        <div class="right-column">
+            <img src="{% static 'core/index/person-run.svg' %}" />
+        </div>
+    </div>
+</div>
+<div class="page-section our-process-box">
+    <div class="main-infographic">
+        <div class="right-column">
+            <img src="{% static 'core/index/platform.svg' %}" />
+        </div>
+        <div class="left-column">
+            <p class="section-title">Our Platform</p>
+            <h1 class="section-header">Omiver</h1>
+            <h1 class="section-header">Platform</h1>
+            <p class="section-paragraph">Through our platform, you can track progress, view recommendations, and access actionable insights.</p>
+            <p class="section-paragraph"><img src="{% static 'core/information/checkmark.svg' %}" />Curated to metabolic data and lifestyle profile</p>
+            <p class="section-paragraph"><img src="{% static 'core/information/checkmark.svg' %}" />Detailed dietary practices and fitness regimens</p>
+            <p class="section-paragraph"><img src="{% static 'core/information/checkmark.svg' %}" />AI implementation for continuous learning</p>
+            <a href="/demo">Try our Demo<img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+        </div>
+    </div>
+</div>
+<div class="page-section our-service-box">
+    <p class="section-title">Our Service</p>
+    <h1 class="section-description">Omiver's platform membership & biomarker test kits provide the whole package</h1>
+    <p class="section-subtext">Our service includes a novel at-home test encompassing 200+ biomarkers related to diet and exercise activities, as well as access to our recommendation platform that continuously adapts to user feedback and up-to-date literature.</p>
+    <div class="tiles">
+        <div class="tile">
+            <div class="tile-header brown">
+                <h3>Try our</h3>
+                <h3>Demo</h3>
+                <span class="tile-price-primary">$0</span> <span class="tile-price-secondary">/14 days free</span>
+            </div>
+            <div class="tile-content">
+                <p class="tile-description-primary">Plan includes</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+            </div>
+            <a class="tile-cta brown">Start your Journey<img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+        </div>
+        <div class="tile">
+            <div class="tile-header green">
+                <h3>Model</h3>
+                <h3>Platform</h3>
+                <span class="tile-price-primary">$29</span> <span class="tile-price-secondary">/monthly</span>
+            </div>
+            <div class="tile-content">
+                <p class="tile-description-primary">Plan includes</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+            </div>
+            <a class="tile-cta green">Start your Journey <img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+        </div>
+        <div class="tile">
+            <div class="tile-header red">
+                <h3>Biomarker</h3>
+                <h3>test kit</h3>
+                <span class="tile-price-primary">$29</span> <span class="tile-price-secondary">/monthly</span>
+            </div>
+            <div class="tile-content">
+                <p class="tile-description-primary">Plan includes</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+                <p class="tile-description-secondary"><img src="{% static 'core/index/round-check.svg' %}" />Lorem Ipsum is simply dummy</p>
+            </div>
+            <a class="tile-cta red">Start your Journey <img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+        </div>
+    </div>
+</div>
+<div class="why-omiver-box page-section">
+    <p class="why-omiver-title">Why Omiver</p>
+    <h1 class="section-description">Redefine personalized wellness management</h1>
+    <div class="tiles">
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>Regimens based on up-to-date scientific literature</p>
+        </div>
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>Adaptive model for continuous learning</p>
+        </div>
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>Extensive performance-focused biomarker panel</p>
+        </div>
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>Create and share custom recipes and exercise regimens</p>
+        </div>
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>Live-chat support for assistance and feedback</p>
+        </div>
+        <div class="tile white">
+            <img src="{% static 'core/index/checkmark-outline.svg' %}" />
+            <p>View & manage client diet, exercise, and wellness metrics</p>
+        </div>
+    </div>
+</div>
+<div id="contact-form-response"></div>
+<div class="page-section contact-us-block main-infographic">
+    <form class="left-column" hx-post="{% url 'send-email' %}" hx-target="#contact-form-response" hx-swap="innerHTML">
+      {% csrf_token %}
+      <span>
+        <label class="contact-me-input">
+          <h4>Full name</h4>
+          <input name="name" placeholder="write..." />
+        </label>
+        <label class="contact-me-input">
+          <h4>Email</h4>
+          <input name="email" placeholder="write..." />
+        </label>
+      </span>
+      <span>
+        <label class="contact-me-input">
+          <h4>Message</h4>
+          <textarea name="message" placeholder="write..."></textarea>
+          <button type="submit" class="submit-button">
+            Submit
+            <img src="{% static 'core/information/diagonal_icon.svg' %}" />
+          </button>
+        </label>
+      </span>
+    </form>
+    <div class="right-column">
+      <div class="point-info-box">
+        <div class="info-icon">
+          <div class="icon-border-div">
+            <img src="{% static 'core/information/headset_icon.svg' %}" />
+          </div>
+        </div>
+        <span>
+          <h3>Call</h3>
+          <h4>(01) 2345-6789</h4>
+        </span>
+      </div>
+      <div class="point-info-box">
+        <div class="info-icon">
+          <div class="icon-border-div">
+            <img src="{% static 'core/information/message_icon.svg' %}" />
+          </div>
+        </div>
+        <span>
+          <h3>Message</h3>
+          <h4>omivernutrition@gmail.com</h4>
+        </span>
+      </div>
+      <div class="point-info-box">
+        <div class="info-icon">
+          <div class="icon-border-div">
+            <img src="{% static 'core/information/linkedin_icon.svg' %}" />
+          </div>
+        </div>
+        <span>
+          <h3>LinkedIn</h3>
+          <h4>@omivernutrition</h4>
+        </span>
+      </div>
+      <div class="point-info-box">
+        <div class="info-icon">
+          <div class="icon-border-div">
+            <img src="{% static 'core/information/instagram_icon.svg' %}" />
+          </div>
+        </div>
+        <span>
+          <h3>Instagram</h3>
+          <h4>@omivernutrition</h4>
+        </span>
+      </div>
+    </div>
+</div>
+</main>
+{% endblock %}
