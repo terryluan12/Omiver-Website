@@ -1,7 +1,23 @@
 
+
+<style>
+	.responsive-iframe {
+		width: 100%;
+		height: 80vh;
+		border: none;
+		display: block;
+		max-width: 100vw;
+		min-height: 1000px;
+	}
+	@media (max-width: 768) {
+		.responsive-iframe {
+			height: 60vh;
+			min-height: 800px;
+		}
+	}
+</style>
 <iframe
 	src="https://uiynyny-llama3rag.hf.space"
-	frameborder="0"
-	width="850"
-	height="450"
+	class="responsive-iframe"
+	allow="clipboard-write"
 ></iframe>
