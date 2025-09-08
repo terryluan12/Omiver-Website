@@ -4,14 +4,15 @@ footer {
     justify-content: center;
     text-align: center;
 
-    margin: 0px 100px;
+    padding: 0 5%;
+
 }  
 
 .disclaimer {
     color: #838688;
     border-radius: 15px;
-    margin: 25px 100px;
-    padding: 35px;
+    margin: 25px 0;
+    padding: 20px;
     border: 1px solid #e6e6e6;
 
 }

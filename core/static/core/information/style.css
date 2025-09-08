@@ -294,9 +294,17 @@
         order: 0;
     }
 
+    .contact-us-block {
+        margin-bottom: 100px;
+    }
+
     .contact-us-block .right-column {
         order: 0;
         flex: 1;
+    }
+
+    .contact-us-block .left-column {
+        height: 50%;
     }
 
     .our-platform-box {
