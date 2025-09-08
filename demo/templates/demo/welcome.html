@@ -23,7 +23,7 @@
     <img class="cartoon-img" src="{% static page.cartoon_url %}" alt="{{ page.cartoon_alt }}" />
 
     <h2>{{ page.heading }}</h2>
-    <p>{{ page.description }}</p>
+    <p class="description">{{ page.description }}</p>
   </span>
   <button id="next-button" hx-get="{% url 'welcome_page' next_index %}" hx-target="#content" hx-select="#content > *" hx-swap="innerHTML"><img src="{% static 'next_arrow.svg' %}" /></button>
 {% endblock %}
