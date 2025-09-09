@@ -88,6 +88,20 @@
                         </div>
                         <div class="profile-stats">
                             <div class="stat">
+                                <span class="stat-label">Sex:</span>
+                                <span class="stat-value">{{sex}}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Height:</span>
+                                <span class="stat-value">{{height}}</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Weight:</span>
+                                <span class="stat-value">{{weight}}</span>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat">
                                 <span class="stat-label">Ethnicity:</span>
                                 <span class="stat-value">{{ethnicity}}</span>
                             </div>
@@ -121,7 +135,7 @@
                 </div>
                 <!-- Informational Message -->
                 <div class="border border-gray-200 rounded-lg p-4 mb-6 bg-gray-50">
-                    <p class="text-gray-600">Your hypoxanthine levels have stabilized to average levels after 4 months. Continue to reduce purine-rich foods.</p>
+                    <p class="text-gray-600">{{ highlight }}</p>
                 </div>
                 <!-- Chart -->
                 <div id="chart" class="relative"></div>
@@ -154,7 +168,7 @@
                         <div class="pie-chart">
                             <div class="pie-background" id="pieBackground"></div>
                             <div class="pie-inner">
-                                <div class="percentage" id="overallPercentage">23%</div>
+                                <div class="percentage" id="overallPercentage">{{biomarker.overall}}</div>
                                 <div class="percentage-label">in range</div>
                             </div>
                         </div>
@@ -169,7 +183,7 @@
                 <div class="biomarker-grid">
                     {% for marker, value in biomarkers.items %}
                     <div class="biomarker-item biomarker-card">
-                        {% component "custom_slider" min='0' max='100' value='{{value}}' marker='{{marker}}' / %}
+                        {% component "custom_slider" min='{{value.min}}' max='{{value.max}}' value='{{value.value}}' marker='{{marker}}' / %}
                     </div>
                     {% endfor %}
                 </div>

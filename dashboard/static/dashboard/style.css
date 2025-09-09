@@ -26,6 +26,11 @@ body {
   cursor: pointer;
 }
 
+#header-title {
+  font-size: 32px;
+    white-space: nowrap;
+}
+
 #sidebar {
   position: fixed;
   top: 100px;

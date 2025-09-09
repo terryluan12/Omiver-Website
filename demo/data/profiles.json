@@ -32,19 +32,138 @@
       "Hydration": "1 gallon (3.8L) of water per day"
     },
     "biomarkers": {
-      "Hippuric Acid": 10,
-      "Histidine": 10,
-      "Carnitine": 10,
-      "Glutamine": 10,
-      "Leucine": 10,
-      "Magnesium": 10,
-      "Lycopene": 10,
-      "Lactic Acid": 10,
-      "Vitamin C": 10,
-      "Vitamin D": 10,
-      "Tmao": 10,
-      "Glucose": 10
+      "Hippuric Acid": {
+        "min": 5.6,
+        "max": 27.9,
+        "value": 25
+      },
+      "Glutamin": {
+        "min": 334,
+        "max": 666,
+        "value": 700
+      },
+      "Lycopene": {
+        "min": 0.3,
+        "max": 1.6,
+        "value": 0.7
+      },
+      "TMAO": {
+        "min": 68,
+        "max": 132,
+        "value": 135
+      },
+      "Histidine": {
+        "min": 9.8,
+        "max": 15.6,
+        "value": 12
+      },
+      "Leucine": {
+        "min": 79,
+        "max": 147,
+        "value": 110
+      },
+      "Lactic Acid": {
+        "min": 118,
+        "max": 1860,
+        "value": 1000
+      },
+      "Glucose": {
+        "min": 2800,
+        "max": 5000,
+        "value": 5103
+      },
+      "Carnitine": {
+        "min": 23,
+        "max": 52,
+        "value": 40
+      },
+      "Magnesium": {
+        "min": 0.75,
+        "max": 1.03,
+        "value": 0.8
+      },
+      "Vitamin D": {
+        "min": 0.075,
+        "max": 0.125,
+        "value": 0.09
+      },
+      "overall": 72
     },
+    "training_plan": {
+      "Monday": {
+        "Focus": "Strength",
+        "Plan": "Sprint intervals: 3 sets of 4-6 reps, with 2-3 minutes rest between sets Agility ladder drills: 3 sets of 10-12 reps, with 2-3 minutes rest between sets Upper-body strength: Bench press: 3 sets of 8- 10 reps Rows: 3 sets of 10-12 reps Push-ups: 3 sets of 12-15 reps"
+      },
+      "Tuesday": {
+        "Focus": "Strength",
+        "Plan": "Plyometrics: 3 sets of 10-12 reps, with 2-3 minutes rest between sets Resistance band drills: 3 sets of 10-12 reps, with 2-3 minutes rest between sets Core stability work: Plank: 3 sets of 30-60 seconds Russian twists: 3 sets of 10-12 reps"
+      },
+      "Wednesday": {
+        "Focus": "Cardio",
+        "Plan": "Active Recovery: Yoga or light swimming for 30-60 minutes"
+      },
+      "Thursday": {
+        "Focus": "Strength",
+        "Plan": "Route running with speed cuts: 3 sets of 10-12 reps, with 2-3 minutes rest between sets Lower-body strength: Squats: 3 sets of 8-10 reps RDLs: 3 sets of 10-12 reps Lunges: 3 sets of 10-12 reps"
+      },
+      "Friday": {
+        "Focus": "Cardio",
+        "Plan": "Full-body HIIT circuit: 3 sets of 10-12 reps, with 2-3 minutes rest between sets Hand-eye coordination training: Jumping jacks with alternating arms: 3 sets of 10-12 reps Box jumps with alternating feet: 3 sets of 10-12 reps"
+      },
+      "Saturday": {
+        "Focus": "Strength",
+        "Plan": "Flag football scrimmage or position-specific drills for 60-90 minutes"
+      },
+      "Sunday": {
+        "Focus": "Rest",
+        "Plan": "Rest and mobility work for 30-60 minutes, focusing on stretching and foam rolling day"
+      }
+    },
+    "meal_plan": {
+      "Monday": {
+        "Breakfast": "Scrambled eggs with spinach, avocado, and whole grain toast",
+        "Lunch": "Grilled chicken breast, quinoa, steamed broccoli",
+        "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
+        "Snacks": "Banana with almond-free protein shake (whey isolate) Rice cakes with sunflower seed butter and banana slices"
+      },
+      "Tuesday": {
+        "Breakfast": "Greek yogurt with berries, honey, and granola",
+        "Lunch": "Turkey and avocado wrap with mixed greens",
+        "Dinner": "Grilled chicken breast, roasted Brussels sprouts, brown rice",
+        "Snacks": "Apple slices with peanut-free butter Carrot sticks with hummus"
+      },
+      "Wednesday": {
+        "Breakfast": "Overnight oats with almond-free milk, banana, and walnuts",
+        "Lunch": "Grilled chicken breast, quinoa, steamed asparagus",
+        "Dinner": "Baked cod, roasted carrots, brown rice",
+        "Snacks": "Protein smoothie with banana, spinach, and almond-free milk Rice crackers with sunflower seed butter and banana slices"
+      },
+      "Thursday": {
+        "Breakfast": "Scrambled eggs with whole grain toast and avocado",
+        "Lunch": "Turkey and cheese sandwich on whole grain bread",
+        "Dinner": "Grilled shrimp, roasted bell peppers, quinoa",
+        "Snacks": "Grapes with cheese Carrot sticks with hummus"
+      },
+      "Friday": {
+        "Breakfast": "Avocado toast with scrambled eggs and whole grain bread",
+        "Lunch": "Grilled chicken breast, mixed greens salad with vinaigrette dressing",
+        "Dinner": "Baked chicken breast, roasted broccoli, brown rice",
+        "Snacks": "Banana with peanut-free butter Rice cakes with sunflower seed butter and banana slices"
+      },
+      "Saturday": {
+        "Breakfast": "Greek yogurt with berries, honey, and granola",
+        "Lunch": "Grilled chicken breast, quinoa, steamed asparagus",
+        "Dinner": "Grilled chicken breast, roasted Brussels sprouts, brown rice",
+        "Snacks": "Banana with almond-free protein shake (whey isolate) Carrot sticks with hummus"
+      },
+      "Sunday": {
+        "Breakfast": "Scrambled eggs with whole grain toast and avocado",
+        "Lunch": "Turkey and avocado wrap with mixed greens",
+        "Dinner": "Baked salmon, roasted sweet potatoes, sautéed kale",
+        "Snacks": "Protein smoothie with banana, spinach, and almond-free milk Rice cakes with sunflower seed butter and banana slices"
+      }
+    },
+    "highlight":"Your hypoxanthine levels have stabilized to average levels after 4 months. Continue to reduce purine-rich foods.",
     "colour": "#D27644",
     "slug": "marcus",
     "registration_date": "06/06/2025",
@@ -87,23 +206,143 @@
       "Hydration": "2-3 liters of water per day, with an additional 1-2 liters on long-run days."
     },
     "biomarkers": {
-      "Hippuric Acid": 20,
-      "Histidine": 40,
-      "Carnitine": 60,
-      "Glutamine": 10,
-      "Leucine": 90,
-      "Magnesium": 80,
-      "Lycopene": 40,
-      "Lactic Acid": 70,
-      "Vitamin C": 20,
-      "Vitamin D": 50,
-      "Tmao": 40,
-      "Glucose": 90
+      "Hippuric Acid": {
+        "min": 5.6,
+        "max": 27.9,
+        "value": 25
+      },
+      "Glutamin": {
+        "min": 334,
+        "max": 666,
+        "value": 500
+      },
+      "Lycopene": {
+        "min": 0.3,
+        "max": 1.6,
+        "value": 1.8
+      },
+      "TMAO": {
+        "min": 68,
+        "max": 132,
+        "value": 57
+      },
+      "Histidine": {
+        "min": 9.8,
+        "max": 15.6,
+        "value": 14
+      },
+      "Leucine": {
+        "min": 79,
+        "max": 147,
+        "value": 155.4
+      },
+      "Lactic Acid": {
+        "min": 118,
+        "max": 1860,
+        "value": 1500
+      },
+      "Glucose": {
+        "min": 2800,
+        "max": 5000,
+        "value": 4500
+      },
+      "Carnitine": {
+        "min": 23,
+        "max": 52,
+        "value": 35
+      },
+      "Magnesium": {
+        "min": 0.75,
+        "max": 1.03,
+        "value": 0.8
+      },
+      "Vitamin D": {
+        "min": 0.075,
+        "max": 0.125,
+        "value": 0.21
+      },
+      "overall": 64
     },
+    "training_plan": {
+      "Monday": {
+        "Focus": "Cardio",
+        "Plan": "Easy recovery run (4 miles); yoga"
+      },
+      "Tuesday": {
+        "Focus": "Strength",
+        "Plan": "Tempo run (6 miles) + lower-body strength (goblet squats, deadlifts, step-ups)"
+      },
+      "Wednesday": {
+        "Focus": "Cardio",
+        "Plan": "Cross-training (cycling or elliptical)"
+      },
+      "Thursday": {
+        "Focus": "Strength",
+        "Plan": "Interval training (400m and 800m repeats); upper-body strength and core"
+      },
+      "Friday": {
+        "Focus": "Cardio",
+        "Plan": "Long run (8–10 miles at moderate pace)"
+      },
+      "Saturday": {
+        "Focus": "Cardio",
+        "Plan": "Recovery jog or swimming; mobility work"
+      },
+      "Sunday": {
+        "Focus": "Rest",
+        "Plan": "Rest"
+      }
+    },
+    "meal_plan": {
+      "Monday": {
+        "Breakfast": "Whole-grain waffles with almond butter, banana, and hemp seeds",
+        "Lunch": "Quinoa and black bean salad with roasted vegetables and avocado",
+        "Dinner": "Grilled tofu with roasted Brussels sprouts and brown rice",
+        "Snacks": "Apple slices with almond butter, Greek yogurt with berries and honey"
+      },
+      "Tuesday": {
+        "Breakfast": "Smoothie bowl with banana, spinach, almond milk, and chia seeds topped with granola and berries",
+        "Lunch": "Lentil soup with whole-grain bread and a side salad",
+        "Dinner": "Grilled portobello mushrooms with roasted sweet potatoes and steamed broccoli",
+        "Snacks": "Apple slices with peanut butter Energy bar (homemade with oats, nuts, and dried fruits)"
+      },
+      "Wednesday": {
+        "Breakfast": "Overnight oats with almond milk, chia seeds, and mixed berries",
+        "Lunch": "Whole-grain pita stuffed with roasted vegetables and hummus",
+        "Dinner": "Grilled eggplant parmesan with a side salad",
+        "Snacks": "Hummus with carrot sticks and cucumber slices Energy chews (homemade with dates, nuts, and honey)"
+      },
+      "Thursday": {
+        "Breakfast": "Whole-grain English muffin with almond butter and banana slices",
+        "Lunch": "Quinoa and black bean bowl with roasted vegetables and avocado",
+        "Dinner": "Grilled tofu with roasted asparagus and brown rice",
+        "Snacks": "Greek yogurt with honey and walnuts Energy bar (homemade with oats, nuts, and dried fruits)"
+      },
+      "Friday": {
+        "Breakfast": "Smoothie with banana, spinach, almond milk, and chia seeds",
+        "Lunch": "Whole-grain pasta with marinara sauce and roasted vegetables",
+        "Dinner": "Grilled portobello mushrooms with roasted sweet potatoes and steamed broccoli",
+        "Snacks": "Hummus with carrot sticks and cucumber slices Apple slices with almond butter"
+      },
+      "Saturday": {
+        "Breakfast": "Whole-grain waffles with almond butter, banana, and hemp seeds",
+        "Lunch": "Quinoa and black bean salad with roasted vegetables and avocado",
+        "Dinner": "Grilled tofu with roasted Brussels sprouts and brown rice",
+        "Snacks": "Greek yogurt with berries and honey Energy chews (homemade with dates, nuts, and honey)"
+      },
+      "Sunday": {
+        "Breakfast": "Overnight oats with almond milk, chia seeds, and mixed berries",
+        "Lunch": "Whole-grain pita stuffed with roasted vegetables and hummus",
+        "Dinner": "Grilled eggplant parmesan with a side salad",
+        "Snacks": "Apple slices with peanut butter Energy bar (homemade with oats, nuts, and dried fruits)"
+      }
+    },
+    "highlight": "Your isoleucine levels have stabilized to average levels after 3 months. Continue with protein-rich food additions.",
     "colour": "#88A9C3",
     "registration_date": "06/06/2025",
     "email": "sofia@email.com",
     "last_activity": "06/06/2025",
+    "testing_date": "06/03 12:00 PM",
     "status": "pending",
     "status_text": "User is Pending",
     "plan": "BASIC"
@@ -141,19 +380,138 @@
       "Hydration": "4-5 liters of water per day, considering Jackson’s high energy expenditure"
     },
     "biomarkers": {
-      "Hippuric Acid": 10,
-      "Histidine": 10,
-      "Carnitine": 10,
-      "Glutamine": 10,
-      "Leucine": 10,
-      "Magnesium": 10,
-      "Lycopene": 10,
-      "Lactic Acid": 10,
-      "Vitamin C": 10,
-      "Vitamin D": 10,
-      "Tmao": 10,
-      "Glucose": 10
+      "Hippuric Acid": {
+        "min": 5.6,
+        "max": 27.9,
+        "value": 28.5
+      },
+      "Glutamin": {
+        "min": 334,
+        "max": 666,
+        "value": 550
+      },
+      "Lycopene": {
+        "min": 0.3,
+        "max": 1.6,
+        "value": 0.7
+      },
+      "TMAO": {
+        "min": 68,
+        "max": 132,
+        "value": 110
+      },
+      "Histidine": {
+        "min": 9.8,
+        "max": 15.6,
+        "value": 16.4
+      },
+      "Leucine": {
+        "min": 79,
+        "max": 147,
+        "value": 120
+      },
+      "Lactic Acid": {
+        "min": 118,
+        "max": 1860,
+        "value": 2000.5
+      },
+      "Glucose": {
+        "min": 2800,
+        "max": 5000,
+        "value": 4800
+      },
+      "Carnitine": {
+        "min": 23,
+        "max": 52,
+        "value": 60.3
+      },
+      "Magnesium": {
+        "min": 0.75,
+        "max": 1.03,
+        "value": 0.8
+      },
+      "Vitamin D": {
+        "min": 0.075,
+        "max": 0.125,
+        "value": 0.09
+      },
+      "overall": 64
     },
+    "training_plan": {
+      "Monday": {
+        "Focus": "Strength",
+        "Plan": "Upper-body hypertrophy: Pull-ups: 3 sets of 8-12 reps Bench press: 3 sets of 8- 12 reps Cable rows: 3 sets of 8- 12 reps Core circuits: 3 sets of 12-15 reps Lower-body strength: Squats: 3 sets of 8-12 reps Lunges: 3 sets of 8-12 reps Leg press: 3 sets of 8-12 reps"
+      },
+      "Tuesday": {
+        "Focus": "Strength",
+        "Plan": "On-ice practice: Drills: 3 sets of 10-15 reps Power skating: 3 sets of 10-15 reps Stick handling: 3 sets of 10-15 reps Off-ice mobility: Leg swings: 3 sets of 12-15 reps Hip circles: 3 sets of 12- 15 reps Toe taps: 3 sets of 12-15 reps"
+      },
+      "Wednesday": {
+        "Focus": "Cardio",
+        "Plan": "HIIT sled pushes: 3 sets of 8-12 reps Agility work: Ladder drills: 3 sets of 10-15 reps Cones drills: 3 sets of 10-15 reps Recovery stretching: Focus on major muscle groups, including hamstrings, quadriceps, and hip flexors"
+      },
+      "Thursday": {
+        "Focus": "Strength",
+        "Plan": "Lower-body strength: Deadlifts: 3 sets of 8-12 reps Calf raises: 3 sets of 12-15 reps Plyometrics: Box jumps: 3 sets of 10-15 reps Burpees: 3 sets of 10-15 reps"
+      },
+      "Friday": {
+        "Focus": "Cardio",
+        "Plan": "On-ice scrimmage: Focus on game- like scenarios and situational awareness Off-ice mobility: Leg swings: 3 sets of 12-15 reps Hip circles: 3 sets of 12-15 reps Toe taps: 3 sets of 12-15 reps"
+      },
+      "Saturday": {
+        "Focus": "Rest",
+        "Plan": "Active recovery: Light jog or rower: 30-45 minutes Stretching: Focus on major muscle groups, including hamstrings, quadriceps, and hip flexors"
+      },
+      "Sunday": {
+        "Focus": "Rest",
+        "Plan": "Rest or massage therapy: Focus on relaxation and recovery"
+      }
+    },
+    "meal_plan": {
+      "Monday": {
+        "Breakfast": "Kimchi omelet with whole-grain toast and a glass of green tea",
+        "Lunch": "Bulgogi beef with brown rice and mixed vegetables",
+        "Dinner": "Grilled mackerel with sweet potato and steamed broccoli",
+        "Snacks": "Apple slices with almond butter Cottage cheese with pineapple"
+      },
+      "Tuesday": {
+        "Breakfast": "Whole-grain cereal with banana and almond milk",
+        "Lunch": "Chicken breast with quinoa and mixed vegetables",
+        "Dinner": "Grilled salmon with roasted asparagus and brown rice",
+        "Snacks": "Trail mix with nuts and dried fruits Greek yogurt with mixed berries"
+      },
+      "Wednesday": {
+        "Breakfast": "Smoothie bowl with banana, spinach, and almond milk topped with granola",
+        "Lunch": "Turkey and avocado wrap with mixed greens",
+        "Dinner": "Grilled chicken breast with roasted bell peppers and quinoa",
+        "Snacks": "Apple slices with peanut butter Cottage cheese with cucumber slices"
+      },
+      "Thursday": {
+        "Breakfast": "Whole-grain toast with scrambled eggs and mixed vegetables",
+        "Lunch": "Chicken Caesar salad",
+        "Dinner": "Grilled shrimp with zucchini noodles and cherry tomatoes",
+        "Snacks": "Greek yogurt with honey and almonds Apple slices with almond butter"
+      },
+      "Friday": {
+        "Breakfast": "Omelet with mushrooms and whole-grain toast",
+        "Lunch": "Turkey and cheese sandwich with carrot sticks",
+        "Dinner": "Grilled chicken breast with roasted asparagus and quinoa",
+        "Snacks": "Cottage cheese with fruit salad Greek yogurt with mixed berries"
+      },
+      "Saturday": {
+        "Breakfast": "Smoothie with banana, spinach, and almond milk",
+        "Lunch": "Chicken Caesar salad",
+        "Dinner": "Grilled salmon with roasted bell peppers and brown rice",
+        "Snacks": "Apple slices with peanut butter Cottage cheese with cucumber slices"
+      },
+      "Sunday": {
+        "Breakfast": "Kimchi omelet with whole-grain toast and a glass of green tea",
+        "Lunch": "Chicken breast with quinoa and mixed vegetables",
+        "Dinner": "Grilled chicken breast with roasted bell peppers and quinoa",
+        "Snacks": "Trail mix with nuts and dried fruits Greek yogurt with berries"
+      }
+    },
+    "highlight": "Your glucose levels have stabilized to average levels after 3 months. Continue with protein-rich food additions.",
     "colour": "#DC6874",
     "registration_date": "06/06/2025",
     "email": "jackson@email.com",

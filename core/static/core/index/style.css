@@ -1,9 +1,10 @@
 /* General styling */
-.page-main{
+.page-main {
   background-image: url("image.png");
   background-size: cover;
   background-position: top
 }
+
 .page-section {
   display: flex;
   flex-direction: column;
@@ -87,6 +88,8 @@
   margin-right: 200px;
   line-height: 1.5;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .what-box-paragraph img {
@@ -137,6 +140,10 @@
   margin-bottom: 50px;
 }
 
+.our-service-box .tile{
+  min-height: 550px;
+}
+
 .section-paragraph {
   font-size: 20px;
   margin-right: 200px;
@@ -174,10 +181,9 @@
   background-color: #a8879d;
   color: white;
   align-items: center;
-
   display: flex;
   width: fit-content;
-
+  margin-top: 20px;
   padding: 10px;
   border-radius: 50px;
 }
@@ -292,6 +298,9 @@
 
 .tile-description-secondary {
   font-size: 23px;
+  display: flex;
+  gap:10px;
+  align-items: center;
 }
 
 .tile-cta {

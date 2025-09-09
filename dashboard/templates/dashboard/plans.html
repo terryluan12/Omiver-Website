@@ -56,34 +56,26 @@
 
         <!-- Icon Row -->
         <div class="primary-header exercise-theme focus-header">Focus</div>
+        {% for day, routine in training_plan.items %}
         <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+            {% if routine.Focus == "Strength" %}
+                <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
+            {% endif %}
+            {% if routine.Focus == "Cardio" %}
+                <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
+            {% endif %}
+            {% if routine.Focus == "Rest" %}
+                <img class="icon" src="{% static 'dashboard/plans/rest.svg' %}" />
+            {% endif %}
         </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
-        </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
-        </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
-        </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/weight.svg' %}" />
-        </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/cardio.svg' %}" />
-        </div>
-        <div class="icon-cell">
-            <img class="icon" src="{% static 'dashboard/plans/rest.svg' %}" />
-        </div>
+        {% endfor %}
         
         <!-- Training Plan Row -->
         <div class="primary-header exercise-theme">Training Plan</div>
 
-        {% for day, routine in weekly_routine.items %}
+        {% for day, routine in training_plan.items %}
         <div class="plan-cell">
-            <div class="exercise">{{ routine}}</div>
+            <div class="exercise">{{ routine.Plan}}</div>
         </div>
         {% endfor %}
         
@@ -106,15 +98,15 @@
     <div class="training-grid">
         <!-- Header Row -->
         <div class="primary-header"></div>
-        <div class="primary-header meal-theme day-header">Monday</div>
+        {% comment %} <div class="primary-header meal-theme day-header">Monday</div>
         <div class="primary-header meal-theme day-header">Tuesday</div>
         <div class="primary-header meal-theme day-header">Wednesday</div>
         <div class="primary-header meal-theme day-header">Thursday</div>
         <div class="primary-header meal-theme day-header">Friday</div>
         <div class="primary-header meal-theme day-header">Saturday</div>
-        <div class="primary-header meal-theme day-header">Sunday</div>
-        
-        {% for time, meal in food_log.items %}
+        <div class="primary-header meal-theme day-header">Sunday</div> {% endcomment %}
+
+        {% comment %} {% for time, meal in meal_plan.items %}
         <!-- meal row -->
         <div class="primary-header meal-theme focus-header">{{time}}</div>
             {% for _ in '1234567' %}
@@ -122,6 +114,34 @@
                 {{ meal }}
             </div>
             {% endfor %}
+        {% endfor %} {% endcomment %}
+
+        {% for day, meal in meal_plan.items %}
+        <div class="primary-header meal-theme focus-header">{{day}}</div>
+        {% endfor %}
+
+        <!-- Breakfast Row -->
+        <div class="primary-header meal-theme day-header">Breakfast</div>
+        {% for day, meals in meal_plan.items %}
+        <div class="plan-cell">{{ meals.Breakfast }}</div>
+        {% endfor %}
+
+        <!-- Lunch Row -->
+        <div class="primary-header meal-theme day-header">Lunch</div>
+        {% for day, meals in meal_plan.items %}
+        <div class="plan-cell">{{ meals.Lunch }}</div>
+        {% endfor %}
+
+        <!-- Dinner Row -->
+        <div class="primary-header meal-theme day-header">Dinner</div>
+        {% for day, meals in meal_plan.items %}
+        <div class="plan-cell">{{ meals.Dinner }}</div>
+        {% endfor %}
+
+        <!-- Snacks Row -->
+        <div class="primary-header meal-theme day-header">Snacks</div>
+        {% for day, meals in meal_plan.items %}
+        <div class="plan-cell">{{ meals.Snacks }}</div>
         {% endfor %}
         
         <!-- Feedback Row -->
