@@ -1,5 +1,5 @@
 [project]
-name = "Omiver Demo"
+name = "omiver-demo"
 version = "1.0.0"
 description = "A demo website created for Omiver, a health tech startup"
 readme = "README.md"
@@ -12,6 +12,8 @@ dependencies = [
     "sqlparse==0.5.3",
     "django-browser-reload",
     "django-components",
+    "gunicorn==23.0.0",
+    "setuptools",
     "Pillow",
     "python-dotenv"
 ]
