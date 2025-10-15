@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponse
+from django.urls import reverse
 
 from django.contrib.auth.decorators import login_required
 import os, json
@@ -49,12 +50,12 @@ def welcome_page(request, index=0):
     index = int(index)
     if index > len(pages) - 1:
         response = HttpResponse()
-        response['HX-Redirect'] = '/login'
+        response['HX-Redirect'] = reverse('login_page')
         return response
     
     if index < 0:
         response = HttpResponse()
-        response['HX-Redirect'] = '/'
+        response['HX-Redirect'] = reverse('demo_page')
         return response
     
     return render(request, "demo/welcome.html", {"page": pages[index], "next_index": index+1, "prev_index": index - 1})

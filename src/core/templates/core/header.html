@@ -1,11 +1,11 @@
 {% load static %}
 <header>
-  <a href="/"><img src="{% static 'green_logo.svg' %}" /></a>
-  <a href="/information"><h2>How Omiver Works</h2></a>
-  <a href="/demo"><h2>Demo</h2></a>
+	<a href="{% url 'root_page' %}"><img src="{% static 'green_logo.svg' %}" /></a>
+  <a href="{% url 'information_page' %}"><h2>How Omiver Works</h2></a>
+  <a href="{% url 'demo_page' %}"><h2>Demo</h2></a>
   <span></span>
   <div class='buttons'>
-    <a class='login' href="/login">Login <img src="{% static 'core/index/diagonal_black.svg' %}" /></a>
-    <a class='account' href="/login">Create Account <img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
+	  <a class='login' href="{% url 'login_page' %}">Login <img src="{% static 'core/index/diagonal_black.svg' %}" /></a>
+	  <a class='account' href="{% url 'login_page' %}">Create Account <img src="{% static 'core/information/diagonal_icon.svg' %}" /></a>
   </div>
 </header>

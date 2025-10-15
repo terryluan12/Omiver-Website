@@ -7,7 +7,7 @@
 
 {% block content %}
   <img src="{% static 'white_logo.svg' %}" alt="Omiver Logo" />
-  <a href="/demo/welcome" id="start_button">
+  <a href="{% url 'welcome_default_page' %}" id="start_button">
     <p>Start Now</p>
     <img src="{% static '/right_caret.svg' %}" />
   </a>
