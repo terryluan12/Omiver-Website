@@ -1,0 +1,23 @@
+[project]
+name = "Omiver Demo"
+version = "1.0.0"
+description = "A demo website created for Omiver, a health tech startup"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "asgiref==3.9.1",
+    "Django==5.2.4",
+    "djangorestframework==3.16.1",
+    "psycopg2==2.9.10",
+    "sqlparse==0.5.3",
+    "django-browser-reload",
+    "django-components",
+    "Pillow",
+    "python-dotenv"
+]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+extend-select = ["I", "SIM"]
