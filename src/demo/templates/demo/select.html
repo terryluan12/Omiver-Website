@@ -35,7 +35,7 @@
           <h4>Nutrition Goal:</h4>
           <p>{{ profile.goal.nutrition }}</p>
         </div>
-        <a class="select-profile-button" style="background-color: {{ profile.colour }}" href="/demo/profile_detail/{{ profile.id }}">Select Profile</a>
+        <a class="select-profile-button" style="background-color: {{ profile.colour }}" href="{% url 'profile_detail_page' profile.id %}">Select Profile</a>
       </div>
     {% endfor %}
   </div>

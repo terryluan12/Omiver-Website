@@ -70,7 +70,7 @@
       </div>
     </div>
   </div>
-  <a href="/dashboard/profile/{{ request.session.profile_id}}">
+  <a href="{% url 'profile_page' request.session.profile_id %}">
     Continue
     <img src="{% static '/next_arrow.svg' %}" />
   </a>
