@@ -14,7 +14,7 @@
 
 {% block content %}
 
-<header id="header" onclick="window.location.href='/dashboard/profile/{{ request.session.profile_id }}'">
+<header id="header" onclick="window.location.href='{% url 'profile_page' request.session.profile_id %}'">
 
   <span class="header-section">
     

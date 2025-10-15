@@ -26,11 +26,6 @@ body {
   cursor: pointer;
 }
 
-#header-title {
-  font-size: 32px;
-    white-space: nowrap;
-}
-
 #sidebar {
   position: fixed;
   top: 100px;
@@ -95,6 +90,7 @@ body {
 
 #header h1 {
   font-weight: 100;
+  font-size: 32px;
 }
 
 h4 {
@@ -385,9 +381,6 @@ h4 {
   }
 }
 
-#header h1 {
-  font-weight: 100;
-}
 
 h4 {
   font-size: larger;
