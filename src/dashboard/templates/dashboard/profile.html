@@ -42,7 +42,7 @@
             </div>
         </button>
         
-        <button class="action-btn" hx-get="/dashboard/chatbot" hx-target="#main-content">
+        <button class="action-btn" hx-get="{% url 'chatbot_page' %}" hx-target="#main-content">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/chatbot.svg' %}" alt="Chatbot" /></span>
             <div class="text-group">
                 <span class="btn-text-secondary">Quick Faq Answers</span>
@@ -50,7 +50,7 @@
             </div>
         </button>
         
-        <button class="action-btn" onclick="openNewPage()" hx-get="/improve" hx-target="#main-content">
+        <button class="action-btn DEMO-ACTION">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/improve.svg' %}" alt="Improve" /></span>
             <div class="text-group">
                 <span class="btn-text-secondary">Give Feedback</span>
@@ -58,7 +58,7 @@
             </div>
         </button>
         
-        <button class="action-btn" onclick="window.location.href='/#contact-form-response'" hx-get="/support" hx-target="#main-content">
+        <button class="action-btn"  onclick="location.href='{% url 'support_page' %}'">
             <span class="btn-icon"><img src="{% static 'dashboard/profile/support.svg' %}" alt="Support" /></span>
             <div class="text-group">
                 <span class="btn-text-secondary">Help Center</span>
@@ -399,10 +399,6 @@
                 // Hide tooltip
                 tooltip.style("opacity", 0);
             });
-
-            function openNewPage() {
-                window.open('https://forms.gle/24t8j5ymXPfJtg577', '_blank');
-            }
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
