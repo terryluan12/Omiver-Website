@@ -43,7 +43,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 
 # copy project
-COPY --chown=appuser:appuser . $APP_HOME
+COPY --chown=appuser:appuser src $APP_HOME
 
 COPY setup.sh .
 RUN chmod +x setup.sh
