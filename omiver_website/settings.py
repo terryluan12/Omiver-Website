@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'core',
     'demo',
     'dashboard',
-    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware'
 ]
 
 ROOT_URLCONF = 'omiver_website.urls'
@@ -167,7 +165,6 @@ COMPONENTS = ComponentsSettings(
     #    app_dirs=["components"],
     #    libraries=[],
     #    context_behavior="isolated",  # "django" | "isolated"
-    reload_on_file_change=True
 )
 
 EMAIL_HOST = os.getenv("EMAIL_HOST", "omiver.me")
