@@ -76,6 +76,10 @@
     border-bottom: 2px solid #e2e8f0;
 }
 
+#sidebar .client-button {
+  background-color: #67997D;
+}
+
 .page-header h1 {
     font-size: 2rem;
     font-weight: 700;

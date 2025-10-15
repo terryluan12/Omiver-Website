@@ -45,9 +45,9 @@ RUN pip install --no-cache /wheels/*
 # copy project
 COPY --chown=appuser:appuser src $APP_HOME
 
-COPY setup.sh .
-RUN chmod +x setup.sh
-RUN ./setup.sh
+COPY startup_scripts ./startup_scripts
+RUN chmod +x startup_scripts/*
+RUN startup_scripts/collectstatic.sh
 
 # change to the app user
 USER app

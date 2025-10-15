@@ -22,7 +22,7 @@ services:
  
   web:
     build: .
-    command: gunicorn omiver_website.wsgi:application --bind 0.0.0.0:8000
+    command: sh -c "startup_scripts/database.sh && gunicorn omiver_website.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - static_volume:/home/app/web/staticfiles
     expose:

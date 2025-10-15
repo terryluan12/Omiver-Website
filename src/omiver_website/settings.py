@@ -32,9 +32,9 @@ SECRET_KEY = 'django-insecure-7z!bv1d43a&a5*b0gdfm_&x5yywoz9sv-1#d24qdjf6mc8m!-=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['omiver-website.onrender.com','*']
+ALLOWED_HOSTS = ['projects.terryluan.com','localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://omiver-website.onrender.com','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['http://projects.terryluan.com','http://localhost:1337']
 
 
 # Application definition
@@ -98,8 +98,12 @@ WSGI_APPLICATION = 'omiver_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        "NAME": os.environ.get("POSTGRES_DB"),
+        "USER": os.environ.get("POSTGRES_USER"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+        "HOST": os.environ.get("POSTGRES_HOST"),
+        "PORT": os.environ.get("POSTGRES_PORT"),
     }
 }
 
@@ -137,6 +141,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+
+FORCE_SCRIPT_NAME = os.environ.get("ROOT_SUBURL")
 
 STATIC_URL = '/omiver_static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
