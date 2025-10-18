@@ -32,9 +32,9 @@ SECRET_KEY = 'django-insecure-7z!bv1d43a&a5*b0gdfm_&x5yywoz9sv-1#d24qdjf6mc8m!-=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['projects.terryluan.com','localhost']
+ALLOWED_HOSTS = ['terryluan.com','localhost']
 
-CSRF_TRUSTED_ORIGINS = ['http://projects.terryluan.com','http://localhost:1337']
+CSRF_TRUSTED_ORIGINS = ['https://terryluan.com','http://localhost:1337']
 
 
 # Application definition
